@@ -5,10 +5,11 @@ import { NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home/home.component';
 import { HomeheaderComponent } from './home/homeheader/homeheader.component';
+import { HomesidebarComponent } from './home/homesidebar/homesidebar.component';
 
 
 @NgModule({
-  declarations: [HomeComponent, HomeheaderComponent],
+  declarations: [HomeComponent, HomeheaderComponent, HomesidebarComponent],
   imports: [
     CommonModule,
     HomeRoutingModule,
