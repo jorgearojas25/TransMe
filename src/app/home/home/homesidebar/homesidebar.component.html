@@ -3,17 +3,18 @@
 <nav class="sidebar" [ngClass]="{sidebarPushRight: isActive, collapsed: collapsed}">
   <div class="list-group">
  
-      <div class="nested-menu" *ngFor="let item of EstacionBoton">
-          <a class="list-group-item" (click)="addExpandClass(item)" >
+      <div class="nested-menu" *ngFor="let item of TroncalBoton">
+          <a class="list-group-item" (click)="addExpandClass(item)" (click)="getEstaciones(item)" >
               <i class="fa fa-plus"></i>&nbsp;
-              <span title='{{item}}'>{{ item }}</span>
+              <span title='{{item}}' >{{ item }}</span>
           </a>
-          <li class="nested" [class.expand]="showMenu === item" >
+
+          <li class="nested" [class.expand]="showMenu === item" value="{{item}}">
               <ul class="submenu" >
-                  <li *ngFor="let item of EstacionBoton">
+                  <li *ngFor="let item of TroncalBoton">
                       <a href="javascript:void(0)">
                           <i class="fa fa-monument"></i>&nbsp;
-                          <span title='{{item}}'>{{ item }}</span>
+                          <span title='{{item}}' >{{ item }}</span>
                       </a>
                   </li>
                   
