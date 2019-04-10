@@ -1,12 +1,9 @@
 import { Component, Output, EventEmitter, OnInit } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
-
+import { TroncalesService } from '../../../shared/services/troncales.service';
 
 declare var $:any;
-
-var troncales:any[]=[];
-var troncalesFiltradas:any[]=[];
 
 @Component({
   selector: 'app-homesidebar',
@@ -16,16 +13,16 @@ var troncalesFiltradas:any[]=[];
 export class HomesidebarComponent implements OnInit {
 
     
-    
-  isActive: boolean;
+    EstacionBoton:any[]=[];
+    isActive: boolean;
     collapsed: boolean;
     showMenu: string;
     pushRightClass: string;
     
-    EstacionBoton:any[]=[];
+    
     @Output() collapsedEvent = new EventEmitter<boolean>();
 
-    constructor(private translate: TranslateService, public router: Router) {
+    constructor(private translate: TranslateService, public router: Router, private _TroncalesService:TroncalesService) {
         this.router.events.subscribe(val => {
             if (
                 val instanceof NavigationEnd &&
@@ -43,24 +40,8 @@ export class HomesidebarComponent implements OnInit {
         this.showMenu = '';
         this.pushRightClass = 'push-right';
 
+        this.EstacionBoton=this._TroncalesService.getTroncales();
 
-        $.getJSON("http://datosabiertos.bogota.gov.co/api/3/action/datastore_search?resource_id=d0775af7-1706-4404-8bea-387194287d73&limit=1000",function(data){
-
-            // console.log(data);
-            $.each(data.result.records,function(i,item){
-
-                troncales.push(item.Corredor);
-              
-            })
-            $.each(troncales,function(i,item){
-                if($.inArray(item, troncalesFiltradas) === -1) troncalesFiltradas.push(item);
-            })
-
-            // console.log(troncalesFiltradas);
-            
-        });
-        this.EstacionBoton=troncalesFiltradas;
-        // console.log(troncalesFiltradas);
     }
 
     
