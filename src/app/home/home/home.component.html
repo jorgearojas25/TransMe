@@ -2,4 +2,7 @@
 
 <app-homeheader></app-homeheader>
 <app-homesidebar></app-homesidebar>
-<p>Hola bb</p>
+<section class="main-container" [ngClass]="{collapsed: collapedSideBar}">
+    <app-busquedas></app-busquedas>
+    <app-mapa></app-mapa>
+</section>

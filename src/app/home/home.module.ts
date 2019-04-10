@@ -6,10 +6,12 @@ import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home/home.component';
 import { HomeheaderComponent } from './home/homeheader/homeheader.component';
 import { HomesidebarComponent } from './home/homesidebar/homesidebar.component';
+import { MapaComponent } from './home/mapa/mapa.component';
+import { BusquedasComponent } from './home/busquedas/busquedas.component';
 
 
 @NgModule({
-  declarations: [HomeComponent, HomeheaderComponent, HomesidebarComponent],
+  declarations: [HomeComponent, HomeheaderComponent, HomesidebarComponent, MapaComponent, BusquedasComponent],
   imports: [
     CommonModule,
     HomeRoutingModule,
