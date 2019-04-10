@@ -5,14 +5,14 @@
       <div class="nested-menu" *ngFor="let item of EstacionBoton">
           <a class="list-group-item" (click)="addExpandClass(item)" >
               <i class="fa fa-plus"></i>&nbsp;
-              <span>{{ item }}</span>
+              <span title='{{item}}'>{{ item }}</span>
           </a>
           <li class="nested" [class.expand]="showMenu === item" >
-              <ul class="submenu">
-                  <li>
+              <ul class="submenu" >
+                  <li *ngFor="let item of EstacionBoton">
                       <a href="javascript:void(0)">
                           <i class="fa fa-monument"></i>&nbsp;
-                          <span>{{ 'Submenu' | translate }}</span>
+                          <span title='{{item}}'>{{ item }}</span>
                       </a>
                   </li>
                   

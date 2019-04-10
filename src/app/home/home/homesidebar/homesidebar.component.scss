@@ -118,12 +118,13 @@ $topnav-background-color: #222;
         ul.submenu {
             display: block;
             list-style-type: none;
-            height: auto;
+            height: 5%;
             li {
                 a {
                     color: #fff;
-                    padding: 10px;
+                    padding: 2px;
                     display: block;
+                    font-size: 14px;
                 }
             }
         }
