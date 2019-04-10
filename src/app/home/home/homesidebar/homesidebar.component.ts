@@ -2,6 +2,9 @@ import { Component, Output, EventEmitter, OnInit } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 
+
+declare var $:any;
+
 @Component({
   selector: 'app-homesidebar',
   templateUrl: './homesidebar.component.html',
@@ -33,6 +36,12 @@ export class HomesidebarComponent implements OnInit {
         this.collapsed = false;
         this.showMenu = '';
         this.pushRightClass = 'push-right';
+
+
+        $.getJSON("http://datosabiertos.bogota.gov.co/api/3/action/datastore_search?resource_id=d0775af7-1706-4404-8bea-387194287d73&limit=1000",function(data){
+
+            console.log(data);
+        });
     }
 
 
@@ -76,8 +85,29 @@ export class HomesidebarComponent implements OnInit {
         localStorage.removeItem('isLoggedin');
     }
 
+
+    // public llamado ():void{ 
+    // //op1
+    // // var data={
+
+    // //         resource_id:"d0775af7-1706-4404-8bea-387194287d73",
+    // //         q:"",
+    // //         filters:{},
+    // //         limit:1000,
+    // //         offset:0
     
+    // //     }
+    
+    // // $.getJSON('http://datosabiertos.bogota.gov.co/api/3/action/datastore_search',function(data){
+
+    // // console.log(data);
+    // // });
+    
+    // //OP2
 
     
+    // }
 
+   
 }
+
