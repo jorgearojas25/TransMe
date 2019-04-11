@@ -13,6 +13,7 @@ declare var $:any;
 export class HomesidebarComponent implements OnInit {
 
     
+    TroncalBoton:any[]=[];
     EstacionBoton:any[]=[];
     isActive: boolean;
     collapsed: boolean;
@@ -40,11 +41,18 @@ export class HomesidebarComponent implements OnInit {
         this.showMenu = '';
         this.pushRightClass = 'push-right';
 
-        this.EstacionBoton=this._TroncalesService.getTroncales();
-
+        this.TroncalBoton=this._TroncalesService.getTroncales();
+        
+        
     }
 
+    public getEstaciones(data){
+        this.EstacionBoton=this._TroncalesService.getEstaciones(data);
+        console.log( this.EstacionBoton);
+        
+    }
     
+
     eventCalled() {
         this.isActive = !this.isActive;
     }
