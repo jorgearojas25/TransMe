@@ -9,12 +9,12 @@
               <span title='{{item}}' >{{ item }}</span>
           </a>
 
-          <li class="nested" [class.expand]="showMenu === item" value="{{item}}">
+          <li class="nested" [class.expand]="showMenu === item">
               <ul class="submenu" >
-                  <li *ngFor="let item of TroncalBoton">
+                  <li *ngFor="let item of EstacionBoton">
                       <a href="javascript:void(0)">
                           <i class="fa fa-monument"></i>&nbsp;
-                          <span title='{{item}}' >{{ item }}</span>
+                          <span title='{{item.Estaciones}}' >{{ item.Estaciones }}</span>
                       </a>
                   </li>
                   

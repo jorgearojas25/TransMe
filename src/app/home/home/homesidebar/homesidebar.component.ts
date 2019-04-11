@@ -14,6 +14,7 @@ export class HomesidebarComponent implements OnInit {
 
     
     TroncalBoton:any[]=[];
+    EstacionBoton:any[]=[];
     isActive: boolean;
     collapsed: boolean;
     showMenu: string;
@@ -41,20 +42,17 @@ export class HomesidebarComponent implements OnInit {
         this.pushRightClass = 'push-right';
 
         this.TroncalBoton=this._TroncalesService.getTroncales();
-
-
+        
         
     }
 
     public getEstaciones(data){
+        this.EstacionBoton=this._TroncalesService.getEstaciones(data);
+        console.log( this.EstacionBoton);
         
-        // return ;
-        console.log(this._TroncalesService.getEstaciones(data));
-
-
     }
-
     
+
     eventCalled() {
         this.isActive = !this.isActive;
     }
