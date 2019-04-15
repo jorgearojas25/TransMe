@@ -4,6 +4,8 @@ declare var $: any;
 const troncales: any[] = [];
 const troncalesFiltradas: any[] = [];
 const estaciones: any[] = [];
+const latLon: any[] = [];
+const longitudes: any[] = [];
 const jsonDA: any[] = [];
 let estacionesTroncales: any[] = [];
 let estacionesTroncalesFiltradas: any[] = [];
@@ -14,6 +16,8 @@ export class TroncalesService {
 
 
   private TroncalBoton: any[] = [];
+  private latLonMapa: any[] = [];
+
   constructor() {
 
     $.getJSON('http://datosabiertos.bogota.gov.co/api/3/action/datastore_search?resource_id=d0775af7-1706-4404-8bea-387194287d73&limit=1000', function(data) {
@@ -24,10 +28,13 @@ export class TroncalesService {
             Estacion: item.Name,
             Troncal: item.Corredor,
             Codigo: item.Id,
-            LatLon: { Lat: item.Latitud, Lon: item.Longitud },
+            Lat: item.Latitud, 
+            Lon: item.Longitud
           });
           troncales.push(item.Corredor);
           estaciones.push(item.Name);
+          latLon.push({Estacion:item.Name,Lat: item.Latitud,Lon: item.Longitud});
+
 
 
       });
@@ -50,6 +57,10 @@ export class TroncalesService {
 
       return this.TroncalBoton = troncalesFiltradas;
 
+    }
+
+    getLatLon(){
+      return this.latLonMapa=latLon;
     }
 
     getEstaciones(dato) {
