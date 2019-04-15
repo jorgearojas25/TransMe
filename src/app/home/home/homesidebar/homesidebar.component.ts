@@ -3,7 +3,7 @@ import { Router, NavigationEnd } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { TroncalesService } from '../../../shared/services/troncales.service';
 
-declare var $:any;
+declare var $: any;
 
 @Component({
   selector: 'app-homesidebar',
@@ -12,18 +12,18 @@ declare var $:any;
 })
 export class HomesidebarComponent implements OnInit {
 
-    
-    TroncalBoton:any[]=[];
-    EstacionBoton:any[]=[];
+
+    TroncalBoton: any[] = [];
+    EstacionBoton: any[] = [];
     isActive: boolean;
     collapsed: boolean;
     showMenu: string;
     pushRightClass: string;
-    
-    
+
+
     @Output() collapsedEvent = new EventEmitter<boolean>();
 
-    constructor(private translate: TranslateService, public router: Router, private _TroncalesService:TroncalesService) {
+    constructor(private translate: TranslateService, public router: Router, private _TroncalesService: TroncalesService) {
         this.router.events.subscribe(val => {
             if (
                 val instanceof NavigationEnd &&
@@ -41,17 +41,17 @@ export class HomesidebarComponent implements OnInit {
         this.showMenu = '';
         this.pushRightClass = 'push-right';
 
-        this.TroncalBoton=this._TroncalesService.getTroncales();
-        
-        
+        this.TroncalBoton = this._TroncalesService.getTroncales();
+
+
     }
 
-    public getEstaciones(data){
-        this.EstacionBoton=this._TroncalesService.getEstaciones(data);
+    public getEstaciones(data) {
+        this.EstacionBoton = this._TroncalesService.getEstaciones(data);
         console.log( this.EstacionBoton);
-        
+
     }
-    
+
 
     eventCalled() {
         this.isActive = !this.isActive;
@@ -94,6 +94,6 @@ export class HomesidebarComponent implements OnInit {
     }
 
 
-  
+
 }
 

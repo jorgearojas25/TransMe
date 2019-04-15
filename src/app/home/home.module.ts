@@ -8,6 +8,7 @@ import { HomeheaderComponent } from './home/homeheader/homeheader.component';
 import { HomesidebarComponent } from './home/homesidebar/homesidebar.component';
 import { MapaComponent } from './home/mapa/mapa.component';
 import { BusquedasComponent } from './home/busquedas/busquedas.component';
+import { AgmCoreModule } from '@agm/core';
 
 
 @NgModule({
@@ -16,7 +17,10 @@ import { BusquedasComponent } from './home/busquedas/busquedas.component';
     CommonModule,
     HomeRoutingModule,
     TranslateModule,
-    NgbDropdownModule
+    NgbDropdownModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyDvardTfenpndyJApa9hYJoBHx8YA9dFKY'
+    })
   ]
 })
 export class HomeModule { }
