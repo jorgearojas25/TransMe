@@ -8,6 +8,9 @@ const routes: Routes = [
         component: LayoutComponent,
         children: [
             { path: '', redirectTo: 'dashboard', pathMatch: 'prefix' },
+            { path: 'Distancia', loadChildren:'./distancia/distancia.module#DistanciaModule'},
+            { path: 'Eventos', loadChildren: './eventos/eventos.module#EventosModule'},
+            { path: 'Perfil', loadChildren:'./usuarioconf/usuarioconf.module#UsuarioconfModule'},
             { path: 'dashboard', loadChildren: './dashboard/dashboard.module#DashboardModule' },
             { path: 'charts', loadChildren: './charts/charts.module#ChartsModule' },
             { path: 'tables', loadChildren: './tables/tables.module#TablesModule' },

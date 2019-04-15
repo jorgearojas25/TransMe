@@ -1,5 +1,17 @@
 <nav class="sidebar" [ngClass]="{sidebarPushRight: isActive, collapsed: collapsed}">
     <div class="list-group">
+        <a routerLink="/Distancia" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa-external-link-square"></i> &nbsp;
+            <span>{{ 'Distancias' | translate }}</span>
+        </a>
+        <a routerLink="/Eventos" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa-calendar"></i> &nbsp;
+            <span>{{ 'Eventos' | translate }}</span>
+        </a>
+        <a routerLink="/Perfil" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa-user"></i> &nbsp;
+            <span>{{ 'Configuración' | translate }}</span>
+        </a>
         <a routerLink="/dashboard" [routerLinkActive]="['router-link-active']" class="list-group-item">
             <i class="fa fa-fw fa-dashboard"></i>&nbsp;
             <span>{{ 'Dashboard' | translate }}</span>
