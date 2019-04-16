@@ -9,7 +9,7 @@ const longitudes: any[] = [];
 const jsonDA: any[] = [];
 let estacionesTroncales: any[] = [];
 let estacionesTroncalesFiltradas: any[] = [];
-const troncalesFiltradasColor:any[]=[];
+const troncalesFiltradasColor: any[] = [];
 @Injectable({
   providedIn: 'root'
 })
@@ -29,12 +29,12 @@ export class TroncalesService {
             Estacion: item.Name,
             Troncal: item.Corredor,
             Codigo: item.Id,
-            Lat: item.Latitud, 
+            Lat: item.Latitud,
             Lon: item.Longitud
           });
           troncales.push(item.Corredor);
           estaciones.push(item.Name);
-          latLon.push({Estacion:item.Name,Lat: item.Latitud,Lon: item.Longitud});
+          latLon.push({Estacion: item.Name, Lat: item.Latitud.replace(',', '.').replace('*', ''), Lon: item.Longitud.replace(',', '.').replace('*', '')});
 
 
 
@@ -45,13 +45,13 @@ export class TroncalesService {
 
       });
 
-      var cont:number=0;
-      $.each(troncalesFiltradas,function(i,item){
-          var x=cont++;
+      let cont = 0;
+      $.each(troncalesFiltradas, function(i, item) {
+          const x = cont++;
           troncalesFiltradasColor.push({
-            Troncal:item,
-            Idcolor:"t"+String(x),
-          })
+            Troncal: item,
+            Idcolor: 't' + String(x),
+          });
 
       });
 
@@ -70,8 +70,8 @@ export class TroncalesService {
 
     }
 
-    getLatLon(){
-      return this.latLonMapa=latLon;
+    getLatLon() {
+      return this.latLonMapa = latLon;
     }
 
     getEstaciones(dato) {
