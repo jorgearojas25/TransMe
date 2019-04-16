@@ -4,9 +4,9 @@
   <div class="list-group">
  
       <div class="nested-menu" *ngFor="let item of TroncalBoton">
-          <a class="list-group-item" (click)="addExpandClass(item)" (click)="getEstaciones(item)" >
+          <a class="list-group-item" (click)="addExpandClass(item)" (click)="getEstaciones(item.Troncal)" id='{{item.Idcolor}}' title='{{item.Troncal}}'  >
               <i class="fa fa-plus"></i>&nbsp;
-              <span title='{{item}}' >{{ item }}</span>
+              <span title='{{item.Troncal}}' >{{ item.Troncal }}</span>
           </a>
 
           <li class="nested" [class.expand]="showMenu === item">

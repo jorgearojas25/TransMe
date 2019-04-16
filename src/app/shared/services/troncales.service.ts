@@ -9,6 +9,7 @@ const longitudes: any[] = [];
 const jsonDA: any[] = [];
 let estacionesTroncales: any[] = [];
 let estacionesTroncalesFiltradas: any[] = [];
+const troncalesFiltradasColor:any[]=[];
 @Injectable({
   providedIn: 'root'
 })
@@ -44,6 +45,16 @@ export class TroncalesService {
 
       });
 
+      var cont:number=0;
+      $.each(troncalesFiltradas,function(i,item){
+          var x=cont++;
+          troncalesFiltradasColor.push({
+            Troncal:item,
+            Idcolor:"t"+String(x),
+          })
+
+      });
+
   });
 
     //  console.log(estacionesTroncales)
@@ -55,7 +66,7 @@ export class TroncalesService {
 
     getTroncales() {
 
-      return this.TroncalBoton = troncalesFiltradas;
+      return this.TroncalBoton = troncalesFiltradasColor;
 
     }
 
