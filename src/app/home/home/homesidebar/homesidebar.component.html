@@ -12,7 +12,7 @@
           <li class="nested" [class.expand]="showMenu === item">
               <ul class="submenu" >
                   <li *ngFor="let item of EstacionBoton">
-                      <a href="javascript:void(0)">
+                      <a href="javascript:void(0)" (click)="getinfo(item.Estaciones)">
                           <i class="fa fa-monument"></i>&nbsp;
                           <span title='{{item.Estaciones}}' >{{ item.Estaciones }}</span>
                       </a>

@@ -9,23 +9,11 @@ import { RutasService } from 'src/app/shared/services/rutas.service';
 })
 export class HomerutasComponent implements OnInit {
 
-  constructor(private _RutasService:RutasService) { 
+  constructor() { 
 
   }
 
   ngOnInit() {
-
-    this._RutasService.getJSONrutas().subscribe(data=>{
-      console.log(data);
-    })
-
-    this._RutasService.getJSONvagones().subscribe(data=>{
-      console.log(data);
-    })
-
-
-
-
 
 
   }

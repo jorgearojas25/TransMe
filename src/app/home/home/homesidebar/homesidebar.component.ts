@@ -2,6 +2,8 @@ import { Component, Output, EventEmitter, OnInit } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { TroncalesService } from '../../../shared/services/troncales.service';
+import { RutasService } from 'src/app/shared/services/rutas.service';
+import { analyzeAndValidateNgModules } from '@angular/compiler';
 
 declare var $: any;
 
@@ -15,6 +17,8 @@ export class HomesidebarComponent implements OnInit {
 
     TroncalBoton: any[] = [];
     EstacionBoton: any[] = [];
+    rutas:any[] =[];
+    vagones:any[]=[];
     isActive: boolean;
     collapsed: boolean;
     showMenu: string;
@@ -23,7 +27,7 @@ export class HomesidebarComponent implements OnInit {
 
     @Output() collapsedEvent = new EventEmitter<boolean>();
 
-    constructor(private translate: TranslateService, public router: Router, private _TroncalesService: TroncalesService) {
+    constructor(private translate: TranslateService, public router: Router, private _TroncalesService: TroncalesService,private _RutasService:RutasService) {
         this.router.events.subscribe(val => {
             if (
                 val instanceof NavigationEnd &&
@@ -33,6 +37,7 @@ export class HomesidebarComponent implements OnInit {
                 this.toggleSidebar();
             }
         });
+
     }
 
     ngOnInit() {
@@ -43,13 +48,79 @@ export class HomesidebarComponent implements OnInit {
 
         this.TroncalBoton = this._TroncalesService.getTroncales();
 
-
+        this.getVagones();
+        this.getRutas();
+          
     }
+
+    getinfo(info){
+        $('#rutapop').append(info);
+        this.verVagones(info);
+      }
+     
+    public verVagones(dato_nombreEstacion){
+
+        
+        var vagonesFiltrados = $.grep(this.vagones,function(value){
+          return value.NameEstacion == dato_nombreEstacion;
+        });
+        
+        $("#rutapop").empty();
+        let countVagon = 0;
+        $("#rutapop").append('<style="font-size: 20px;>'+dato_nombreEstacion+'</style><br><br>');
+         $.each(vagonesFiltrados,function(index,value){
+           countVagon += 1;
+           
+        $("#rutapop").append('<br>');
+          var vagonActual = 'Vagon: '+ countVagon;
+          
+          $("#rutapop").append(vagonActual);
+          this.verRutas(value.idVagon);
+        });
+        
+        return vagonesFiltrados;
+      }
+
+
+    public verRutas(dato_nombreVagon){
+
+
+        var rutasFiltradas = $.grep(this.rutas,function(value){
+          return value.idVagon == dato_nombreVagon;
+        });
+        console.log(rutasFiltradas);
+        
+        
+        //$("#rutaspop").empty();
+        var html = '';
+        $.each(rutasFiltradas,function(index,value){
+        html += `<div style="margin-top:10px"> ${value.Name}</div>`
+        });
+        $("#rutapop").append(html);
+
+      }
 
     public getEstaciones(data) {
         this.EstacionBoton = this._TroncalesService.getEstaciones(data);
         console.log( this.EstacionBoton);
 
+    }
+    public getVagones(){
+        this._RutasService.getJSONvagones().subscribe(data=>{
+            for(var i=0; i<=data.length-1;i++){
+                this.vagones.push((data[i])) ;}
+    })
+        console.log(this.vagones);
+    }
+
+    public getRutas(){
+        this._RutasService.getJSONrutas().subscribe(data=>{
+            for(var i=0; i<=data.length-1;i++){
+                this.rutas.push((data[i]));
+            }
+            
+        })
+        console.log(this.rutas)
     }
 
 
