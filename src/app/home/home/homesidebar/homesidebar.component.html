@@ -4,7 +4,7 @@
   <div class="list-group">
  
       <div class="nested-menu" *ngFor="let item of TroncalBoton">
-          <a class="list-group-item" (click)="addExpandClass(item)" (click)="getEstaciones(item.Troncal)" id='{{item.Idcolor}}' title='{{item.Troncal}}'  >
+          <a class="list-group-item" (click)="addExpandClass(item)" (click)="getEstaciones(item.Troncal)" id='{{item.Idcolor}}' title='{{item.Troncal}}' ngbTooltip='{{item.Troncal}}' placement="bottom">
               <i class="fa fa-plus"></i>&nbsp;
               <span title='{{item.Troncal}}' >{{ item.Troncal }}</span>
           </a>
@@ -73,8 +73,13 @@
 
       </div>
   </div>
-  <div class="toggle-button" [ngClass]="{collapsed: collapsed}" (click)="toggleCollapsed()">
-      <i class="fa fa-fw fa-angle-double-{{collapsed?'right':'left'}}"></i>&nbsp;
-      <span>{{ 'Collapse Sidebar' | translate }}</span>
+  <div class="toggle-button">
+    <a
+    [routerLink]="[ '/login']"
+    class="nav-link btn mt-1" role="button"
+    style="padding: .375rem 1rem !important;border-color: #999; color:#fff"
+    >
+    {{ 'Log in' | translate }}
+    </a>
   </div>
 </nav>

@@ -9,6 +9,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AuthGuard } from './shared';
 import {TroncalesService} from './shared/services/troncales.service';
+import { RutasService } from './shared/services/rutas.service';
+
 
 @NgModule({
     imports: [
@@ -23,7 +25,7 @@ import {TroncalesService} from './shared/services/troncales.service';
           })
     ],
     declarations: [AppComponent],
-    providers: [AuthGuard, TroncalesService],
+    providers: [AuthGuard, TroncalesService,RutasService],
     bootstrap: [AppComponent]
 })
 export class AppModule {}

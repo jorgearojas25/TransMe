@@ -1,0 +1,441 @@
+[
+    {"idVagon":"AV. 39_1","numeroVagon":"1","nombreEstacion":"av 39","tipoVagon":"1"},
+    {"idVagon":"AV. 39_2","numeroVagon":"2","nombreEstacion":"av 39","tipoVagon":"1"},
+
+    {"idVagon":"AV. Jimémez (AV. Caracas)1","numeroVagon":"1","nombreEstacion":"AV. Jimémez (AV. Caracas)","tipoVagon":""},
+    {"idVagon":"AV. Jimémez (AV. Caracas)2","numeroVagon":"2","nombreEstacion":"AV. Jimémez (AV. Caracas)","tipoVagon":""},
+
+    {"idVagon":"Calle 19_1","numeroVagon":"1","nombreEstacion":"Calle 19","tipoVagon":"1"},
+    {"idVagon":"Calle 19_2","numeroVagon":"2","nombreEstacion":"Calle 19","tipoVagon":"1"},
+    {"idVagon":"Calle 19_3","numeroVagon":"3","nombreEstacion":"Calle 19","tipoVagon":"1"},
+
+    {"idVagon":"Calle 22_1","numeroVagon":"1","nombreEstacion":"Calle 22","tipoVagon":"1"},
+    {"idVagon":"Calle 22_2","numeroVagon":"2","nombreEstacion":"Calle 22","tipoVagon":"1"},
+    {"idVagon":"Calle 22_3","numeroVagon":"3","nombreEstacion":"Calle 22","tipoVagon":"1"},
+
+    {"idVagon":"Calle 26_1","numeroVagon":"1","nombreEstacion":"Calle 26","tipoVagon":"1"},
+    {"idVagon":"Calle 26_2","numeroVagon":"2","nombreEstacion":"Calle 26","tipoVagon":"1"},
+    {"idVagon":"Calle 26_3","numeroVagon":"3","nombreEstacion":"Calle 26","tipoVagon":"1"},
+
+    {"idVagon":"Calle 34_1","numeroVagon":"1","nombreEstacion":"Calle 34","tipoVagon":"1"},
+    {"idVagon":"Calle 34_2","numeroVagon":"2","nombreEstacion":"Calle 34","tipoVagon":"1"},
+    {"idVagon":"Calle 34_3","numeroVagon":"3","nombreEstacion":"Calle 34","tipoVagon":"1"},
+
+    {"idVagon":"Calle 45_1","numeroVagon":"1","nombreEstacion":"Calle 45","tipoVagon":"1"},
+    {"idVagon":"Calle 45_2","numeroVagon":"2","nombreEstacion":"Calle 45","tipoVagon":"1"},
+    {"idVagon":"Calle 45_3","numeroVagon":"3","nombreEstacion":"Calle 45","tipoVagon":"1"},
+
+    {"idVagon":"Calle 57_1","numeroVagon":"1","nombreEstacion":"Calle 57","tipoVagon":"1"},
+    {"idVagon":"Calle 57_2","numeroVagon":"2","nombreEstacion":"Calle 57","tipoVagon":"1"},
+    {"idVagon":"Calle 57_3","numeroVagon":"3","nombreEstacion":"Calle 57","tipoVagon":"1"},
+
+    {"idVagon":"Calle 63_1","numeroVagon":"1","nombreEstacion":"Calle 63","tipoVagon":"1"},
+    {"idVagon":"Calle 63_2","numeroVagon":"2","nombreEstacion":"Calle 63","tipoVagon":"1"},
+    {"idVagon":"Calle 63_3","numeroVagon":"3","nombreEstacion":"Calle 63","tipoVagon":"1"},
+
+    {"idVagon":"Calle 72_1","numeroVagon":"1","nombreEstacion":"Calle 72","tipoVagon":"1"},
+    {"idVagon":"Calle 72_2","numeroVagon":"2","nombreEstacion":"Calle 72","tipoVagon":"1"},
+    {"idVagon":"Calle 72_3","numeroVagon":"3","nombreEstacion":"Calle 72","tipoVagon":"1"},
+
+    {"idVagon":"Calle 76_1","numeroVagon":"1","nombreEstacion":"Calle 76","tipoVagon":"1"},
+    {"idVagon":"Calle 76_2","numeroVagon":"2","nombreEstacion":"Calle 76","tipoVagon":"1"},
+    {"idVagon":"Calle 76_3","numeroVagon":"3","nombreEstacion":"Calle 76","tipoVagon":"1"},
+
+    {"idVagon":"Flores1","numeroVagon":"1","nombreEstacion":"Flores","tipoVagon":"1"},
+    {"idVagon":"Flores2","numeroVagon":"2","nombreEstacion":"Flores","tipoVagon":"1"},
+    {"idVagon":"Flores3","numeroVagon":"3","nombreEstacion":"Flores","tipoVagon":"1"},
+
+    {"idVagon":"Marly1","numeroVagon":"1","nombreEstacion":"Marly","tipoVagon":"1"},
+    {"idVagon":"Marly2","numeroVagon":"2","nombreEstacion":"Marly","tipoVagon":"1"},
+    {"idVagon":"Marly3","numeroVagon":"3","nombreEstacion":"Marly","tipoVagon":"1"},
+
+    {"idVagon":"Tercer Milenio1","numeroVagon":"1","nombreEstacion":"Tercer Milenio","tipoVagon":"1"},
+    {"idVagon":"Tercer Milenio2","numeroVagon":"2","nombreEstacion":"Tercer Milenio","tipoVagon":"1"},
+    {"idVagon":"Tercer Milenio3","numeroVagon":"3","nombreEstacion":"Tercer Milenio","tipoVagon":"1"},
+
+
+
+    {"idVagon":"Alcalá1","numeroVagon":"1","nombreEstacion":"Alcalá","tipoVagon":"1"},
+    {"idVagon":"Alcalá2","numeroVagon":"2","nombreEstacion":"Alcalá","tipoVagon":"1"},
+    {"idVagon":"Alcalá3","numeroVagon":"3","nombreEstacion":"Alcalá","tipoVagon":"1"},
+
+    {"idVagon":"Calle 85_1","numeroVagon":"1","nombreEstacion":"Calle 85","tipoVagon":"1"},
+    {"idVagon":"Calle 85_2","numeroVagon":"2","nombreEstacion":"Calle 85","tipoVagon":"1"},
+    {"idVagon":"Calle 85_3","numeroVagon":"3","nombreEstacion":"Calle 85","tipoVagon":"1"},
+
+    {"idVagon":"Calle 100_1","numeroVagon":"1","nombreEstacion":"Calle 100","tipoVagon":"1"},
+    {"idVagon":"Calle 100_2","numeroVagon":"2","nombreEstacion":"Calle 100","tipoVagon":"1"},
+    {"idVagon":"Calle 100_3","numeroVagon":"3","nombreEstacion":"Calle 100","tipoVagon":"1"},
+
+    {"idVagon":"Calle 106_1","numeroVagon":"1","nombreEstacion":"Calle 106","tipoVagon":"1"},
+    {"idVagon":"Calle 106_2","numeroVagon":"2","nombreEstacion":"Calle 106","tipoVagon":"1"},
+
+    {"idVagon":"Calle 127_1","numeroVagon":"1","nombreEstacion":"Calle 127","tipoVagon":"1"},
+    {"idVagon":"Calle 127_2","numeroVagon":"2","nombreEstacion":"Calle 127","tipoVagon":"1"},
+
+    {"idVagon":"Calle 142_1","numeroVagon":"1","nombreEstacion":"Calle 142","tipoVagon":"1"},
+    {"idVagon":"Calle 142_2","numeroVagon":"2","nombreEstacion":"Calle 142","tipoVagon":"1"},
+
+    {"idVagon":"Calle 146_1","numeroVagon":"1","nombreEstacion":"Calle 146","tipoVagon":"1"},
+    {"idVagon":"Calle 146_2","numeroVagon":"2","nombreEstacion":"Calle 146","tipoVagon":"1"},
+    {"idVagon":"Calle 146_3","numeroVagon":"3","nombreEstacion":"Calle 146","tipoVagon":"1"},
+
+    {"idVagon":"Calle 187_1","numeroVagon":"1","nombreEstacion":"Calle 187","tipoVagon":"1"},
+
+    {"idVagon":"Estación Calle 161_1","numeroVagon":"1","nombreEstacion":"Estación Calle 161","tipoVagon":"1"},
+    {"idVagon":"Estación Calle 161_2","numeroVagon":"2","nombreEstacion":"Estación Calle 161","tipoVagon":"1"},
+
+    {"idVagon":"Héroes1","numeroVagon":"1","nombreEstacion":"Héroes","tipoVagon":"1"},
+    {"idVagon":"Héroes2","numeroVagon":"2","nombreEstacion":"Héroes","tipoVagon":"1"},
+    {"idVagon":"Héroes3","numeroVagon":"3","nombreEstacion":"Héroes","tipoVagon":"1"},
+
+    {"idVagon":"Mazurén1","numeroVagon":"1","nombreEstacion":"Mazurém","tipoVagon":"1"},
+    {"idVagon":"Mazurén2","numeroVagon":"2","nombreEstacion":"Mazurém","tipoVagon":"1"},
+    {"idVagon":"Mazurén3","numeroVagon":"3","nombreEstacion":"Mazurém","tipoVagon":"1"},
+
+    {"idVagon":"Pepe Sierra1","numeroVagon":"1","nombreEstacion":"Pepe Sierra","tipoVagon":"1"},
+    {"idVagon":"Pepe Sierra2","numeroVagon":"2","nombreEstacion":"Pepe Sierra","tipoVagon":"1"},
+
+    {"idVagon":"Portal del Norte0","numeroVagon":"0","nombreEstacion":"Portal del Norte","tipoVagon":"1"},
+
+    {"idVagon":"Prado1","numeroVagon":"1","nombreEstacion":"Prado","tipoVagon":"1"},
+    {"idVagon":"Prado2","numeroVagon":"2","nombreEstacion":"Prado","tipoVagon":"1"},
+    {"idVagon":"Prado3","numeroVagon":"3","nombreEstacion":"Prado","tipoVagon":"1"},
+
+    {"idVagon":"Terminal1","numeroVagon":"1","nombreEstacion":"Terminal","tipoVagon":"1"},
+
+
+
+    {"idVagon":"21 ángeles1","numeroVagon":"1","nombreEstacion":"21 ángeles","tipoVagon":"1"},
+    {"idVagon":"21 ángeles2","numeroVagon":"2","nombreEstacion":"21 ángeles","tipoVagon":"1"},
+
+    {"idVagon":"Gratamira1","numeroVagon":"1","nombreEstacion":"Gratamira","tipoVagon":"1"},
+    {"idVagon":"Gratamira2","numeroVagon":"2","nombreEstacion":"Gratamira","tipoVagon":"1"},
+
+    {"idVagon":"Humedal Córdoba1","numeroVagon":"1","nombreEstacion":"Humedal Córdoba","tipoVagon":"1"},
+    {"idVagon":"Humedal Córdoba2","numeroVagon":"2","nombreEstacion":"Humedal Córdoba","tipoVagon":"1"},
+
+    {"idVagon":"La Campiña1","numeroVagon":"1","nombreEstacion":"La Campiña","tipoVagon":"1"},
+    {"idVagon":"La Campiña2","numeroVagon":"2","nombreEstacion":"La Campiña","tipoVagon":"1"},
+
+    {"idVagon":"Niza - CL 127_1","numeroVagon":"1","nombreEstacion":"Niza - CL 127","tipoVagon":"1"},
+    {"idVagon":"Niza - CL 127_2","numeroVagon":"2","nombreEstacion":"Niza - CL 127","tipoVagon":"1"},
+
+    {"idVagon":"Puentelargo1","numeroVagon":"1","nombreEstacion":"puentelargo","tipoVagon":"1"},
+    {"idVagon":"Puentelargo2","numeroVagon":"2","nombreEstacion":"puentelargo","tipoVagon":"1"},
+
+    {"idVagon":"Rionegro1","numeroVagon":"1","nombreEstacion":"Rionegro","tipoVagon":"1"},
+    {"idVagon":"Rionegro2","numeroVagon":"2","nombreEstacion":"Rionegro","tipoVagon":"1"},
+
+    {"idVagon":"San Martín1","numeroVagon":"1","nombreEstacion":"San Martín","tipoVagon":"1"},
+    {"idVagon":"San Martín2","numeroVagon":"2","nombreEstacion":"San Martín","tipoVagon":"1"},
+
+    {"idVagon":"Shaio1","numeroVagon":"1","nombreEstacion":"Shaio","tipoVagon":"1"},
+    {"idVagon":"Shaio2","numeroVagon":"2","nombreEstacion":"Shaio","tipoVagon":"1"},
+
+    {"idVagon":"Suba - AV. Boyacá1","numeroVagon":"1","nombreEstacion":"Suba - AV. Boyacá","tipoVagon":"1"},
+    {"idVagon":"Suba - AV. Boyacá2","numeroVagon":"2","nombreEstacion":"Suba - AV. Boyacá","tipoVagon":"1"},
+
+    {"idVagon":"Suba - CL 95_1","numeroVagon":"1","nombreEstacion":"Suba - CL 95","tipoVagon":"1"},
+    {"idVagon":"Suba - CL 95_2","numeroVagon":"2","nombreEstacion":"Suba - CL 95","tipoVagon":"1"},
+
+    {"idVagon":"Suba - CL 100_1","numeroVagon":"1","nombreEstacion":"Suba - CL 100","tipoVagon":"1"},
+    {"idVagon":"Suba - CL 100_2","numeroVagon":"2","nombreEstacion":"Suba - CL 100","tipoVagon":"1"},
+
+    {"idVagon":"Suba - TV. 91_1","numeroVagon":"1","nombreEstacion":"Suba - TV. 91","tipoVagon":"1"},
+    {"idVagon":"Suba - TV. 91_2","numeroVagon":"2","nombreEstacion":"Suba - TV. 91","tipoVagon":"1"},
+
+
+
+    {"idVagon":"Avenida 68_1","numeroVagon":"1","nombreEstacion":"Avenida 68","tipoVagon":"1"},
+
+    {"idVagon":"Avenida Cali1","numeroVagon":"1","nombreEstacion":"Avenida Cali","tipoVagon":"1"},
+
+    {"idVagon":"Boyacá1","numeroVagon":"1","nombreEstacion":"Boyacá","tipoVagon":"1"},
+
+    {"idVagon":"Carrera 47_1","numeroVagon":"1","nombreEstacion":"Carrera 47","tipoVagon":"1"},
+
+    {"idVagon":"Carrera 53_1","numeroVagon":"1","nombreEstacion":"Carrera 53","tipoVagon":"1"},
+
+    {"idVagon":"Carrera 90_1","numeroVagon":"1","nombreEstacion":"Carrera 90","tipoVagon":"1"},
+
+    {"idVagon":"Esc. Militar1","numeroVagon":"1","nombreEstacion":"Esc. Militar","tipoVagon":"1"},
+    {"idVagon":"Esc. Militar2","numeroVagon":"2","nombreEstacion":"Esc. Militar","tipoVagon":"1"},
+
+    {"idVagon":"Ferias1","numeroVagon":"1","nombreEstacion":"Ferias","tipoVagon":"1"},
+
+    {"idVagon":"Granja - Carrera 77_1","numeroVagon":"1","nombreEstacion":"Granja - Carrera 77","tipoVagon":"1"},
+    {"idVagon":"Granja - Carrera 77_2","numeroVagon":"2","nombreEstacion":"Granja - Carrera 77","tipoVagon":"1"},
+    {"idVagon":"Granja - Carrera 77_3","numeroVagon":"3","nombreEstacion":"Granja - Carrera 77","tipoVagon":"1"},
+
+    {"idVagon":"Minuto de Dios1","numeroVagon":"1","nombreEstacion":"Minuto de Dios","tipoVagon":"1"},
+
+    {"idVagon":"Polo1","numeroVagon":"1","nombreEstacion":"Polo","tipoVagon":"1"},
+
+    {"idVagon":"Portal de la 80_0","numeroVagon":"0","nombreEstacion":"Portal de la 80","tipoVagon":"1"},
+
+    {"idVagon":"Quirigua0","numeroVagon":"0","nombreEstacion":"Quirigua","tipoVagon":"1"},
+
+
+
+    {"idVagon":"AV. Chile0","numeroVagon":"0","nombreEstacion":"AV. Chile","tipoVagon":"1"},
+
+    {"idVagon":"AV. El Dorado1","numeroVagon":"1","nombreEstacion":"AV. El Dorado","tipoVagon":"1"},
+
+    {"idVagon":"CAD1","numeroVagon":"1","nombreEstacion":"CAD","tipoVagon":"1"},
+    {"idVagon":"CAD2","numeroVagon":"2","nombreEstacion":"CAD","tipoVagon":"1"},
+
+    {"idVagon":"Campín - Universidad Antonio Nariño1","numeroVagon":"1","nombreEstacion":"Campín - Universidad Antonio Nariño","tipoVagon":"1"},
+    {"idVagon":"Campín - Universidad Antonio Nariño2","numeroVagon":"2","nombreEstacion":"Campín - Universidad Antonio Nariño","tipoVagon":"1"},
+    
+    {"idVagon":"Guatoque - Veraguas1","numeroVagon":"1","nombreEstacion":"Guatoque - Veraguas","tipoVagon":"1"},
+    {"idVagon":"Guatoque - Veraguas2","numeroVagon":"2","nombreEstacion":"Guatoque - Veraguas","tipoVagon":"1"},
+
+    {"idVagon":"La Castellana1","numeroVagon":"1","nombreEstacion":"La Castellana","tipoVagon":"1"},
+    {"idVagon":"La Castellana2","numeroVagon":"2","nombreEstacion":"La Castellana","tipoVagon":"1"},
+
+    {"idVagon":"Movistar Arena1","numeroVagon":"1","nombreEstacion":"Movistar Arena","tipoVagon":"1"},
+    {"idVagon":"Movistar Arena2","numeroVagon":"2","nombreEstacion":"Movistar Arena","tipoVagon":"1"},
+
+    {"idVagon":"NQS - Calle 75_1","numeroVagon":"1","nombreEstacion":"NQS - Calle 75","tipoVagon":"1"},
+    {"idVagon":"NQS - Calle 75_2","numeroVagon":"2","nombreEstacion":"NQS - Calle 75","tipoVagon":"1"},
+
+    {"idVagon":"Paloquemao1","numeroVagon":"1","nombreEstacion":"Paloquemao","tipoVagon":"1"},
+    {"idVagon":"Paloquemao2","numeroVagon":"2","nombreEstacion":"Paloquemao","tipoVagon":"1"},
+
+    {"idVagon":"Ricaurte (NQS)1","numeroVagon":"1","nombreEstacion":"Ricaurte (NQS)","tipoVagon":"1"},
+    {"idVagon":"Ricaurte (NQS)2","numeroVagon":"2","nombreEstacion":"Ricaurte (NQS)","tipoVagon":"1"},
+    {"idVagon":"Ricaurte (NQS)3","numeroVagon":"3","nombreEstacion":"Ricaurte (NQS)","tipoVagon":"1"},
+
+    {"idVagon":"Simón Bolívar1","numeroVagon":"1","nombreEstacion":"Simón Bolívar","tipoVagon":"1"},
+    {"idVagon":"Simón Bolívar2","numeroVagon":"2","nombreEstacion":"Simón Bolívar","tipoVagon":"1"},
+
+    {"idVagon":"Tygua - San José1","numeroVagon":"1","nombreEstacion":"Tygua - San José","tipoVagon":"1"},
+    {"idVagon":"Tygua - San José2","numeroVagon":"2","nombreEstacion":"Tygua - San José","tipoVagon":"1"},
+
+    {"idVagon":"U. Nacional1","numeroVagon":"1","nombreEstacion":"U. Nacional","tipoVagon":"1"},
+    {"idVagon":"U. Nacional2","numeroVagon":"2","nombreEstacion":"U. Nacional","tipoVagon":"1"},
+    {"idVagon":"U. Nacional3","numeroVagon":"3","nombreEstacion":"U. Nacional","tipoVagon":"1"},
+
+
+
+    {"idVagon":"AV. Jiménez (CL 13)0","numeroVagon":"0","nombreEstacion":"AV. Jiménez (CL 13)","tipoVagon":"1"},
+    
+    {"idVagon":"Américas - KR 53A1","numeroVagon":"1","nombreEstacion":"Américas - KR 53A","tipoVagon":"1"},
+    {"idVagon":"Américas - KR 53A2","numeroVagon":"2","nombreEstacion":"Américas - KR 53A","tipoVagon":"1"},
+
+    {"idVagon":"Banderas1","numeroVagon":"1","nombreEstacion":"Banderas","tipoVagon":"1"},
+
+    {"idVagon":"Biblioteca Tintal1","numeroVagon":"1","nombreEstacion":"Biblioteca Tintal","tipoVagon":"1"},
+    {"idVagon":"Biblioteca Tintal1","numeroVagon":"1","nombreEstacion":"Biblioteca Tintal","tipoVagon":"1"},
+
+    {"idVagon":"CDS - Carrera 32_1","numeroVagon":"1","nombreEstacion":"CDS - Carrera 32","tipoVagon":"1"},
+    {"idVagon":"CDS - Carrera 32_2","numeroVagon":"2","nombreEstacion":"CDS - Carrera 32","tipoVagon":"1"},
+
+    {"idVagon":"Carrera 43_1","numeroVagon":"1","nombreEstacion":"Carrera 43","tipoVagon":"1"},
+    {"idVagon":"Carrera 43_2","numeroVagon":"2","nombreEstacion":"Carrera 43","tipoVagon":"1"},
+
+    {"idVagon":"De La Sabana1","numeroVagon":"1","nombreEstacion":"De La Sabana","tipoVagon":"1"},
+    {"idVagon":"De La Sabana2","numeroVagon":"2","nombreEstacion":"De La Sabana","tipoVagon":"1"},
+
+    {"idVagon":"Mandalay1","numeroVagon":"1","nombreEstacion":"Mandalay","tipoVagon":"1"},
+    {"idVagon":"Mandalay2","numeroVagon":"2","nombreEstacion":"Mandalay","tipoVagon":"1"},
+
+    {"idVagon":"Marsella1","numeroVagon":"1","nombreEstacion":"Marsella","tipoVagon":"1"},
+    {"idVagon":"Marsella2","numeroVagon":"2","nombreEstacion":"Marsella","tipoVagon":"1"},
+    {"idVagon":"Marsella3","numeroVagon":"3","nombreEstacion":"Marsella","tipoVagon":"1"},
+
+    {"idVagon":"Mundo Aventura1","numeroVagon":"1","nombreEstacion":"Mundo Aventura","tipoVagon":"1"},
+    {"idVagon":"Mundo Aventura2","numeroVagon":"2","nombreEstacion":"Mundo Aventura","tipoVagon":"1"},
+
+    {"idVagon":"Patio Bonito1","numeroVagon":"1","nombreEstacion":"Patio Bonito","tipoVagon":"1"},
+    {"idVagon":"Patio Bonito2","numeroVagon":"2","nombreEstacion":"Patio Bonito","tipoVagon":"1"},
+
+    {"idVagon":"Portal Américas0","numeroVagon":"0","nombreEstacion":"Portal Américas","tipoVagon":"1"},
+
+    {"idVagon":"Pradera1","numeroVagon":"1","nombreEstacion":"Pradera","tipoVagon":"1"},
+    {"idVagon":"Pradera2","numeroVagon":"2","nombreEstacion":"Pradera","tipoVagon":"1"},
+
+    {"idVagon":"Puente Aranda1","numeroVagon":"1","nombreEstacion":"Puente Aranda","tipoVagon":"1"},
+    {"idVagon":"Puente Aranda2","numeroVagon":"2","nombreEstacion":"Puente Aranda","tipoVagon":"1"},
+
+    {"idVagon":"Ricaurte (CL 13)0","numeroVagon":"Ricaurte (CL 13)","nombreEstacion":"Ricaurte (CL 13)","tipoVagon":"1"},
+    
+
+
+    {"idVagon":"Alquería1","numeroVagon":"1","nombreEstacion":"Alquería","tipoVagon":"1"},
+    {"idVagon":"Alquería2","numeroVagon":"2","nombreEstacion":"Alquería","tipoVagon":"1"},
+
+    {"idVagon":"Bosa1","numeroVagon":"1","nombreEstacion":"Bosa","tipoVagon":"1"},
+    {"idVagon":"Bosa2","numeroVagon":"2","nombreEstacion":"Bosa","tipoVagon":"1"},
+
+    {"idVagon":"Comuneros1","numeroVagon":"1","nombreEstacion":"Comuneros","tipoVagon":"1"},
+    {"idVagon":"Comuneros2","numeroVagon":"2","nombreEstacion":"Comuneros","tipoVagon":"1"},
+
+    {"idVagon":"General Santander1","numeroVagon":"1","nombreEstacion":"General Santander","tipoVagon":"1"},
+    {"idVagon":"General Santander2","numeroVagon":"2","nombreEstacion":"General Santander","tipoVagon":"1"},
+
+    {"idVagon":"La Despensa1","numeroVagon":"1","nombreEstacion":"La Despensa","tipoVagon":"1"},
+    {"idVagon":"La Despensa2","numeroVagon":"2","nombreEstacion":"La Despensa","tipoVagon":"1"},
+
+    {"idVagon":"León XIII_1","numeroVagon":"1","nombreEstacion":"León XIII","tipoVagon":"1"},
+    {"idVagon":"León XIII_2","numeroVagon":"2","nombreEstacion":"León XIII","tipoVagon":"1"},
+    
+    {"idVagon":"Madelena1","numeroVagon":"1","nombreEstacion":"Madelena","tipoVagon":"1"},
+    {"idVagon":"Madelena2","numeroVagon":"2","nombreEstacion":"Madelena","tipoVagon":"1"},
+
+    {"idVagon":"NQS - CL 30 S.1","numeroVagon":"1","nombreEstacion":"NQS - CL 30 S.","tipoVagon":"1"},
+    {"idVagon":"NQS - CL 30 S.2","numeroVagon":"2","nombreEstacion":"NQS - CL 30 S.","tipoVagon":"1"},
+
+    {"idVagon":"NQS - CL 38A S.1","numeroVagon":"1","nombreEstacion":"NQS - CL 30A S.","tipoVagon":"1"},
+    {"idVagon":"NQS - CL 38A S.2","numeroVagon":"2","nombreEstacion":"NQS - CL 30A S.","tipoVagon":"1"},
+
+    {"idVagon":"Perdomo1","numeroVagon":"1","nombreEstacion":"Perdomo","tipoVagon":"1"},
+    {"idVagon":"Perdomo2","numeroVagon":"2","nombreEstacion":"Perdomo","tipoVagon":"1"},
+
+    {"idVagon":"Portal del Sur0","numeroVagon":"0","nombreEstacion":"Portal del Sur","tipoVagon":"1"},
+
+    {"idVagon":"SENA1","numeroVagon":"1","nombreEstacion":"SENA","tipoVagon":"1"},
+    {"idVagon":"SENA2","numeroVagon":"2","nombreEstacion":"SENA","tipoVagon":"1"},
+
+    {"idVagon":"San Mateo1","numeroVagon":"1","nombreEstacion":"San Mateo","tipoVagon":"1"},
+    {"idVagon":"San Mateo2","numeroVagon":"2","nombreEstacion":"San Mateo","tipoVagon":"1"},
+    {"idVagon":"San Mateo3","numeroVagon":"3","nombreEstacion":"San Mateo","tipoVagon":"1"},
+
+    {"idVagon":"San Isabel1","numeroVagon":"1","nombreEstacion":"San Isabel","tipoVagon":"1"},
+    {"idVagon":"San Isabel2","numeroVagon":"2","nombreEstacion":"San Isabel","tipoVagon":"1"},
+
+
+
+    {"idVagon":"Biblioteca1","numeroVagon":"1","nombreEstacion":"Biblioteca","tipoVagon":"1"},
+
+    {"idVagon":"Calle 40 Sur1","numeroVagon":"1","nombreEstacion":"Calle 40 Sur","tipoVagon":"1"},
+    {"idVagon":"Calle 40 Sur2","numeroVagon":"2","nombreEstacion":"Calle 40 Sur","tipoVagon":"1"},
+    {"idVagon":"Calle 40 Sur3","numeroVagon":"3","nombreEstacion":"Calle 40 Sur","tipoVagon":"1"},
+
+    {"idVagon":"Consuelo1","numeroVagon":"1","nombreEstacion":"Consuelo","tipoVagon":"1"},
+    {"idVagon":"Consuelo2","numeroVagon":"2","nombreEstacion":"Consuelo","tipoVagon":"1"},
+
+    {"idVagon":"Fucha1","numeroVagon":"1","nombreEstacion":"Fucha","tipoVagon":"1"},
+    {"idVagon":"Fucha2","numeroVagon":"2","nombreEstacion":"Fucha","tipoVagon":"1"},
+
+    {"idVagon":"Hortúa1","numeroVagon":"1","nombreEstacion":"Hortúa","tipoVagon":"1"},
+    {"idVagon":"Hortúa2","numeroVagon":"2","nombreEstacion":"Hortúa","tipoVagon":"1"},
+
+    {"idVagon":"Hospital1","numeroVagon":"1","nombreEstacion":"Hospital","tipoVagon":"1"},
+    {"idVagon":"Hospital2","numeroVagon":"2","nombreEstacion":"Hospital","tipoVagon":"1"},
+    
+    {"idVagon":"Molinos1","numeroVagon":"1","nombreEstacion":"Molinos","tipoVagon":"1"},
+    {"idVagon":"Molinos2","numeroVagon":"2","nombreEstacion":"Molinos","tipoVagon":"1"},
+
+    {"idVagon":"Nariño1","numeroVagon":"1","nombreEstacion":"Nariño","tipoVagon":"1"},
+    {"idVagon":"Nariño2","numeroVagon":"2","nombreEstacion":"Nariño","tipoVagon":"1"},
+
+    {"idVagon":"Olaya1","numeroVagon":"1","nombreEstacion":"Olaya","tipoVagon":"1"},
+    {"idVagon":"Olaya2","numeroVagon":"2","nombreEstacion":"Olaya","tipoVagon":"1"},
+
+    {"idVagon":"Parque1","numeroVagon":"1","nombreEstacion":"Parque","tipoVagon":"1"},
+
+    {"idVagon":"Portal de Usme0","numeroVagon":"0","nombreEstacion":"Portal de Usme","tipoVagon":"1"},
+
+    {"idVagon":"Portal del Tunal0","numeroVagon":"0","nombreEstacion":"Portal del Tunal","tipoVagon":"1"},
+
+    {"idVagon":"Quiroga1","numeroVagon":"1","nombreEstacion":"Quiroga","tipoVagon":"1"},
+
+    {"idVagon":"Restrepo1","numeroVagon":"1","nombreEstacion":"Restrepo","tipoVagon":"1"},
+    {"idVagon":"Restrepo2","numeroVagon":"2","nombreEstacion":"Restrepo","tipoVagon":"1"},
+
+    {"idVagon":"Santa Lucía1","numeroVagon":"1","nombreEstacion":"Santa Lucía","tipoVagon":"1"},
+    {"idVagon":"Santa Lucía2","numeroVagon":"2","nombreEstacion":"Santa Lucía","tipoVagon":"1"},
+
+
+
+    {"idVagon":"Las Aguas1","numeroVagon":"1","nombreEstacion":"Las Aguas","tipoVagon":"1"},
+
+    {"idVagon":"Museo del Oro1","numeroVagon":"1","nombreEstacion":"Museo del Oro","tipoVagon":"1"},
+
+
+
+    {"idVagon":"AV. Rojas1","numeroVagon":"1","nombreEstacion":"AV. Rojas","tipoVagon":"1"},
+    {"idVagon":"AV. Rojas2","numeroVagon":"2","nombreEstacion":"AV. Rojas","tipoVagon":"1"},
+
+    {"idVagon":"CAN1","numeroVagon":"1","nombreEstacion":"CAN","tipoVagon":"1"},
+    {"idVagon":"CAN2","numeroVagon":"2","nombreEstacion":"CAN","tipoVagon":"1"},
+
+    {"idVagon":"Centro Memoria1","numeroVagon":"1","nombreEstacion":"Centro Memoria","tipoVagon":"1"},
+    {"idVagon":"Centro Memoria2","numeroVagon":"2","nombreEstacion":"Centro Memoria","tipoVagon":"1"},
+
+    {"idVagon":"Ciudad Universitaria1","numeroVagon":"1","nombreEstacion":"Ciudad Universitaria","tipoVagon":"1"},
+    {"idVagon":"Ciudad Universitaria2","numeroVagon":"2","nombreEstacion":"Ciudad Universitaria","tipoVagon":"1"},
+
+    {"idVagon":"Consejo de Bogotá1","numeroVagon":"1","nombreEstacion":"Consejo de bogotá","tipoVagon":"1"},
+    {"idVagon":"Consejo de Bogotá2","numeroVagon":"2","nombreEstacion":"Consejo de bogotá","tipoVagon":"1"},
+
+    {"idVagon":"Corferias1","numeroVagon":"1","nombreEstacion":"Corferias","tipoVagon":"1"},
+    {"idVagon":"Corferias2","numeroVagon":"2","nombreEstacion":"Corferias","tipoVagon":"1"},
+
+    {"idVagon":"El Tiempo - Maloka1","numeroVagon":"1","nombreEstacion":"El Tiempo - Maloka","tipoVagon":"1"},
+    {"idVagon":"El Tiempo - Maloka2","numeroVagon":"2","nombreEstacion":"El Tiempo - Maloka","tipoVagon":"1"},
+
+    {"idVagon":"Gobernación1","numeroVagon":"1","nombreEstacion":"Gobernación","tipoVagon":"1"},
+    {"idVagon":"Gobernación2","numeroVagon":"2","nombreEstacion":"Gobernación","tipoVagon":"1"},
+
+    {"idVagon":"Modelia1","numeroVagon":"1","nombreEstacion":"Modelia","tipoVagon":"1"},
+    {"idVagon":"Modelia2","numeroVagon":"2","nombreEstacion":"Modelia","tipoVagon":"1"},
+
+    {"idVagon":"Normandía1","numeroVagon":"1","nombreEstacion":"Normandía","tipoVagon":"1"},
+    {"idVagon":"Normandía2","numeroVagon":"2","nombreEstacion":"Normandía","tipoVagon":"1"},
+
+    {"idVagon":"Portal Eldorado0","numeroVagon":"0","nombreEstacion":"Portal Eldorado","tipoVagon":"1"},
+
+    {"idVagon":"Quinta Paredes1","numeroVagon":"1","nombreEstacion":"Quinta Paredes","tipoVagon":"1"},
+    {"idVagon":"Quinta Paredes2","numeroVagon":"2","nombreEstacion":"Quinta Paredes","tipoVagon":"1"},
+
+    {"idVagon":"Salitre - El Greco1","numeroVagon":"1","nombreEstacion":"Salitre - El Greco","tipoVagon":"1"},
+    {"idVagon":"Salitre - El Greco2","numeroVagon":"2","nombreEstacion":"Salitre - El Greco","tipoVagon":"1"},
+
+    {"idVagon":"Universidades1","numeroVagon":"1","nombreEstacion":"Universidades","tipoVagon":"1"},
+    {"idVagon":"Universidades2","numeroVagon":"2","nombreEstacion":"Universidades","tipoVagon":"1"},
+
+
+
+    {"idVagon":"AV. 1° Mayo1","numeroVagon":"1","nombreEstacion":"AV. 1° Mayo","tipoVagon":"1"},
+    {"idVagon":"AV. 1° Mayo2","numeroVagon":"2","nombreEstacion":"AV. 1° Mayo","tipoVagon":"1"},
+    {"idVagon":"AV. 1° Mayo3","numeroVagon":"3","nombreEstacion":"AV. 1° Mayo","tipoVagon":"1"},
+
+    {"idVagon":"Bicentenario1","numeroVagon":"1","nombreEstacion":"Bicentenario","tipoVagon":"1"},
+    {"idVagon":"Bicentenario2","numeroVagon":"2","nombreEstacion":"Bicentenario","tipoVagon":"1"},
+    {"idVagon":"Bicentenario3","numeroVagon":"3","nombreEstacion":"Bicentenario","tipoVagon":"1"},
+
+    {"idVagon":"Ciudad Jardín - UAN1","numeroVagon":"1","nombreEstacion":"Ciudad Jardín - UAN","tipoVagon":"1"},
+    {"idVagon":"Ciudad Jardín - UAN2","numeroVagon":"2","nombreEstacion":"Ciudad Jardín - UAN","tipoVagon":"1"},
+    {"idVagon":"Ciudad Jardín - UAN3","numeroVagon":"3","nombreEstacion":"Ciudad Jardín - UAN","tipoVagon":"1"},
+
+    {"idVagon":"Country Sur1","numeroVagon":"1","nombreEstacion":"Country Sur","tipoVagon":"1"},
+    {"idVagon":"Country Sur2","numeroVagon":"2","nombreEstacion":"Country Sur","tipoVagon":"1"},
+
+    {"idVagon":"Estación San Bernardo1","numeroVagon":"1","nombreEstacion":"Estación San Bernardo","tipoVagon":"1"},
+    {"idVagon":"Estación San Bernardo2","numeroVagon":"2","nombreEstacion":"Estación San Bernardo","tipoVagon":"1"},
+
+    {"idVagon":"Las Nieves1","numeroVagon":"1","nombreEstacion":"Las Nieves","tipoVagon":"1"},
+    {"idVagon":"Las Nieves2","numeroVagon":"2","nombreEstacion":"Las Nieves","tipoVagon":"1"},
+
+    {"idVagon":"Policarpa1","numeroVagon":"1","nombreEstacion":"Policarpa","tipoVagon":"1"},
+    {"idVagon":"Policarpa2","numeroVagon":"2","nombreEstacion":"Policarpa","tipoVagon":"1"},
+
+    {"idVagon":"Portal  20 de Julio0","numeroVagon":"0","nombreEstacion":"Portal 20 de Julio","tipoVagon":"1"},
+
+    {"idVagon":"San Diego1","numeroVagon":"1","nombreEstacion":"San Diego","tipoVagon":"1"},
+    {"idVagon":"San Diego2","numeroVagon":"2","nombreEstacion":"San Diego","tipoVagon":"1"},
+
+    {"idVagon":"San Victorino1","numeroVagon":"1","nombreEstacion":"San Victorino","tipoVagon":"1"},
+    {"idVagon":"San Victorino2","numeroVagon":"2","nombreEstacion":"San Victorino","tipoVagon":"1"},
+    {"idVagon":"San Victorino3","numeroVagon":"3","nombreEstacion":"San Victorino","tipoVagon":"1"},
+
+
+
+    {"idVagon":"Museo Nacional1","numeroVagon":"1","nombreEstacion":"Museo Nacional","tipoVagon":"1"},
+    {"idVagon":"Museo Nacional2","numeroVagon":"2","nombreEstacion":"Museo Nacional","tipoVagon":"1"}
+    ]
+
+
