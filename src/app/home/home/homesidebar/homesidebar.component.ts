@@ -3,7 +3,6 @@ import { Router, NavigationEnd } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { TroncalesService } from '../../../shared/services/troncales.service';
 import { RutasService } from 'src/app/shared/services/rutas.service';
-import { analyzeAndValidateNgModules } from '@angular/compiler';
 
 declare var $: any;
 
@@ -57,48 +56,51 @@ export class HomesidebarComponent implements OnInit {
         $('#rutapop').append(info);
         this.verVagones(info);
       }
+
      
-    public verVagones(dato_nombreEstacion){
+    verVagones(dato_nombreEstacion){
 
         
         var vagonesFiltrados = $.grep(this.vagones,function(value){
-          return value.NameEstacion == dato_nombreEstacion;
+          return value.nombreEstacion == dato_nombreEstacion;
         });
+        console.log(vagonesFiltrados);
         
         $("#rutapop").empty();
         let countVagon = 0;
         $("#rutapop").append('<style="font-size: 20px;>'+dato_nombreEstacion+'</style><br><br>');
-         $.each(vagonesFiltrados,function(index,value){
+         $.each(vagonesFiltrados,function(i,value){
            countVagon += 1;
            
         $("#rutapop").append('<br>');
           var vagonActual = 'Vagon: '+ countVagon;
           
           $("#rutapop").append(vagonActual);
-          this.verRutas(value.idVagon);
-        });
+       
+        this.verRutas(value.idVagon);
+
+        }.bind(this));     
         
-        return vagonesFiltrados;
       }
 
 
-    public verRutas(dato_nombreVagon){
+      verRutas(dato_nombreVagon){
 
-
+        console.log(dato_nombreVagon);
         var rutasFiltradas = $.grep(this.rutas,function(value){
           return value.idVagon == dato_nombreVagon;
         });
         console.log(rutasFiltradas);
-        
-        
         //$("#rutaspop").empty();
         var html = '';
         $.each(rutasFiltradas,function(index,value){
-        html += `<div style="margin-top:10px"> ${value.Name}</div>`
+        html += `<div style="margin-top:10px"> ${value.nombreRuta}</div>`
         });
         $("#rutapop").append(html);
 
+
       }
+
 
     public getEstaciones(data) {
         this.EstacionBoton = this._TroncalesService.getEstaciones(data);
