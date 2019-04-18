@@ -9,6 +9,9 @@ export class BusquedasComponent implements OnInit {
 
   constructor() { }
 
+  date = new Date();
+  date2 = new Date();
+
   ngOnInit() {
   }
 
