@@ -8,6 +8,7 @@ const routes: Routes = [
         component: LayoutComponent,
         children: [
             { path: '', redirectTo: 'dashboard', pathMatch: 'prefix' },
+            { path: 'Mapa', loadChildren:'./mapa/mapa.module#MapaModule'},
             { path: 'Distancia', loadChildren:'./distancia/distancia.module#DistanciaModule'},
             { path: 'Eventos', loadChildren: './eventos/eventos.module#EventosModule'},
             { path: 'Perfil', loadChildren:'./usuarioconf/usuarioconf.module#UsuarioconfModule'},
