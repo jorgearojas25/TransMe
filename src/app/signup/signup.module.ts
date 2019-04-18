@@ -4,12 +4,14 @@ import { TranslateModule } from '@ngx-translate/core';
 
 import { SignupRoutingModule } from './signup-routing.module';
 import { SignupComponent } from './signup.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
     CommonModule,
     TranslateModule,
-    SignupRoutingModule
+    SignupRoutingModule,
+    ReactiveFormsModule
   ],
   declarations: [SignupComponent]
 })

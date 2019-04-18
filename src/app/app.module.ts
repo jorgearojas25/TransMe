@@ -10,7 +10,10 @@ import { AppComponent } from './app.component';
 import { AuthGuard } from './shared';
 import {TroncalesService} from './shared/services/troncales.service';
 import { RutasService } from './shared/services/rutas.service';
-
+import { ReactiveFormsModule } from "@angular/forms";
+import { UserService } from './shared/services/user.service';
+//import { HttpClient } from "@angular/common/http"; 
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
     imports: [
@@ -20,12 +23,17 @@ import { RutasService } from './shared/services/rutas.service';
         HttpClientModule,
         LanguageTranslationModule,
         AppRoutingModule,
+        ReactiveFormsModule,
+        ToastrModule.forRoot({
+            progressBar:true
+        }),
+        //HttpClient,
         AgmCoreModule.forRoot({
             apiKey: 'AIzaSyDvardTfenpndyJApa9hYJoBHx8YA9dFKY'
           })
     ],
     declarations: [AppComponent],
-    providers: [AuthGuard, TroncalesService,RutasService],
+    providers: [UserService, AuthGuard, TroncalesService,RutasService],
     bootstrap: [AppComponent]
 })
 export class AppModule {}
