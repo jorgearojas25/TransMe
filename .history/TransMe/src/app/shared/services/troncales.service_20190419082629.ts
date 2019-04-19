@@ -34,7 +34,7 @@ export class TroncalesService {
           });
           troncales.push(item.Corredor);
           estaciones.push(item.Name);
-          latLon.push({Estacion: item.Name, Lat: item.Latitud.replace(',', '.').replace('*', ''), Lon: item.Longitud.replace(',', '.').replace('*', ''),Troncal: item.Corredor});
+          latLon.push({Estacion: item.Name, Lat: item.Latitud.replace(',', '.').replace('*', ''), Lon: item.Longitud.replace(',', '.').replace('*', '')});
 
 
 

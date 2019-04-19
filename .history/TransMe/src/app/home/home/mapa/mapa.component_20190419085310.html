@@ -1,0 +1,18 @@
+
+ <div class="container">
+     <div class="row">
+         <div class="col-sm-0 col-lg-1"></div>
+            <div class="col-sm-12 col-lg-10">
+                <agm-map [latitude]="4.6597100" [longitude]="-74.0917500" [styles]='[{"featureType":"poi","elementType":"all","stylers":[{"hue":"#000000"},{"saturation":-100},{"lightness":-100},{"visibility":"off"}]},{"featureType":"poi","elementType":"all","stylers":[{"hue":"#000000"},{"saturation":-100},{"lightness":-100},{"visibility":"off"}]},{"featureType":"administrative","elementType":"all","stylers":[{"hue":"#000000"},{"saturation":0},{"lightness":-100},{"visibility":"off"}]},{"featureType":"road","elementType":"labels","stylers":[{"hue":"#ffffff"},{"saturation":-100},{"lightness":100},{"visibility":"off"}]},{"featureType":"water","elementType":"labels","stylers":[{"hue":"#000000"},{"saturation":-100},{"lightness":-100},{"visibility":"off"}]},{"featureType":"road.local","elementType":"all","stylers":[{"hue":"#ffffff"},{"saturation":-100},{"lightness":100},{"visibility":"on"}]},{"featureType":"water","elementType":"geometry","stylers":[{"hue":"#ffffff"},{"saturation":-100},{"lightness":100},{"visibility":"on"}]},{"featureType":"transit","elementType":"labels","stylers":[{"hue":"#000000"},{"saturation":0},{"lightness":-100},{"visibility":"off"}]},{"featureType":"landscape","elementType":"labels","stylers":[{"hue":"#000000"},{"saturation":-100},{"lightness":-100},{"visibility":"off"}]},{"featureType":"road","elementType":"geometry","stylers":[{"hue":"#bbbbbb"},{"saturation":-100},{"lightness":26},{"visibility":"on"}]},{"featureType":"landscape","elementType":"geometry","stylers":[{"hue":"#dddddd"},{"saturation":-100},{"lightness":-3},{"visibility":"on"}]}]' [zoom]="11" [streetViewControl]="false" [zoomControl]="false" >
+                        <div ng-switch on="myvar" *ngFor="let place of latLon; let i = index">
+                        <agm-marker ng-switch-when="comprobarTroncalNqs(place.Troncal,NQS Sur)" [latitude]="place.Lat" [longitude]="place.Lon" [title]="place.Estacion"[iconUrl]="'/assets/points/point1.ico'"></agm-marker>
+                       </div>
+            </agm-map>
+            </div>
+        <div class="col-sm-0 col-lg-1"></div>
+    </div>
+</div>
+<div ng-switch on="myvar" *ngFor="let place of latLon; let i = index">
+    {{place.Troncal}}
+</div>
+
