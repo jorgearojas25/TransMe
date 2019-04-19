@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from '../shared/services/user.service';
 
 @Component({
     selector: 'app-layout',
@@ -7,11 +8,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LayoutComponent implements OnInit {
 
+    userDetails;
+
     collapedSideBar: boolean;
 
-    constructor() {}
+    constructor(private service:UserService) {
+    }
 
-    ngOnInit() {}
+    ngOnInit() {
+        this.service.getUserProfile().subscribe(
+            res=>{
+                this.userDetails =res;
+            },
+            err=>{
+                console.log(err)
+            },
+        );
+    }
 
     receiveCollapsed($event) {
         this.collapedSideBar = $event;

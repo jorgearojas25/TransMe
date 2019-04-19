@@ -1,8 +1,8 @@
 <div class="login-page" [@routerTransition]>
     <div class="row justify-content-md-center">
         <div class="col-md-4">
-            <img class="user-avatar" src="assets/images/logo.png" width="150px" />
-            <h1>TransMe</h1>
+            <img [routerLink]="['']" class="user-avatar" src="assets/images/logo.png" width="150px" />
+            <h1>TransMe | <a [routerLink]="['']">{{ 'Inicio' | translate }}</a></h1>
             <form role="form" [formGroup]="service.formModel" autocomplete="off" (submit)="onSubmit()">
                 <div class="form-content">
                     <div class="form-group required">
@@ -39,7 +39,7 @@
                 <div class="form-row">
                     <div class="form-group col-md-8 offset-md-2">
                         <button type="submit" [disabled]="!service.formModel.valid" class="btn rounded-btn">{{ 'Register' | translate }}</button>&nbsp;
-                    <!-- <button class="btn rounded-btn" [routerLink]="['/login']">{{ 'Log in' | translate }}</button> -->
+                    <button class="btn rounded-btn" [routerLink]="['/login']">{{ 'Log in' | translate }}</button>
                     </div>
                 </div>
             </form>

@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LayoutComponent } from './layout.component';
+import { AuthGuard } from '../auth/auth.guard';
 
 const routes: Routes = [
     {
@@ -12,7 +13,7 @@ const routes: Routes = [
             { path: 'Distancia', loadChildren:'./distancia/distancia.module#DistanciaModule'},
             { path: 'Eventos', loadChildren: './eventos/eventos.module#EventosModule'},
             { path: 'Perfil', loadChildren:'./usuarioconf/usuarioconf.module#UsuarioconfModule'},
-            { path: 'dashboard', loadChildren: './dashboard/dashboard.module#DashboardModule' },
+            { path: 'dashboard', loadChildren: './dashboard/dashboard.module#DashboardModule', canActivate:[AuthGuard]},
             { path: 'charts', loadChildren: './charts/charts.module#ChartsModule' },
             { path: 'tables', loadChildren: './tables/tables.module#TablesModule' },
             { path: 'forms', loadChildren: './form/form.module#FormModule' },
