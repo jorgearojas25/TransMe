@@ -19,11 +19,11 @@ export class SignupComponent implements OnInit {
     onSubmit(){
         this.service.register().subscribe(
             (res:any)=>{
-                if(res.succeded){
+                if(res.succeeded){
                     this.service.formModel.reset();
                     this.toastr.success('Usuario Creado!','Registro Completo')
                 }else{
-                    res.forEach(element => {
+                    res.errors.forEach(element => {
                         switch (element.code) {
                             case 'DuplicateUserName':
                                 //El nombre de usuario ya esta en uso.

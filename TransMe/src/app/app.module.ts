@@ -12,7 +12,7 @@ import {TroncalesService} from './shared/services/troncales.service';
 import { RutasService } from './shared/services/rutas.service';
 import { ReactiveFormsModule, FormsModule } from "@angular/forms";
 import { UserService } from './shared/services/user.service';
-//import { HttpClient } from "@angular/common/http"; 
+import { HttpClient } from "@angular/common/http"; 
 import { ToastrModule } from 'ngx-toastr';
 import { AuthInterceptor } from './auth/auth.interceptor';
 
@@ -22,14 +22,14 @@ import { AuthInterceptor } from './auth/auth.interceptor';
         BrowserModule,
         BrowserAnimationsModule,
         HttpClientModule,
-        LanguageTranslationModule,
+/*         HttpClient,
+ */        LanguageTranslationModule,
         AppRoutingModule,
         ReactiveFormsModule,
         ToastrModule.forRoot({
             progressBar:true
         }),
         FormsModule,
-        //HttpClient,
         AgmCoreModule.forRoot({
             apiKey: 'AIzaSyDvardTfenpndyJApa9hYJoBHx8YA9dFKY'
           })
