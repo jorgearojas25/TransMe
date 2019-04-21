@@ -31,7 +31,6 @@ export class MapaComponent implements OnInit {
     this.latLon = this._TroncalesService.getLatLon();
     console.log(this.latLon);
   }
-  
   constructor(private translate: TranslateService, public router: Router, private _TroncalesService: TroncalesService) {
    $.getJSON('http://datosabiertos.bogota.gov.co/api/3/action/datastore_search?resource_id=d0775af7-1706-4404-8bea-387194287d73&limit=1000', function(data) {
     $.each(data.result.records, function(i, item) {
