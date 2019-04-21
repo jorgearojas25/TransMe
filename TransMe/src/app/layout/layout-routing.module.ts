@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LayoutComponent } from './layout.component';
+import { AuthGuard } from '../auth/auth.guard';
 
 const routes: Routes = [
     {
@@ -8,6 +9,7 @@ const routes: Routes = [
         component: LayoutComponent,
         children: [
             { path: '', redirectTo: 'dashboard', pathMatch: 'prefix' },
+            { path: 'Administrador', loadChildren:'./admin/admin.module#AdminModule', canActivate: [AuthGuard],data:{permittedRoles:['Admin']}},
             { path: 'Mapa', loadChildren:'./mapa/mapa.module#MapaModule'},
             { path: 'Distancia', loadChildren:'./distancia/distancia.module#DistanciaModule'},
             { path: 'Eventos', loadChildren: './eventos/eventos.module#EventosModule'},
