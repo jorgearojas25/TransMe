@@ -52,6 +52,11 @@ export class HomesidebarComponent implements OnInit {
           
     }
 
+    clearInfo(){
+
+        $('#rutapop').empty();
+    }
+
     getinfo(info){
         $('#rutapop').append(info);
         this.verVagones(info);
@@ -68,12 +73,12 @@ export class HomesidebarComponent implements OnInit {
         
         $("#rutapop").empty();
         let countVagon = 0;
-        $("#rutapop").append('<style="font-size: 20px;>'+dato_nombreEstacion+'</style><br><br>');
+        $("#rutapop").append('<style="font-size: 20px;>'+dato_nombreEstacion+'</style><br>');
          $.each(vagonesFiltrados,function(i,value){
            countVagon += 1;
            
         $("#rutapop").append('<br>');
-          var vagonActual = 'Vagon: '+ countVagon;
+          var vagonActual = 'Vagon: '+ countVagon + ' -- ';
           
           $("#rutapop").append(vagonActual);
        
@@ -94,7 +99,7 @@ export class HomesidebarComponent implements OnInit {
         //$("#rutaspop").empty();
         var html = '';
         $.each(rutasFiltradas,function(index,value){
-        html += `<div style="margin-top:10px"> ${value.nombreRuta}</div>`
+        html += `<div style="margin-left:10px; display:inline-block"> ${value.nombreRuta}</div>`
         });
         $("#rutapop").append(html);
 

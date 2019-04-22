@@ -4,7 +4,8 @@
   <div class="list-group">
  
       <div class="nested-menu" *ngFor="let item of TroncalBoton">
-          <a class="list-group-item" (click)="addExpandClass(item)" (click)="getEstaciones(item.Troncal)" id='{{item.Idcolor}}' title='{{item.Troncal}}' ngbTooltip='{{item.Troncal}}' placement="bottom">
+          <a class="list-group-item" (click)="addExpandClass(item)" (click)="getEstaciones(item.Troncal)" id='{{item.Idcolor}}' title='{{item.Troncal}}' ngbTooltip='{{item.Troncal}}' placement="bottom" 
+           (click)="clearInfo()">
               <i class="fa fa-plus"></i>&nbsp;
               <span title='{{item.Troncal}}' >{{ item.Troncal }}</span>
           </a>
@@ -12,7 +13,7 @@
           <li class="nested" [class.expand]="showMenu === item">
               <ul class="submenu" >
                   <li *ngFor="let item of EstacionBoton">
-                      <a href="javascript:void(0)" (click)="getinfo(item.Estaciones)">
+                      <a href="javascript:void(0)" (click)="getinfo(item.Estaciones)" (dblclick)="clearInfo()">
                           <i class="fa fa-monument"></i>&nbsp;
                           <span title='{{item.Estaciones}}' >{{ item.Estaciones }}</span>
                       </a>
