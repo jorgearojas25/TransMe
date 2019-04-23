@@ -5,8 +5,6 @@ import { mapChildrenIntoArray } from '@angular/router/src/url_tree';
 import { TranslateService } from '@ngx-translate/core';
 import { TroncalesService } from '../../../shared/services/troncales.service';
 import { Router } from '@angular/router';
-import { RutasService } from 'src/app/shared/services/rutas.service';
-
 
 
 declare var lat: any;
@@ -37,9 +35,7 @@ export class MapaComponent implements OnInit {
     console.log(this.latLon);
   }
 
-  // tslint:disable-next-line:max-line-length
-  constructor(private translate: TranslateService, public router: Router, private _TroncalesService: TroncalesService ,private _RutasService:RutasService) {
-   // tslint:disable-next-line:max-line-length
+  constructor(private translate: TranslateService, public router: Router, private _TroncalesService: TroncalesService) {
    $.getJSON('http://datosabiertos.bogota.gov.co/api/3/action/datastore_search?resource_id=d0775af7-1706-4404-8bea-387194287d73&limit=1000', function(data) {
     $.each(data.result.records, function(i, item) {
 
@@ -53,20 +49,15 @@ export class MapaComponent implements OnInit {
   });
   this.jsonDA2 = jsonDA;
   console.log(this.jsonDA2);
-  this._RutasService.getJSONrutas().subscribe(data=>{
-    for(var i=0; i<=data.length-1;i++){
-        this.arrayRutas2.push((data[i]));
-    }
-    
-})
-console.log(this.arrayRutas2)
 
 
-}
-comprobar(vagon:string,Estacion:string){
-  if(vagon.indexOf(Estacion)){
-    return true;
-  }
-  return false;
+  $.getJSON('http://datosabiertos.bogota.gov.co/api/3/action/datastore_search?resource_id=d0775af7-1706-4404-8bea-387194287d73&limit=1000', function(rutas) {
+  $.each(rutas.result.records, function(i, r) {
+
+   
+    console.log(r);
+ });
+});
+
 }
 }

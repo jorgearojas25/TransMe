@@ -63,10 +63,4 @@ console.log(this.arrayRutas2)
 
 
 }
-comprobar(vagon:string,Estacion:string){
-  if(vagon.indexOf(Estacion)){
-    return true;
-  }
-  return false;
-}
 }

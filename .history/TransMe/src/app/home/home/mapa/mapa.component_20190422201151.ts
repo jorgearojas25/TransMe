@@ -5,14 +5,12 @@ import { mapChildrenIntoArray } from '@angular/router/src/url_tree';
 import { TranslateService } from '@ngx-translate/core';
 import { TroncalesService } from '../../../shared/services/troncales.service';
 import { Router } from '@angular/router';
-import { RutasService } from 'src/app/shared/services/rutas.service';
-
 
 
 declare var lat: any;
 declare var $: any;
 const jsonDA: any[] = [];
-const arrayRutas: any[] = [];
+const arrayRutas2: any[] = [];
 
 
 
@@ -28,7 +26,7 @@ export class MapaComponent implements OnInit {
    // tslint:disable-next-line:max-line-length
    style2 = '[{"featureType":"poi","elementType":"all","stylers":[{"hue":"#000000"},{"saturation":-100},{"lightness":-100},{"visibility":"off"}]},{"featureType":"poi","elementType":"all","stylers":[{"hue":"#000000"},{"saturation":-100},{"lightness":-100},{"visibility":"off"}]},{"featureType":"administrative","elementType":"all","stylers":[{"hue":"#000000"},{"saturation":0},{"lightness":-100},{"visibility":"off"}]},{"featureType":"road","elementType":"labels","stylers":[{"hue":"#ffffff"},{"saturation":-100},{"lightness":100},{"visibility":"off"}]},{"featureType":"water","elementType":"labels","stylers":[{"hue":"#000000"},{"saturation":-100},{"lightness":-100},{"visibility":"off"}]},{"featureType":"road.local","elementType":"all","stylers":[{"hue":"#ffffff"},{"saturation":-100},{"lightness":100},{"visibility":"on"}]},{"featureType":"water","elementType":"geometry","stylers":[{"hue":"#ffffff"},{"saturation":-100},{"lightness":100},{"visibility":"on"}]},{"featureType":"transit","elementType":"labels","stylers":[{"hue":"#000000"},{"saturation":0},{"lightness":-100},{"visibility":"off"}]},{"featureType":"landscape","elementType":"labels","stylers":[{"hue":"#000000"},{"saturation":-100},{"lightness":-100},{"visibility":"off"}]},{"featureType":"road","elementType":"geometry","stylers":[{"hue":"#bbbbbb"},{"saturation":-100},{"lightness":26},{"visibility":"on"}]},{"featureType":"landscape","elementType":"geometry","stylers":[{"hue":"#dddddd"},{"saturation":-100},{"lightness":-3},{"visibility":"on"}]}]';
    jsonDA2: any[] = [];
-   arrayRutas2: any[] = [];
+   arrayRutas: any[] = [];
    latLon: any[] = [];
 
   ngOnInit() {
@@ -37,9 +35,7 @@ export class MapaComponent implements OnInit {
     console.log(this.latLon);
   }
 
-  // tslint:disable-next-line:max-line-length
-  constructor(private translate: TranslateService, public router: Router, private _TroncalesService: TroncalesService ,private _RutasService:RutasService) {
-   // tslint:disable-next-line:max-line-length
+  constructor(private translate: TranslateService, public router: Router, private _TroncalesService: TroncalesService) {
    $.getJSON('http://datosabiertos.bogota.gov.co/api/3/action/datastore_search?resource_id=d0775af7-1706-4404-8bea-387194287d73&limit=1000', function(data) {
     $.each(data.result.records, function(i, item) {
 
@@ -53,20 +49,17 @@ export class MapaComponent implements OnInit {
   });
   this.jsonDA2 = jsonDA;
   console.log(this.jsonDA2);
-  this._RutasService.getJSONrutas().subscribe(data=>{
-    for(var i=0; i<=data.length-1;i++){
-        this.arrayRutas2.push((data[i]));
-    }
-    
-})
-console.log(this.arrayRutas2)
+  $.getJSON('/assets/json/rutas.json', function(rutas){
+  $.each(rutas.result.records, function(i, r) {
 
-
-}
-comprobar(vagon:string,Estacion:string){
-  if(vagon.indexOf(Estacion)){
-    return true;
-  }
-  return false;
+    arrayRutas2.push({
+      Ruta: r.nombreRuta,
+      Esctacion: idVagon
+    });
+ });
+});
+this.arrayRutas = arrayRutas2;
+console.log('rutas');
+console.log(this.arrayRutas);
 }
 }
