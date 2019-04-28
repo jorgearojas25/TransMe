@@ -11,7 +11,6 @@ declare var $:any;
 export class HomeComponent implements OnInit {
 
   collapedSideBar: boolean;
-  @ViewChild(HomesidebarComponent) sidebar: HomesidebarComponent;
 
   constructor() {}
 

@@ -25,9 +25,6 @@ export class HomesidebarComponent implements OnInit {
 
 
     @Output() collapsedEvent = new EventEmitter<boolean>();
-    lat: any;
-    long: any;
-    zoom: any;
 
     constructor(private translate: TranslateService, public router: Router, private _TroncalesService: TroncalesService,private _RutasService:RutasService) {
         this.router.events.subscribe(val => {
@@ -172,15 +169,6 @@ export class HomesidebarComponent implements OnInit {
 
     onLoggedout() {
         localStorage.removeItem('isLoggedin');
-    }
-    changevalue(longitud:number , latitud :number ){
-        this.long=longitud;
-        this.lat=latitud;
-        this.zoom=15;
-    }
-    getvalue(){
-
-        return (this.long , this.lat , this.zoom);
     }
 
 

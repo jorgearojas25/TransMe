@@ -173,13 +173,7 @@ export class HomesidebarComponent implements OnInit {
     onLoggedout() {
         localStorage.removeItem('isLoggedin');
     }
-    changevalue(longitud:number , latitud :number ){
-        this.long=longitud;
-        this.lat=latitud;
-        this.zoom=15;
-    }
-    getvalue(){
-
+    chagevalue(){
         return (this.long , this.lat , this.zoom);
     }
 

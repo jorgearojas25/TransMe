@@ -7,7 +7,7 @@
           <a class="list-group-item" (click)="addExpandClass(item)" (click)="getEstaciones(item.Troncal)" id='{{item.Idcolor}}' title='{{item.Troncal}}' ngbTooltip='{{item.Troncal}}' placement="bottom" 
            (click)="clearInfo()">
               <i class="fa fa-plus"></i>&nbsp;
-              <span title='{{item.Troncal}}'  >{{ item.Troncal }}</span>
+              <span title='{{item.Troncal}}' >{{ item.Troncal }}</span>
           </a>
 
           <li class="nested" [class.expand]="showMenu === item">
