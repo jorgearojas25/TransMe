@@ -201,26 +201,6 @@ namespace WebAPI.Migrations
                     b.ToTable("Categoria");
                 });
 
-            modelBuilder.Entity("WebAPI.Models.Estacion", b =>
-                {
-                    b.Property<string>("EstacionesID")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<string>("CoordenadasEstacion");
-
-                    b.Property<string>("NombreEstaciones");
-
-                    b.Property<string>("RutaImagen");
-
-                    b.Property<string>("TroncalesID");
-
-                    b.HasKey("EstacionesID");
-
-                    b.HasIndex("TroncalesID");
-
-                    b.ToTable("Estacions");
-                });
-
             modelBuilder.Entity("WebAPI.Models.Evento", b =>
                 {
                     b.Property<string>("EventoID")
@@ -230,7 +210,7 @@ namespace WebAPI.Migrations
 
                     b.Property<string>("Descripcion");
 
-                    b.Property<string>("EstacionesID");
+                    b.Property<string>("Estacione");
 
                     b.Property<DateTime>("Fecha");
 
@@ -241,8 +221,6 @@ namespace WebAPI.Migrations
                     b.Property<string>("NombreEvento");
 
                     b.HasKey("EventoID");
-
-                    b.HasIndex("EstacionesID");
 
                     b.ToTable("Eventos");
                 });
@@ -264,52 +242,6 @@ namespace WebAPI.Migrations
                     b.HasIndex("EventoID");
 
                     b.ToTable("EventoCategorias");
-                });
-
-            modelBuilder.Entity("WebAPI.Models.Ruta", b =>
-                {
-                    b.Property<string>("RutasID")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<string>("FinRuta");
-
-                    b.Property<string>("InicioRuta");
-
-                    b.Property<string>("NombreRuta");
-
-                    b.HasKey("RutasID");
-
-                    b.ToTable("Rutas");
-                });
-
-            modelBuilder.Entity("WebAPI.Models.TipoVagon", b =>
-                {
-                    b.Property<string>("TipoVagonesID")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<string>("Longitud");
-
-                    b.Property<string>("NombreVagon");
-
-                    b.HasKey("TipoVagonesID");
-
-                    b.ToTable("TipoVagons");
-                });
-
-            modelBuilder.Entity("WebAPI.Models.Troncal", b =>
-                {
-                    b.Property<string>("TroncalesID")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<string>("FinalCoordenadas");
-
-                    b.Property<string>("InicioCoordenadas");
-
-                    b.Property<string>("NombreTroncales");
-
-                    b.HasKey("TroncalesID");
-
-                    b.ToTable("Troncals");
                 });
 
             modelBuilder.Entity("WebAPI.Models.UsuarioCategoria", b =>
@@ -348,47 +280,6 @@ namespace WebAPI.Migrations
                     b.HasIndex("UsuarioID");
 
                     b.ToTable("UsuarioEventos");
-                });
-
-            modelBuilder.Entity("WebAPI.Models.Vagon", b =>
-                {
-                    b.Property<string>("VagonesID")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<string>("EstacionesID");
-
-                    b.Property<string>("Longitud");
-
-                    b.Property<string>("TipoVagonesID");
-
-                    b.HasKey("VagonesID");
-
-                    b.HasIndex("EstacionesID");
-
-                    b.HasIndex("TipoVagonesID");
-
-                    b.ToTable("Vagons");
-                });
-
-            modelBuilder.Entity("WebAPI.Models.VagonRuta", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("RutasID");
-
-                    b.Property<string>("RutasID1");
-
-                    b.Property<string>("VagonesID");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("RutasID1");
-
-                    b.HasIndex("VagonesID");
-
-                    b.ToTable("VagonRutas");
                 });
 
             modelBuilder.Entity("WebAPI.Models.ApplicationUser", b =>
@@ -448,20 +339,6 @@ namespace WebAPI.Migrations
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
-            modelBuilder.Entity("WebAPI.Models.Estacion", b =>
-                {
-                    b.HasOne("WebAPI.Models.Troncal", "Troncales")
-                        .WithMany()
-                        .HasForeignKey("TroncalesID");
-                });
-
-            modelBuilder.Entity("WebAPI.Models.Evento", b =>
-                {
-                    b.HasOne("WebAPI.Models.Estacion", "Estaciones")
-                        .WithMany()
-                        .HasForeignKey("EstacionesID");
-                });
-
             modelBuilder.Entity("WebAPI.Models.EventoCategoria", b =>
                 {
                     b.HasOne("WebAPI.Models.Categoria", "Categoria")
@@ -493,28 +370,6 @@ namespace WebAPI.Migrations
                     b.HasOne("WebAPI.Models.ApplicationUser", "Usuario")
                         .WithMany()
                         .HasForeignKey("UsuarioID");
-                });
-
-            modelBuilder.Entity("WebAPI.Models.Vagon", b =>
-                {
-                    b.HasOne("WebAPI.Models.Estacion", "Estaciones")
-                        .WithMany()
-                        .HasForeignKey("EstacionesID");
-
-                    b.HasOne("WebAPI.Models.TipoVagon", "TipoVagones")
-                        .WithMany()
-                        .HasForeignKey("TipoVagonesID");
-                });
-
-            modelBuilder.Entity("WebAPI.Models.VagonRuta", b =>
-                {
-                    b.HasOne("WebAPI.Models.Ruta", "Rutas")
-                        .WithMany()
-                        .HasForeignKey("RutasID1");
-
-                    b.HasOne("WebAPI.Models.Vagon", "Vagones")
-                        .WithMany()
-                        .HasForeignKey("VagonesID");
                 });
 #pragma warning restore 612, 618
         }

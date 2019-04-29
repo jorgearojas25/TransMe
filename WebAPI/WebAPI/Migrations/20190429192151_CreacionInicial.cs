@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace WebAPI.Migrations
 {
-    public partial class Inicial : Migration
+    public partial class CreacionInicial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -62,44 +62,21 @@ namespace WebAPI.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Rutas",
+                name: "Eventos",
                 columns: table => new
                 {
-                    RutasID = table.Column<string>(nullable: false),
-                    NombreRuta = table.Column<string>(nullable: true),
-                    InicioRuta = table.Column<string>(nullable: true),
-                    FinRuta = table.Column<string>(nullable: true)
+                    EventoID = table.Column<string>(nullable: false),
+                    NombreEvento = table.Column<string>(nullable: true),
+                    Descripcion = table.Column<string>(nullable: true),
+                    Fecha = table.Column<DateTime>(nullable: false),
+                    Hora = table.Column<TimeSpan>(nullable: false),
+                    Lugar = table.Column<string>(nullable: true),
+                    Estacione = table.Column<string>(nullable: true),
+                    Costo = table.Column<decimal>(nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Rutas", x => x.RutasID);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "TipoVagons",
-                columns: table => new
-                {
-                    TipoVagonesID = table.Column<string>(nullable: false),
-                    Longitud = table.Column<string>(nullable: true),
-                    NombreVagon = table.Column<string>(nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_TipoVagons", x => x.TipoVagonesID);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Troncals",
-                columns: table => new
-                {
-                    TroncalesID = table.Column<string>(nullable: false),
-                    NombreTroncales = table.Column<string>(nullable: true),
-                    InicioCoordenadas = table.Column<string>(nullable: true),
-                    FinalCoordenadas = table.Column<string>(nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Troncals", x => x.TroncalesID);
+                    table.PrimaryKey("PK_Eventos", x => x.EventoID);
                 });
 
             migrationBuilder.CreateTable(
@@ -235,77 +212,6 @@ namespace WebAPI.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Estacions",
-                columns: table => new
-                {
-                    EstacionesID = table.Column<string>(nullable: false),
-                    NombreEstaciones = table.Column<string>(nullable: true),
-                    CoordenadasEstacion = table.Column<string>(nullable: true),
-                    RutaImagen = table.Column<string>(nullable: true),
-                    TroncalesID = table.Column<string>(nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Estacions", x => x.EstacionesID);
-                    table.ForeignKey(
-                        name: "FK_Estacions_Troncals_TroncalesID",
-                        column: x => x.TroncalesID,
-                        principalTable: "Troncals",
-                        principalColumn: "TroncalesID",
-                        onDelete: ReferentialAction.Restrict);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Eventos",
-                columns: table => new
-                {
-                    EventoID = table.Column<string>(nullable: false),
-                    NombreEvento = table.Column<string>(nullable: true),
-                    Descripcion = table.Column<string>(nullable: true),
-                    Fecha = table.Column<DateTime>(nullable: false),
-                    Hora = table.Column<TimeSpan>(nullable: false),
-                    Lugar = table.Column<string>(nullable: true),
-                    EstacionesID = table.Column<string>(nullable: true),
-                    Costo = table.Column<decimal>(nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Eventos", x => x.EventoID);
-                    table.ForeignKey(
-                        name: "FK_Eventos_Estacions_EstacionesID",
-                        column: x => x.EstacionesID,
-                        principalTable: "Estacions",
-                        principalColumn: "EstacionesID",
-                        onDelete: ReferentialAction.Restrict);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Vagons",
-                columns: table => new
-                {
-                    VagonesID = table.Column<string>(nullable: false),
-                    EstacionesID = table.Column<string>(nullable: true),
-                    Longitud = table.Column<string>(nullable: true),
-                    TipoVagonesID = table.Column<string>(nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Vagons", x => x.VagonesID);
-                    table.ForeignKey(
-                        name: "FK_Vagons_Estacions_EstacionesID",
-                        column: x => x.EstacionesID,
-                        principalTable: "Estacions",
-                        principalColumn: "EstacionesID",
-                        onDelete: ReferentialAction.Restrict);
-                    table.ForeignKey(
-                        name: "FK_Vagons_TipoVagons_TipoVagonesID",
-                        column: x => x.TipoVagonesID,
-                        principalTable: "TipoVagons",
-                        principalColumn: "TipoVagonesID",
-                        onDelete: ReferentialAction.Restrict);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "EventoCategorias",
                 columns: table => new
                 {
@@ -357,33 +263,6 @@ namespace WebAPI.Migrations
                         onDelete: ReferentialAction.Restrict);
                 });
 
-            migrationBuilder.CreateTable(
-                name: "VagonRutas",
-                columns: table => new
-                {
-                    Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    VagonesID = table.Column<string>(nullable: true),
-                    RutasID = table.Column<int>(nullable: false),
-                    RutasID1 = table.Column<string>(nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_VagonRutas", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_VagonRutas_Rutas_RutasID1",
-                        column: x => x.RutasID1,
-                        principalTable: "Rutas",
-                        principalColumn: "RutasID",
-                        onDelete: ReferentialAction.Restrict);
-                    table.ForeignKey(
-                        name: "FK_VagonRutas_Vagons_VagonesID",
-                        column: x => x.VagonesID,
-                        principalTable: "Vagons",
-                        principalColumn: "VagonesID",
-                        onDelete: ReferentialAction.Restrict);
-                });
-
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
                 table: "AspNetRoleClaims",
@@ -424,11 +303,6 @@ namespace WebAPI.Migrations
                 filter: "[NormalizedUserName] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Estacions_TroncalesID",
-                table: "Estacions",
-                column: "TroncalesID");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_EventoCategorias_CategoriaID",
                 table: "EventoCategorias",
                 column: "CategoriaID");
@@ -437,11 +311,6 @@ namespace WebAPI.Migrations
                 name: "IX_EventoCategorias_EventoID",
                 table: "EventoCategorias",
                 column: "EventoID");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Eventos_EstacionesID",
-                table: "Eventos",
-                column: "EstacionesID");
 
             migrationBuilder.CreateIndex(
                 name: "IX_UsuarioCategorias_CategoriaID",
@@ -462,26 +331,6 @@ namespace WebAPI.Migrations
                 name: "IX_UsuarioEventos_UsuarioID",
                 table: "UsuarioEventos",
                 column: "UsuarioID");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_VagonRutas_RutasID1",
-                table: "VagonRutas",
-                column: "RutasID1");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_VagonRutas_VagonesID",
-                table: "VagonRutas",
-                column: "VagonesID");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Vagons_EstacionesID",
-                table: "Vagons",
-                column: "EstacionesID");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Vagons_TipoVagonesID",
-                table: "Vagons",
-                column: "TipoVagonesID");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -511,9 +360,6 @@ namespace WebAPI.Migrations
                 name: "UsuarioEventos");
 
             migrationBuilder.DropTable(
-                name: "VagonRutas");
-
-            migrationBuilder.DropTable(
                 name: "AspNetRoles");
 
             migrationBuilder.DropTable(
@@ -524,21 +370,6 @@ namespace WebAPI.Migrations
 
             migrationBuilder.DropTable(
                 name: "AspNetUsers");
-
-            migrationBuilder.DropTable(
-                name: "Rutas");
-
-            migrationBuilder.DropTable(
-                name: "Vagons");
-
-            migrationBuilder.DropTable(
-                name: "Estacions");
-
-            migrationBuilder.DropTable(
-                name: "TipoVagons");
-
-            migrationBuilder.DropTable(
-                name: "Troncals");
         }
     }
 }
