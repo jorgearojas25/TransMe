@@ -24,20 +24,17 @@ export class UserService {
     
   });
 
-  formModel2=this.fb2.group({
+  eventForm=this.fb2.group({
     EventoID:[''],
     NombreEvento:[''],
     Descripcion:[''],
     Fecha:[''],
     Hora:[''],
     Lugar:[''],
-    EstacionesID:[''],
+    Estacione:[''],
     Costo:['']
   });
 
-  createEvent(){
-    
-  }
 
   comparePasswords(fb: FormGroup) {
     let confirmPswrdCtrl = fb.get('ConfirmPassword');
@@ -61,6 +58,7 @@ export class UserService {
     };
     return this.http.post(this.BaseURI + '/ApplicationUser/Register', body);
   }
+
   login(formData){
     return this.http.post(this.BaseURI + '/ApplicationUser/Login', formData);
   }
@@ -70,14 +68,14 @@ export class UserService {
   
   postEvento(){
     var body2={
-      EventoID:this.formModel2.value.EventoID,
-      NombreEvento:this.formModel2.value.NombreEvento,
-      Descripcion:this.formModel2.value.Descripcion,
-      Fecha:this.formModel2.value.Fecha,
-      Hora:this.formModel2.value.Hora,
-      Lugar:this.formModel2.value.Lugar,
-      EstacionesID:this.formModel2.value.EstacionesID,
-      Costo:this.formModel2.value.Costo
+      EventoID:this.eventForm.value.EventoID,
+      NombreEvento:this.eventForm.value.NombreEvento,
+      Descripcion:this.eventForm.value.Descripcion,
+      Fecha:this.eventForm.value.Fecha,
+      Hora:this.eventForm.value.Hora,
+      Lugar:this.eventForm.value.Lugar,
+      EstacionesID:this.eventForm.value.EstacionesID,
+      Costo:this.eventForm.value.Costo
     }
 
     return this.http.post(this.BaseURI+'/Evento',body2);

@@ -13,7 +13,7 @@ export class AdminComponent implements OnInit {
   constructor(public service: UserService, private toastr:ToastrService) { }
 
   ngOnInit() {
-    this.service.formModel2.reset();
+    this.service.eventForm.reset();
     this.service.getUserProfile().subscribe(
       res => {
         this.userDetails = res
@@ -28,8 +28,8 @@ export class AdminComponent implements OnInit {
     this.service.postEvento().subscribe(
         (res:any)=>{
             if(res.succeeded){
-                this.service.formModel2.reset();
-                this.toastr.success('Usuario Creado!','Registro Completo');
+                this.service.eventForm.reset();
+                this.toastr.success('Evento Creado!','Registro Completo');
             }
         },
         err=>{

@@ -14,8 +14,7 @@ namespace WebAPI.Models
         public DateTime Fecha { get; set; }
         public TimeSpan Hora { get; set; }
         public string Lugar { get; set; }
-        public string EstacionesID { get; set; }
-        public Estacion Estaciones { get; set; }
+        public string Estacione { get; set; }
         public decimal Costo { get; set; }
     }
 }

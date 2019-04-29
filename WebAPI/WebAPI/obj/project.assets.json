@@ -12548,11 +12548,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Colnodo\\Desktop\\rep\\WebAPI\\WebAPI\\WebAPI.csproj",
+      "projectUniqueName": "C:\\Users\\Colnodo\\Desktop\\TransMe\\WebAPI\\WebAPI\\WebAPI.csproj",
       "projectName": "WebAPI",
-      "projectPath": "C:\\Users\\Colnodo\\Desktop\\rep\\WebAPI\\WebAPI\\WebAPI.csproj",
+      "projectPath": "C:\\Users\\Colnodo\\Desktop\\TransMe\\WebAPI\\WebAPI\\WebAPI.csproj",
       "packagesPath": "C:\\Users\\Colnodo\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Colnodo\\Desktop\\rep\\WebAPI\\WebAPI\\obj\\",
+      "outputPath": "C:\\Users\\Colnodo\\Desktop\\TransMe\\WebAPI\\WebAPI\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

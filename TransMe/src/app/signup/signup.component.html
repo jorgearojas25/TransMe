@@ -6,8 +6,8 @@
             <form role="form" [formGroup]="service.formModel" autocomplete="off" (submit)="onSubmit()">
                 <div class="form-content">
                     <div class="form-group required">
-                        <label>Nombre de usuario</label>
-                        <input class="form-control input-underline input-lg" formControlName="UserName" id="" placeholder="{{ 'Usuario' | translate }}">
+                        <label>Numero de Documento</label>
+                        <input class="form-control input-underline input-lg" formControlName="UserName" id="" placeholder="{{ 'Numero de Documento' | translate }}">
                         <label class="text-danger" *ngIf="service.formModel.get('UserName').touched && service.formModel.get('UserName').errors?.required">Este campo es obligatorio.</label>
                     </div>
 

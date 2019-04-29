@@ -34,7 +34,8 @@ namespace WebAPI
             //Inyeccion AppSettings
             services.Configure<ApplicationSettings>(Configuration.GetSection("ApplicationSettings"));
 
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            services.AddMvc()
+                .SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
                 
 
             services.AddDbContext<AuthenticationContext>(options =>

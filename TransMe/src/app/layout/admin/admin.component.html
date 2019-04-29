@@ -7,4 +7,41 @@
       <li class="list-group-item"><strong>id : </strong>{{userDetails.id}}</li> 
     </ul>
   </div>
+  <form role="form" [formGroup]="service.eventForm" autocomplete="off" (submit)="onSubmit()">
+    <div class="form-content">
+      <div class="form-group required">
+        <label>ID Evento</label>
+        <input class="form-control input-underline input-lg" formControlName="EventoID">
+      </div>
+      <div class="form-group required">
+        <label>Nombre Evento</label>
+        <input class="form-control input-underline input-lg" formControlName="NombreEvento">
+      </div>
+      <div class="form-group required">
+        <label>Descripcion</label>
+        <input class="form-control input-underline input-lg" formControlName="Descripcion">
+      </div>
+      <div class="form-group required">
+        <label>Fecha</label>
+        <input class="form-control input-underline input-lg" formControlName="Fecha">
+      </div>
+      <div class="form-group required">
+        <label>Hora</label>
+        <input class="form-control input-underline input-lg" formControlName="Hora">
+      </div>
+      <div class="form-group required">
+        <label>Lugar</label>
+        <input class="form-control input-underline input-lg" formControlName="Lugar">
+      </div>
+      <div class="form-group required">
+        <label>Estacion Cercana</label>
+        <input class="form-control input-underline input-lg" formControlName="Estacione">
+      </div>
+      <div class="form-group required">
+        <label>Costo</label>
+        <input class="form-control input-underline input-lg" formControlName="Costo">
+      </div> 
+      <div class="form-group col-md-8 offset-md-2">
+        <button type="submit" [disabled]="!service.eventForm.valid" class="btn rounded-btn">CREAR EVENTO</button>&nbsp;
 </div>
+
