@@ -1,3 +1,10 @@
-<p>
-  admin works!
-</p>
+<div class="container">
+  <div class="card m-5" style="width:18rem" *ngIf="userDetails">
+    <ul class="list-group">
+      <li class="list-group-item"><strong>Username : </strong>{{userDetails.userName}}</li>
+      <li class="list-group-item"><strong>FullName : </strong>{{userDetails.fullName}}</li>
+      <li class="list-group-item"><strong>Email : </strong>{{userDetails.email}}</li>
+      <li class="list-group-item"><strong>id : </strong>{{userDetails.id}}</li> 
+    </ul>
+  </div>
+</div>

@@ -8,7 +8,7 @@ import { HttpClient, HttpHeaders} from '@angular/common/http';
 })
 export class UserService {
 
-  constructor(private fb: FormBuilder, private http:HttpClient) { }
+  constructor(private fb: FormBuilder, private fb2:FormBuilder, private http:HttpClient) { }
   readonly BaseURI = 'http://localhost:49810/api';
 
   formModel = this.fb.group({
@@ -23,6 +23,22 @@ export class UserService {
     {validator:this.comparePasswords})
     
   });
+
+  formModel2=this.fb2.group({
+    EventoID:[''],
+    NombreEvento:[''],
+    Descripcion:[''],
+    Fecha:[''],
+    Hora:[''],
+    Lugar:[''],
+    EstacionesID:[''],
+    Costo:['']
+  });
+
+  createEvent(){
+    
+  }
+
   comparePasswords(fb: FormGroup) {
     let confirmPswrdCtrl = fb.get('ConfirmPassword');
     //passwordMismatch
@@ -50,6 +66,22 @@ export class UserService {
   }
   getUserProfile(){
     return this.http.get(this.BaseURI+'/UserProfile')
+  }
+  
+  postEvento(){
+    var body2={
+      EventoID:this.formModel2.value.EventoID,
+      NombreEvento:this.formModel2.value.NombreEvento,
+      Descripcion:this.formModel2.value.Descripcion,
+      Fecha:this.formModel2.value.Fecha,
+      Hora:this.formModel2.value.Hora,
+      Lugar:this.formModel2.value.Lugar,
+      EstacionesID:this.formModel2.value.EstacionesID,
+      Costo:this.formModel2.value.Costo
+    }
+
+    return this.http.post(this.BaseURI+'/Evento',body2);
+
   }
 
   roleMatch(allowedRoles): boolean {

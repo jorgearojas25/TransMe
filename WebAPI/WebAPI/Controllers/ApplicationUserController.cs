@@ -22,6 +22,7 @@ namespace WebAPI.Controllers
         private SignInManager<ApplicationUser> _singInManager;
         private readonly ApplicationSettings _appSettings;
 
+
         public ApplicationUserController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, IOptions<ApplicationSettings> appSettings)
         {
             _userManager = userManager;

@@ -15,9 +15,11 @@ namespace WebAPI.Controllers
     public class UserProfileController : ControllerBase
     {
         private UserManager<ApplicationUser> _userManager;
-        public UserProfileController(UserManager<ApplicationUser> userManager)
+        private readonly AuthenticationContext _context;
+        public UserProfileController(UserManager<ApplicationUser> userManager, AuthenticationContext context)
         {
             _userManager = userManager;
+            _context = context;
         }
 
         [HttpGet]
@@ -29,11 +31,31 @@ namespace WebAPI.Controllers
             var user = await _userManager.FindByIdAsync(userId);
             return new
             {
+                user.Id,
                 user.FullName,
                 user.Email,
                 user.UserName
             };
         }
+
+        [HttpGet]
+        [Route("Eventos")]
+        public async Task<Object> GetEventos()
+        {
+            var eventoU = (from u in _context.ApplicationUsers
+                           join ue in _context.UsuarioEventos
+                           on u.Id equals ue.UsuarioID
+                           join e in _context.Eventos
+                           on ue.EventoID equals e.EventoID
+                           select new {
+                               id_Usuario = u.Id,
+                               Nombre_Usuario = u.FullName,
+                               Nombre_Evento = e.NombreEvento
+                           });
+            return eventoU;
+        } 
+
+        
 
         [HttpGet]
         [Authorize(Roles = "Admin")]

@@ -21,7 +21,7 @@ export class SignupComponent implements OnInit {
             (res:any)=>{
                 if(res.succeeded){
                     this.service.formModel.reset();
-                    this.toastr.success('Usuario Creado!','Registro Completo')
+                    this.toastr.success('Usuario Creado!','Registro Completo');
                 }else{
                     res.errors.forEach(element => {
                         switch (element.code) {

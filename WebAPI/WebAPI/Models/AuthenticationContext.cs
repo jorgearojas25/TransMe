@@ -9,11 +9,30 @@ namespace WebAPI.Models
 {
     public class AuthenticationContext : IdentityDbContext
     {
-        public AuthenticationContext(DbContextOptions options) : base(options)
+        public AuthenticationContext(DbContextOptions <AuthenticationContext> options) : base(options)
         {
 
         }
 
         public DbSet<ApplicationUser> ApplicationUsers { get; set; }
+        public DbSet<Evento> Eventos { get; set; }
+        public DbSet<UsuarioEvento> UsuarioEventos { get; set; }
+        public DbSet<Estacion> Estacions { get; set; }
+        public DbSet<EventoCategoria> EventoCategorias { get; set; }
+        public DbSet<Ruta> Rutas { get; set; }
+        public DbSet<TipoVagon> TipoVagons { get; set; }
+        public DbSet<Troncal> Troncals { get; set; }
+        public DbSet<UsuarioCategoria> UsuarioCategorias { get; set; }
+        public DbSet<Vagon> Vagons { get; set; }
+        public DbSet<VagonRuta> VagonRutas { get; set; }
+
+
+
+
+
+
+
+
+
     }
 }

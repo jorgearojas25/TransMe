@@ -13,10 +13,11 @@ import { AgmCoreModule } from '@agm/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomerutasComponent } from './home/homerutas/homerutas.component';
 import { HttpClientModule } from '@angular/common/http';
+import { SliderComponent } from './home/slider/slider.component';
 
 
 @NgModule({
-  declarations: [HomeComponent, HomeheaderComponent, HomesidebarComponent, MapaComponent, BusquedasComponent, HomerutasComponent, ],
+  declarations: [HomeComponent, HomeheaderComponent, HomesidebarComponent, MapaComponent, BusquedasComponent, HomerutasComponent, SliderComponent, ],
   imports: [
     CommonModule,
     HttpClientModule,

@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild ,Input} from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { google } from '@agm/core/services/google-maps-types';
 
 import { mapChildrenIntoArray } from '@angular/router/src/url_tree';

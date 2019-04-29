@@ -1,5 +1,4 @@
-import { Component, OnInit,ViewChild  } from '@angular/core';
-import {HomesidebarComponent} from './homesidebar/homesidebar.component';
+import { Component, OnInit } from '@angular/core';
 
 declare var $:any;
 
@@ -11,7 +10,6 @@ declare var $:any;
 export class HomeComponent implements OnInit {
 
   collapedSideBar: boolean;
-  @ViewChild(HomesidebarComponent) sidebar: HomesidebarComponent;
 
   constructor() {}
 
