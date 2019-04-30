@@ -74,6 +74,10 @@ export class TroncalesService {
       return this.latLonMapa = latLon;
     }
 
+    getEstacion(){
+      return estaciones;
+    }
+
     getEstaciones(dato) {
 
       estacionesTroncalesFiltradas = [];

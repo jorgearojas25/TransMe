@@ -1,3 +1,15 @@
-<p>
-  eventos works!
-</p>
+<div class="container">
+  <div class="row">
+    <div class="btn-group-toggle" data-toggle="buttons">
+      <label class="btn btn-primary">
+        <input type="checkbox"> Text
+      </label>
+    </div>
+  </div>
+  <div class="card" *ngFor="let e of events.list">
+    <div class="card-body">
+      <h5 class="card-title">{{e.evento}}</h5>
+      <p class="card-text">{{e.descripcionEvento}}</p>
+    </div>
+  </div>
+</div>

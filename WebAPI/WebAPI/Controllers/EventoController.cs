@@ -22,10 +22,48 @@ namespace WebAPI.Controllers
 
         // GET: api/Evento
         [HttpGet]
-        public IEnumerable<Evento> GetEventos()
+        public async Task<Object> GetEventos()
         {
-            return _context.Eventos;
+            var eventos = (from e in _context.Eventos
+                           join c in _context.Categoria
+                           on e.CategoriaID equals c.id
+                           select new
+                           {    
+                               Evento = e.NombreEvento,
+                               idEvento = e.id,
+                               DescripcionEvento = e.Descripcion,
+                               idCategoria = c.id,
+                               colorCategoria = c.color,
+                               Categoria = c.Nombre,
+                               FechaEvento = e.Fecha,
+                               HoraEvento = e.Hora,
+                               LugarEvento = e.Lugar,
+                               EstacionRecomendada = e.Estacion,
+                               CostoEvento = e.Costo
+                           });
+            return eventos;
         }
+
+        /**[HttpGet("CategoriaID")]
+        [Route("EventosDe")]
+        public async Task<Object> FiltroEventos([FromRoute] string CategoriaID)
+        {
+            var eventosF = (from e in _context.Eventos
+                           join c in _context.Categoria
+                           on  equals c.id
+                           select new {
+                               Evento = e.NombreEvento,
+                               DescripcionEvento = e.Descripcion,
+                               idCategoria = c.id,
+                               Categoria = c.Nombre,
+                               FechaEvento = e.Fecha,
+                               HoraEvento = e.Hora,
+                               LugarEvento = e.Lugar,
+                               EstacionRecomendada = e.Estacion,
+                               CostoEvento = e.Costo
+                           });
+            return eventosF;
+        }**/
 
         // GET: api/Evento/5
         [HttpGet("{id}")]
