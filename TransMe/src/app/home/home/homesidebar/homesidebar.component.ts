@@ -77,14 +77,14 @@ export class HomesidebarComponent implements OnInit {
 
         $('#rutapop').empty();
         let countVagon = 0;
-        $('#rutapop').append('<style="font-size: 20px;>' + dato_nombreEstacion + '</style><br>');
+        $("#rutapop").append('<h2><span class="badge badge-pill badge-danger style="font-size: 40px;">'+'Te encuentras en la estacion '+dato_nombreEstacion+'</span></h2>');
          $.each(vagonesFiltrados, function(i, value) {
            countVagon += 1;
 
         $('#rutapop').append('<br>');
-          const vagonActual = 'Vagon: ' + countVagon + ' -- ';
-
-          $('#rutapop').append(vagonActual);
+        const vagonActual = 'Vagon '+ countVagon ;
+          
+        $("#rutapop").append('<span class="badge badge-secondary">'+vagonActual+'</span>');
 
         this.verRutas(value.idVagon);
 
