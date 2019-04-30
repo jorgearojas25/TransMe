@@ -16,8 +16,8 @@ export class HomesidebarComponent implements OnInit {
 
     TroncalBoton: any[] = [];
     EstacionBoton: any[] = [];
-    rutas:any[] =[];
-    vagones:any[]=[];
+    rutas: any[] =[];
+    vagones:any[] =[];
     isActive: boolean;
     collapsed: boolean;
     showMenu: string;
@@ -49,7 +49,7 @@ export class HomesidebarComponent implements OnInit {
 
         this.getVagones();
         this.getRutas();
-          
+
     }
 
     clearInfo(){
@@ -59,53 +59,53 @@ export class HomesidebarComponent implements OnInit {
     }
 
     getinfo(info){
-        $('#estacionCambio').attr('value', info); 
+        $('#estacionCambio').attr('value', info);
         $('#estacionCambio').click();
         $('#rutapop').append(info);
-        this.verVagones(info);        
-         
+        this.verVagones(info);
+
       }
 
-     
-    verVagones(dato_nombreEstacion){
 
-        
-        var vagonesFiltrados = $.grep(this.vagones,function(value){
-          return value.nombreEstacion == dato_nombreEstacion;
+    verVagones(dato_nombreEstacion) {
+
+
+        var vagonesFiltrados = $.grep(this.vagones,function(value) {
+          return value.nombreEstacion === dato_nombreEstacion;
         });
         console.log(vagonesFiltrados);
-        
-        $("#rutapop").empty();
+
+        $('#rutapop').empty();
         let countVagon = 0;
-        $("#rutapop").append('<style="font-size: 20px;>'+dato_nombreEstacion+'</style><br>');
-         $.each(vagonesFiltrados,function(i,value){
+        $('#rutapop').append('<style="font-size: 20px;>' + dato_nombreEstacion + '</style><br>');
+         $.each(vagonesFiltrados, function(i, value) {
            countVagon += 1;
-           
-        $("#rutapop").append('<br>');
-          var vagonActual = 'Vagon: '+ countVagon + ' -- ';
-          
-          $("#rutapop").append(vagonActual);
-       
+
+        $('#rutapop').append('<br>');
+          const vagonActual = 'Vagon: ' + countVagon + ' -- ';
+
+          $('#rutapop').append(vagonActual);
+
         this.verRutas(value.idVagon);
 
-        }.bind(this));     
-        
+        }.bind(this));
+
       }
 
 
-      verRutas(dato_nombreVagon){
+      verRutas(dato_nombreVagon) {
 
         console.log(dato_nombreVagon);
-        var rutasFiltradas = $.grep(this.rutas,function(value){
-          return value.idVagon == dato_nombreVagon;
+        const rutasFiltradas = $.grep(this.rutas, function(value) {
+          return value.idVagon === dato_nombreVagon;
         });
         console.log(rutasFiltradas);
-        //$("#rutaspop").empty();
-        var html = '';
-        $.each(rutasFiltradas,function(index,value){
-        html += `<div style="margin-left:10px; display:inline-block"> ${value.nombreRuta}</div>`
+        // $("#rutaspop").empty();
+        let html = '';
+        $.each(rutasFiltradas, function(index, value) {
+        html += `<div style="margin-left:10px; display:inline-block"> ${value.nombreRuta}</div>`;
         });
-        $("#rutapop").append(html);
+        $('#rutapop').append(html);
 
 
       }
@@ -116,22 +116,22 @@ export class HomesidebarComponent implements OnInit {
         console.log( this.EstacionBoton);
 
     }
-    public getVagones(){
-        this._RutasService.getJSONvagones().subscribe(data=>{
-            for(var i=0; i<=data.length-1;i++){
-                this.vagones.push((data[i])) ;}
-    })
+    public getVagones() {
+        this._RutasService.getJSONvagones().subscribe(data => {
+            for (let i = 0; i <= data.length - 1; i++) {
+                this.vagones.push((data[i])) ; }
+    });
         console.log(this.vagones);
     }
 
-    public getRutas(){
-        this._RutasService.getJSONrutas().subscribe(data=>{
-            for(var i=0; i<=data.length-1;i++){
+    public getRutas() {
+        this._RutasService.getJSONrutas().subscribe(data => {
+            for (let i = 0; i <= data.length - 1; i++) {
                 this.rutas.push((data[i]));
             }
-            
-        })
-        console.log(this.rutas)
+
+        });
+        console.log(this.rutas);
     }
 
 
