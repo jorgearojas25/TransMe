@@ -53,30 +53,12 @@ namespace WebAPI.Migrations
                 name: "Categoria",
                 columns: table => new
                 {
-                    CategoriaID = table.Column<string>(nullable: false),
+                    id = table.Column<string>(nullable: false),
                     Nombre = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Categoria", x => x.CategoriaID);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Eventos",
-                columns: table => new
-                {
-                    EventoID = table.Column<string>(nullable: false),
-                    NombreEvento = table.Column<string>(nullable: true),
-                    Descripcion = table.Column<string>(nullable: true),
-                    Fecha = table.Column<DateTime>(nullable: false),
-                    Hora = table.Column<TimeSpan>(nullable: false),
-                    Lugar = table.Column<string>(nullable: true),
-                    Estacione = table.Column<string>(nullable: true),
-                    Costo = table.Column<decimal>(nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Eventos", x => x.EventoID);
+                    table.PrimaryKey("PK_Categoria", x => x.id);
                 });
 
             migrationBuilder.CreateTable(
@@ -186,6 +168,31 @@ namespace WebAPI.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Eventos",
+                columns: table => new
+                {
+                    id = table.Column<string>(nullable: false),
+                    NombreEvento = table.Column<string>(nullable: true),
+                    Descripcion = table.Column<string>(nullable: true),
+                    CategoriaID = table.Column<string>(nullable: true),
+                    Fecha = table.Column<DateTime>(nullable: false),
+                    Hora = table.Column<TimeSpan>(nullable: false),
+                    Lugar = table.Column<string>(nullable: true),
+                    Estacion = table.Column<string>(nullable: true),
+                    Costo = table.Column<decimal>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Eventos", x => x.id);
+                    table.ForeignKey(
+                        name: "FK_Eventos_Categoria_CategoriaID",
+                        column: x => x.CategoriaID,
+                        principalTable: "Categoria",
+                        principalColumn: "id",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "UsuarioCategorias",
                 columns: table => new
                 {
@@ -201,39 +208,13 @@ namespace WebAPI.Migrations
                         name: "FK_UsuarioCategorias_Categoria_CategoriaID",
                         column: x => x.CategoriaID,
                         principalTable: "Categoria",
-                        principalColumn: "CategoriaID",
+                        principalColumn: "id",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_UsuarioCategorias_AspNetUsers_UsuarioID",
                         column: x => x.UsuarioID,
                         principalTable: "AspNetUsers",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "EventoCategorias",
-                columns: table => new
-                {
-                    Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    CategoriaID = table.Column<string>(nullable: true),
-                    EventoID = table.Column<string>(nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_EventoCategorias", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_EventoCategorias_Categoria_CategoriaID",
-                        column: x => x.CategoriaID,
-                        principalTable: "Categoria",
-                        principalColumn: "CategoriaID",
-                        onDelete: ReferentialAction.Restrict);
-                    table.ForeignKey(
-                        name: "FK_EventoCategorias_Eventos_EventoID",
-                        column: x => x.EventoID,
-                        principalTable: "Eventos",
-                        principalColumn: "EventoID",
                         onDelete: ReferentialAction.Restrict);
                 });
 
@@ -253,7 +234,7 @@ namespace WebAPI.Migrations
                         name: "FK_UsuarioEventos_Eventos_EventoID",
                         column: x => x.EventoID,
                         principalTable: "Eventos",
-                        principalColumn: "EventoID",
+                        principalColumn: "id",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_UsuarioEventos_AspNetUsers_UsuarioID",
@@ -303,14 +284,9 @@ namespace WebAPI.Migrations
                 filter: "[NormalizedUserName] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
-                name: "IX_EventoCategorias_CategoriaID",
-                table: "EventoCategorias",
+                name: "IX_Eventos_CategoriaID",
+                table: "Eventos",
                 column: "CategoriaID");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_EventoCategorias_EventoID",
-                table: "EventoCategorias",
-                column: "EventoID");
 
             migrationBuilder.CreateIndex(
                 name: "IX_UsuarioCategorias_CategoriaID",
@@ -351,9 +327,6 @@ namespace WebAPI.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
-                name: "EventoCategorias");
-
-            migrationBuilder.DropTable(
                 name: "UsuarioCategorias");
 
             migrationBuilder.DropTable(
@@ -363,13 +336,13 @@ namespace WebAPI.Migrations
                 name: "AspNetRoles");
 
             migrationBuilder.DropTable(
-                name: "Categoria");
-
-            migrationBuilder.DropTable(
                 name: "Eventos");
 
             migrationBuilder.DropTable(
                 name: "AspNetUsers");
+
+            migrationBuilder.DropTable(
+                name: "Categoria");
         }
     }
 }

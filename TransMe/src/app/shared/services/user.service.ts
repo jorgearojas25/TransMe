@@ -25,13 +25,14 @@ export class UserService {
   });
 
   eventForm=this.fb2.group({
-    EventoID:[''],
+    id:[''],
     NombreEvento:[''],
     Descripcion:[''],
+    CategoriaID:[''],
     Fecha:[''],
     Hora:[''],
     Lugar:[''],
-    Estacione:[''],
+    Estacion:[''],
     Costo:['']
   });
 
@@ -71,16 +72,19 @@ export class UserService {
       EventoID:this.eventForm.value.EventoID,
       NombreEvento:this.eventForm.value.NombreEvento,
       Descripcion:this.eventForm.value.Descripcion,
+      CategoriaID:this.eventForm.value.CategoriaID,
       Fecha:this.eventForm.value.Fecha,
       Hora:this.eventForm.value.Hora,
       Lugar:this.eventForm.value.Lugar,
-      EstacionesID:this.eventForm.value.EstacionesID,
+      Estacion:this.eventForm.value.Estacion,
       Costo:this.eventForm.value.Costo
     }
 
     return this.http.post(this.BaseURI+'/Evento',body2);
 
   }
+
+
 
   roleMatch(allowedRoles): boolean {
     var isMatch = false;

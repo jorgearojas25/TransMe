@@ -2,21 +2,25 @@
 
 <app-homeheader></app-homeheader>
 <app-homesidebar></app-homesidebar>
-<section class="main-container" [ngClass]="{collapsed: collapedSideBar}">
+<section class="main-container" [ngClass]="{collapsed: collapedSideBar}" style="background-image: url(../../../assets/images/fondo.png);">
    
-    
-    <div class="row">
+    <div class="row" id="homerow">
+
         <div class="col-12 col-md-8">
             <app-homerutas></app-homerutas>
         </div>
         
         <div class="col-12 col-md-8">
             <app-mapa></app-mapa>
+            <br>
         </div>
         <div class="col-9 col-md-3">
             <app-slider></app-slider>
+            <br>
+            <br>
         </div>
+            <app-homefooter></app-homefooter>
+        
     </div>
-    <br>
     
 </section>

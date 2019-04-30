@@ -1,18 +1,17 @@
 <div class="container">
-  <div class="card m-5" style="width:18rem" *ngIf="userDetails">
+  <!-- <div class="card m-5" style="width:18rem" *ngIf="userDetails">
     <ul class="list-group">
       <li class="list-group-item"><strong>Username : </strong>{{userDetails.userName}}</li>
       <li class="list-group-item"><strong>FullName : </strong>{{userDetails.fullName}}</li>
       <li class="list-group-item"><strong>Email : </strong>{{userDetails.email}}</li>
       <li class="list-group-item"><strong>id : </strong>{{userDetails.id}}</li> 
     </ul>
-  </div>
+  </div> -->
+  <div class="row">
+  <div class="col-xl-2"></div>
+  <div class="col-xl-8">
   <form role="form" [formGroup]="service.eventForm" autocomplete="off" (submit)="onSubmit()">
     <div class="form-content">
-      <div class="form-group required">
-        <label>ID Evento</label>
-        <input class="form-control input-underline input-lg" formControlName="EventoID">
-      </div>
       <div class="form-group required">
         <label>Nombre Evento</label>
         <input class="form-control input-underline input-lg" formControlName="NombreEvento">
@@ -20,6 +19,12 @@
       <div class="form-group required">
         <label>Descripcion</label>
         <input class="form-control input-underline input-lg" formControlName="Descripcion">
+      </div>
+      <div class="form-group required">
+        <label>Categoria </label>
+        <select name="categorias" formControlName="CategoriaID">
+            <option *ngFor="let c of categoria.list" value="{{c.id}}">{{c.nombre}}</option>
+          </select>
       </div>
       <div class="form-group required">
         <label>Fecha</label>
@@ -35,7 +40,7 @@
       </div>
       <div class="form-group required">
         <label>Estacion Cercana</label>
-        <input class="form-control input-underline input-lg" formControlName="Estacione">
+        <input class="form-control input-underline input-lg" formControlName="Estacion">
       </div>
       <div class="form-group required">
         <label>Costo</label>
@@ -43,5 +48,7 @@
       </div> 
       <div class="form-group col-md-8 offset-md-2">
         <button type="submit" [disabled]="!service.eventForm.valid" class="btn rounded-btn">CREAR EVENTO</button>&nbsp;
-</div>
+      </div>
+    </div>
+
 

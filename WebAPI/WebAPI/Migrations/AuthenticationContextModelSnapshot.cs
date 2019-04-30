@@ -191,26 +191,28 @@ namespace WebAPI.Migrations
 
             modelBuilder.Entity("WebAPI.Models.Categoria", b =>
                 {
-                    b.Property<string>("CategoriaID")
+                    b.Property<string>("id")
                         .ValueGeneratedOnAdd();
 
                     b.Property<string>("Nombre");
 
-                    b.HasKey("CategoriaID");
+                    b.HasKey("id");
 
                     b.ToTable("Categoria");
                 });
 
             modelBuilder.Entity("WebAPI.Models.Evento", b =>
                 {
-                    b.Property<string>("EventoID")
+                    b.Property<string>("id")
                         .ValueGeneratedOnAdd();
+
+                    b.Property<string>("CategoriaID");
 
                     b.Property<decimal>("Costo");
 
                     b.Property<string>("Descripcion");
 
-                    b.Property<string>("Estacione");
+                    b.Property<string>("Estacion");
 
                     b.Property<DateTime>("Fecha");
 
@@ -220,28 +222,11 @@ namespace WebAPI.Migrations
 
                     b.Property<string>("NombreEvento");
 
-                    b.HasKey("EventoID");
-
-                    b.ToTable("Eventos");
-                });
-
-            modelBuilder.Entity("WebAPI.Models.EventoCategoria", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("CategoriaID");
-
-                    b.Property<string>("EventoID");
-
-                    b.HasKey("Id");
+                    b.HasKey("id");
 
                     b.HasIndex("CategoriaID");
 
-                    b.HasIndex("EventoID");
-
-                    b.ToTable("EventoCategorias");
+                    b.ToTable("Eventos");
                 });
 
             modelBuilder.Entity("WebAPI.Models.UsuarioCategoria", b =>
@@ -339,15 +324,11 @@ namespace WebAPI.Migrations
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
-            modelBuilder.Entity("WebAPI.Models.EventoCategoria", b =>
+            modelBuilder.Entity("WebAPI.Models.Evento", b =>
                 {
                     b.HasOne("WebAPI.Models.Categoria", "Categoria")
                         .WithMany()
                         .HasForeignKey("CategoriaID");
-
-                    b.HasOne("WebAPI.Models.Evento", "Evento")
-                        .WithMany()
-                        .HasForeignKey("EventoID");
                 });
 
             modelBuilder.Entity("WebAPI.Models.UsuarioCategoria", b =>

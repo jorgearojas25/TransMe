@@ -275,8 +275,8 @@
     {"idVagon":"General Santander1","numeroVagon":"1","nombreEstacion":"General Santander","tipoVagon":"1"},
     {"idVagon":"General Santander2","numeroVagon":"2","nombreEstacion":"General Santander","tipoVagon":"1"},
 
-    {"idVagon":"La Despensa1","numeroVagon":"1","nombreEstacion":"La Despensa","tipoVagon":"1"},
-    {"idVagon":"La Despensa2","numeroVagon":"2","nombreEstacion":"La Despensa","tipoVagon":"1"},
+    {"idVagon":"La Despensa1","numeroVagon":"1","nombreEstacion":"LA DESPENSA","tipoVagon":"1"},
+    {"idVagon":"La Despensa2","numeroVagon":"2","nombreEstacion":"LA DESPENSA","tipoVagon":"1"},
 
     {"idVagon":"León XIII_1","numeroVagon":"1","nombreEstacion":"León XIII","tipoVagon":"1"},
     {"idVagon":"León XIII_2","numeroVagon":"2","nombreEstacion":"León XIII","tipoVagon":"1"},

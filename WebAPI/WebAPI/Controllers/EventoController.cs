@@ -55,7 +55,7 @@ namespace WebAPI.Controllers
                 return BadRequest(ModelState);
             }
 
-            if (id != evento.EventoID)
+            if (id != evento.id)
             {
                 return BadRequest();
             }
@@ -93,7 +93,7 @@ namespace WebAPI.Controllers
             _context.Eventos.Add(evento);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetEvento", new { id = evento.EventoID }, evento);
+            return CreatedAtAction("GetEvento", new { id = evento.id }, evento);
         }
 
         // DELETE: api/Evento/5
@@ -119,7 +119,7 @@ namespace WebAPI.Controllers
 
         private bool EventoExists(string id)
         {
-            return _context.Eventos.Any(e => e.EventoID == id);
+            return _context.Eventos.Any(e => e.id == id);
         }
     }
 }

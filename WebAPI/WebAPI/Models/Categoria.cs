@@ -7,7 +7,7 @@ namespace WebAPI.Models
 {
     public class Categoria
     {
-        public string CategoriaID { get; set; }
+        public string id { get; set; }
         public string Nombre { get; set; }
     }
 }

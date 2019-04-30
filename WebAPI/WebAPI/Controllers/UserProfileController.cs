@@ -46,7 +46,7 @@ namespace WebAPI.Controllers
                            join ue in _context.UsuarioEventos
                            on u.Id equals ue.UsuarioID
                            join e in _context.Eventos
-                           on ue.EventoID equals e.EventoID
+                           on ue.EventoID equals e.id
                            select new {
                                id_Usuario = u.Id,
                                Nombre_Usuario = u.FullName,
