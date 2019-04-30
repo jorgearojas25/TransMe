@@ -33,13 +33,15 @@ export class MapaComponent implements OnInit {
    jsonDA2: any[] = [];
    arrayRutas2: any[] = [];
    latLon: any[] = [];
+   rutaImages:any[]=[];
 
 
   ngOnInit() {
     this.Troncal = this._TroncalesService.getTroncales();
     this.latLon = this._TroncalesService.getLatLon();
     console.log(this.latLon);
-
+    this.getBuscarImagen();
+    this.buscarImagen('1');
 
   }
 
@@ -50,6 +52,7 @@ export class MapaComponent implements OnInit {
     $.each(data.result.records, function(i, item) {
 
       jsonDA.push({
+        
         Estacion: item.Name,
         Troncal: item.Corredor,
         Codigo: item.Id,
@@ -65,8 +68,8 @@ export class MapaComponent implements OnInit {
     }
 
 });
-console.log(this.arrayRutas2);
 
+console.log(this.arrayRutas2);
 
 }
 
@@ -94,6 +97,22 @@ resetMap(lati: number , long: number, zoom2: number) {
   this.lat = lati;
   this.lng = long;
   this.zoom = zoom2;
+}
+
+buscarImagen(id_ruta){
+    console.log(this.rutaImages);
+    console.log(id_ruta);
+    const rutaimagen=$.grep(this.rutaImages,function(value){
+      return value.idRuta === id_ruta;
+    });
+    console.log(rutaimagen);
+}
+
+getBuscarImagen(){
+  this._TroncalesService.buscarImagen().subscribe(data=>{
+    for (let i = 0; i <= data.length - 1; i++) {
+      this.rutaImages.push((data[i])) ; }
+      });
 }
 
 }

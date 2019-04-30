@@ -1,4 +1,8 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs/internal/Observable';
+
+
 
 declare var $: any;
 const troncales: any[] = [];
@@ -19,7 +23,7 @@ export class TroncalesService {
   private TroncalBoton: any[] = [];
   private latLonMapa: any[] = [];
 
-  constructor() {
+  constructor(private http: HttpClient) {
 
     $.getJSON('http://datosabiertos.bogota.gov.co/api/3/action/datastore_search?resource_id=d0775af7-1706-4404-8bea-387194287d73&limit=1000', function(data) {
 
@@ -34,7 +38,7 @@ export class TroncalesService {
           });
           troncales.push(item.Corredor);
           estaciones.push(item.Name);
-          latLon.push({Estacion: item.Name, Lat: item.Latitud.replace(',', '.').replace('*', ''), Lon: item.Longitud.replace(',', '.').replace('*', ''),Troncal: item.Corredor});
+          latLon.push({Estacion: item.Name, Lat: item.Latitud.replace(',', '.').replace('*', ''), Lon: item.Longitud.replace(',', '.').replace('*', ''),Troncal: item.Corredor,Id:item.Id});
 
 
 
@@ -92,6 +96,11 @@ export class TroncalesService {
       return estacionesTroncalesFiltradas;
 
 
+    }
+
+    buscarImagen(): Observable<any> {
+      return this.http.get('./assets/json/imagenesjson.json');
+    
     }
 
 }
