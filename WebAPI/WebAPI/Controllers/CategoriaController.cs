@@ -11,56 +11,56 @@ namespace WebAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class EventoController : ControllerBase
+    public class CategoriaController : ControllerBase
     {
         private readonly AuthenticationContext _context;
 
-        public EventoController(AuthenticationContext context)
+        public CategoriaController(AuthenticationContext context)
         {
             _context = context;
         }
 
-        // GET: api/Evento
+        // GET: api/Categoria
         [HttpGet]
-        public IEnumerable<Evento> GetEventos()
+        public IEnumerable<Categoria> GetCategoria()
         {
-            return _context.Eventos;
+            return _context.Categoria;
         }
 
-        // GET: api/Evento/5
+        // GET: api/Categoria/5
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetEvento([FromRoute] string id)
+        public async Task<IActionResult> GetCategoria([FromRoute] string id)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            var evento = await _context.Eventos.FindAsync(id);
+            var categoria = await _context.Categoria.FindAsync(id);
 
-            if (evento == null)
+            if (categoria == null)
             {
                 return NotFound();
             }
 
-            return Ok(evento);
+            return Ok(categoria);
         }
 
-        // PUT: api/Evento/5
+        // PUT: api/Categoria/5
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutEvento([FromRoute] string id, [FromBody] Evento evento)
+        public async Task<IActionResult> PutCategoria([FromRoute] string id, [FromBody] Categoria categoria)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            if (id != evento.id)
+            if (id != categoria.id)
             {
                 return BadRequest();
             }
 
-            _context.Entry(evento).State = EntityState.Modified;
+            _context.Entry(categoria).State = EntityState.Modified;
 
             try
             {
@@ -68,7 +68,7 @@ namespace WebAPI.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!EventoExists(id))
+                if (!CategoriaExists(id))
                 {
                     return NotFound();
                 }
@@ -81,45 +81,45 @@ namespace WebAPI.Controllers
             return NoContent();
         }
 
-        // POST: api/Evento
+        // POST: api/Categoria
         [HttpPost]
-        public async Task<IActionResult> PostEvento([FromBody] Evento evento)
+        public async Task<IActionResult> PostCategoria([FromBody] Categoria categoria)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            _context.Eventos.Add(evento);
+            _context.Categoria.Add(categoria);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetEvento", new { id = evento.id }, evento);
+            return CreatedAtAction("GetCategoria", new { id = categoria.id }, categoria);
         }
 
-        // DELETE: api/Evento/5
+        // DELETE: api/Categoria/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteEvento([FromRoute] string id)
+        public async Task<IActionResult> DeleteCategoria([FromRoute] string id)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            var evento = await _context.Eventos.FindAsync(id);
-            if (evento == null)
+            var categoria = await _context.Categoria.FindAsync(id);
+            if (categoria == null)
             {
                 return NotFound();
             }
 
-            _context.Eventos.Remove(evento);
+            _context.Categoria.Remove(categoria);
             await _context.SaveChangesAsync();
 
-            return Ok(evento);
+            return Ok(categoria);
         }
 
-        private bool EventoExists(string id)
+        private bool CategoriaExists(string id)
         {
-            return _context.Eventos.Any(e => e.id == id);
+            return _context.Categoria.Any(e => e.id == id);
         }
     }
 }

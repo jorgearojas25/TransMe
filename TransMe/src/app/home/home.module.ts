@@ -14,10 +14,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomerutasComponent } from './home/homerutas/homerutas.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SliderComponent } from './home/slider/slider.component';
+import { HomefooterComponent } from './home/homefooter/homefooter.component';
 
 
 @NgModule({
-  declarations: [HomeComponent, HomeheaderComponent, HomesidebarComponent, MapaComponent, BusquedasComponent, HomerutasComponent, SliderComponent, ],
+  declarations: [HomeComponent, HomeheaderComponent, HomesidebarComponent, MapaComponent, BusquedasComponent, HomerutasComponent, SliderComponent, HomefooterComponent, ],
   imports: [
     CommonModule,
     HttpClientModule,

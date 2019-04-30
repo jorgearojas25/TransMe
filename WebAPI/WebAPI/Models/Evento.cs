@@ -8,13 +8,16 @@ namespace WebAPI.Models
 {
     public class Evento
     {
-        public string EventoID { get; set; }
+        public string id { get; set; }
         public string NombreEvento { get; set; }
         public string Descripcion { get; set; }
+        public string CategoriaID { get; set; }
+        public Categoria Categoria { get; set; }
         public DateTime Fecha { get; set; }
         public TimeSpan Hora { get; set; }
         public string Lugar { get; set; }
-        public string Estacione { get; set; }
+        public string Estacion { get; set; }
         public decimal Costo { get; set; }
+        
     }
 }

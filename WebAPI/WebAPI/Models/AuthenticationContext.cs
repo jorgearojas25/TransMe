@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using WebAPI.Models;
 
 namespace WebAPI.Models
 {
@@ -17,8 +18,8 @@ namespace WebAPI.Models
         public DbSet<ApplicationUser> ApplicationUsers { get; set; }
         public DbSet<Evento> Eventos { get; set; }
         public DbSet<UsuarioEvento> UsuarioEventos { get; set; }
-        public DbSet<EventoCategoria> EventoCategorias { get; set; }
         public DbSet<UsuarioCategoria> UsuarioCategorias { get; set; }
+        public DbSet<WebAPI.Models.Categoria> Categoria { get; set; }
 
 
 

@@ -25,13 +25,14 @@ export class UserService {
   });
 
   eventForm=this.fb2.group({
-    EventoID:[''],
+    id:[''],
     NombreEvento:[''],
     Descripcion:[''],
+    CategoriaID:[''],
     Fecha:[''],
     Hora:[''],
     Lugar:[''],
-    Estacione:[''],
+    Estacion:[''],
     Costo:['']
   });
 
@@ -81,6 +82,8 @@ export class UserService {
     return this.http.post(this.BaseURI+'/Evento',body2);
 
   }
+
+
 
   roleMatch(allowedRoles): boolean {
     var isMatch = false;
