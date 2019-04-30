@@ -39,10 +39,7 @@ export class MapaComponent implements OnInit {
     this.Troncal = this._TroncalesService.getTroncales();
     this.latLon = this._TroncalesService.getLatLon();
     console.log(this.latLon);
- 
-$('#estacionCambio').on('change', function() {
-  alert('eatoy vivo');
-});
+
   }
 
   // tslint:disable-next-line:max-line-length
@@ -68,22 +65,11 @@ $('#estacionCambio').on('change', function() {
 
 });
 console.log(this.arrayRutas2);
-
-
-}
-
-buscar() {
-  
-  this.latLon.forEach(element => {
-     
-   if(element.Estacion == $('#estacionCambio').val()){
-    alert("latitud"+element.Lat+"longitud"+element.Lon);
-      this.resetMap(element.Lat, element.Lon,15);
-   }
- });
+$( "#estacionCambio" ).text.change(function() {
+  alert( "Handler for .change() called." );
+});
 
 }
-
 comprobar(vagon: string, Estacion: string) {
   if (vagon.indexOf(Estacion)) {
     return true;
@@ -97,5 +83,4 @@ resetMap(lati: number , long: number, zoom2: number) {
   this.lng = long;
   this.zoom = zoom2;
 }
-
 }

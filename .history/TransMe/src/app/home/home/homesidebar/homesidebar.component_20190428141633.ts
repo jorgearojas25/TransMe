@@ -3,6 +3,7 @@ import { Router, NavigationEnd } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { TroncalesService } from '../../../shared/services/troncales.service';
 import { RutasService } from 'src/app/shared/services/rutas.service';
+import { Subject } from 'ts-observer-pattern';
 
 declare var $: any;
 
@@ -13,7 +14,7 @@ declare var $: any;
 })
 export class HomesidebarComponent implements OnInit {
 
-
+    private Observers: Observers[];
     TroncalBoton: any[] = [];
     EstacionBoton: any[] = [];
     rutas:any[] =[];
@@ -55,15 +56,11 @@ export class HomesidebarComponent implements OnInit {
     clearInfo(){
 
         $('#rutapop').empty();
-        $('#estacionCambio').val('');
     }
 
     getinfo(info){
-        $('#estacionCambio').attr('value', info); 
-        $('#estacionCambio').click();
         $('#rutapop').append(info);
-        this.verVagones(info);        
-         
+        this.verVagones(info);
       }
 
      
@@ -173,6 +170,12 @@ export class HomesidebarComponent implements OnInit {
 
     onLoggedout() {
         localStorage.removeItem('isLoggedin');
+    }
+    public publish()
+    {
+        //Some code here
+        this.Observer.notify("New edition available") //Here I passed a string,
+        //but you can pass any data you want
     }
 
 

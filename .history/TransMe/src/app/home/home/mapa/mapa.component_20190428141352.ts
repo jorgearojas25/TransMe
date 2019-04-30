@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild ,Input} from '@angular/core';
 import { google } from '@agm/core/services/google-maps-types';
 
 import { mapChildrenIntoArray } from '@angular/router/src/url_tree';
@@ -6,6 +6,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { TroncalesService } from '../../../shared/services/troncales.service';
 import { Router } from '@angular/router';
 import { RutasService } from 'src/app/shared/services/rutas.service';
+import { Subject } from 'ts-observer-pattern';
 
 
 
@@ -21,8 +22,9 @@ const arrayRutas: any[] = [];
   selector: 'app-mapa',
   templateUrl: './mapa.component.html',
   styleUrls: ['./mapa.component.scss']
-})
-export class MapaComponent implements OnInit {
+})   
+
+export class MapaComponent implements OnInit ,   {
   lat = 4.6597100;
   lng = -74.0917500;
   zoom = 11;
@@ -39,15 +41,13 @@ export class MapaComponent implements OnInit {
     this.Troncal = this._TroncalesService.getTroncales();
     this.latLon = this._TroncalesService.getLatLon();
     console.log(this.latLon);
- 
-$('#estacionCambio').on('change', function() {
-  alert('eatoy vivo');
-});
+
   }
 
   // tslint:disable-next-line:max-line-length
   constructor(private translate: TranslateService, public router: Router, private _TroncalesService: TroncalesService , private _RutasService: RutasService) {
    // tslint:disable-next-line:max-line-length
+
    $.getJSON('http://datosabiertos.bogota.gov.co/api/3/action/datastore_search?resource_id=d0775af7-1706-4404-8bea-387194287d73&limit=1000', function(data) {
     $.each(data.result.records, function(i, item) {
 
@@ -71,19 +71,6 @@ console.log(this.arrayRutas2);
 
 
 }
-
-buscar() {
-  
-  this.latLon.forEach(element => {
-     
-   if(element.Estacion == $('#estacionCambio').val()){
-    alert("latitud"+element.Lat+"longitud"+element.Lon);
-      this.resetMap(element.Lat, element.Lon,15);
-   }
- });
-
-}
-
 comprobar(vagon: string, Estacion: string) {
   if (vagon.indexOf(Estacion)) {
     return true;
@@ -97,5 +84,4 @@ resetMap(lati: number , long: number, zoom2: number) {
   this.lng = long;
   this.zoom = zoom2;
 }
-
 }

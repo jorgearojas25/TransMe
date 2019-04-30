@@ -3,6 +3,7 @@ import { Router, NavigationEnd } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { TroncalesService } from '../../../shared/services/troncales.service';
 import { RutasService } from 'src/app/shared/services/rutas.service';
+import { Subject } from 'ts-observer-pattern';
 
 declare var $: any;
 
@@ -11,9 +12,9 @@ declare var $: any;
   templateUrl: './homesidebar.component.html',
   styleUrls: ['./homesidebar.component.scss']
 })
-export class HomesidebarComponent implements OnInit {
+export class HomesidebarComponent extends Subject implements OnInit {
 
-
+    private Observers: Observers[];
     TroncalBoton: any[] = [];
     EstacionBoton: any[] = [];
     rutas:any[] =[];
@@ -26,7 +27,9 @@ export class HomesidebarComponent implements OnInit {
 
     @Output() collapsedEvent = new EventEmitter<boolean>();
 
+    // tslint:disable-next-line:max-line-length
     constructor(private translate: TranslateService, public router: Router, private _TroncalesService: TroncalesService,private _RutasService:RutasService) {
+        super();
         this.router.events.subscribe(val => {
             if (
                 val instanceof NavigationEnd &&
@@ -55,15 +58,11 @@ export class HomesidebarComponent implements OnInit {
     clearInfo(){
 
         $('#rutapop').empty();
-        $('#estacionCambio').val('');
     }
 
     getinfo(info){
-        $('#estacionCambio').attr('value', info); 
-        $('#estacionCambio').click();
         $('#rutapop').append(info);
-        this.verVagones(info);        
-         
+        this.verVagones(info);
       }
 
      
@@ -173,6 +172,12 @@ export class HomesidebarComponent implements OnInit {
 
     onLoggedout() {
         localStorage.removeItem('isLoggedin');
+    }
+    public publish()
+    {
+        //Some code here
+        this.Observer.notify("New edition available") //Here I passed a string,
+        //but you can pass any data you want
     }
 
 
