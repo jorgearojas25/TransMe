@@ -41,7 +41,6 @@ export class MapaComponent implements OnInit {
     this.latLon = this._TroncalesService.getLatLon();
     console.log(this.latLon);
     this.getBuscarImagen();
-    this.buscarImagen('1');
 
   }
 
@@ -100,12 +99,14 @@ resetMap(lati: number , long: number, zoom2: number) {
 }
 
 buscarImagen(id_ruta){
+    id_ruta=id_ruta.toString();
     console.log(this.rutaImages);
     console.log(id_ruta);
     const rutaimagen=$.grep(this.rutaImages,function(value){
       return value.idRuta === id_ruta;
     });
     console.log(rutaimagen);
+    return rutaimagen;
 }
 
 getBuscarImagen(){
