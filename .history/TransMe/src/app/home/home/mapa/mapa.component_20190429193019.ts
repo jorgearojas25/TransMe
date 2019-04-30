@@ -73,12 +73,12 @@ console.log(this.arrayRutas2);
 }
 
 buscar() {
-  
   this.latLon.forEach(element => {
-     
+    console.log('trocales');
+    console.log(element.Estacion);
+    console.log($('#estacionCambio').val());
    if(element.Estacion == $('#estacionCambio').val()){
-    alert("latitud"+element.Lat+"longitud"+element.Lon);
-      this.resetMap(element.Lat, element.Lon,15);
+    alert('lo logre' + $('#estacionCambio').val());
    }
  });
 

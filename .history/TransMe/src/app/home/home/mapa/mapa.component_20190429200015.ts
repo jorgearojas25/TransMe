@@ -77,8 +77,8 @@ buscar() {
   this.latLon.forEach(element => {
      
    if(element.Estacion == $('#estacionCambio').val()){
-    alert("latitud"+element.Lat+"longitud"+element.Lon);
-      this.resetMap(element.Lat, element.Lon,15);
+    alert(element);
+      this.resetMap(element.lat, element.lon,15);
    }
  });
 

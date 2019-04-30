@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild ,Input} from '@angular/core';
 import { google } from '@agm/core/services/google-maps-types';
 
 import { mapChildrenIntoArray } from '@angular/router/src/url_tree';
@@ -10,19 +10,28 @@ import { RutasService } from 'src/app/shared/services/rutas.service';
 
 
 
+
 declare var lat: any;
 declare var $: any;
 const jsonDA: any[] = [];
 const arrayRutas: any[] = [];
 
-
+interface Observer {
+  uniqueID: string;
+  update(): void;
+}
 
 @Component({
   selector: 'app-mapa',
   templateUrl: './mapa.component.html',
   styleUrls: ['./mapa.component.scss']
-})
-export class MapaComponent implements OnInit {
+})   
+
+export class MapaComponent implements OnInit , Observer  {
+  uniqueID: string;
+  update(): void {
+    throw new Error('Method not implemented.');
+  }
   lat = 4.6597100;
   lng = -74.0917500;
   zoom = 11;
@@ -39,15 +48,13 @@ export class MapaComponent implements OnInit {
     this.Troncal = this._TroncalesService.getTroncales();
     this.latLon = this._TroncalesService.getLatLon();
     console.log(this.latLon);
- 
-$('#estacionCambio').on('change', function() {
-  alert('eatoy vivo');
-});
+
   }
 
   // tslint:disable-next-line:max-line-length
-  constructor(private translate: TranslateService, public router: Router, private _TroncalesService: TroncalesService , private _RutasService: RutasService) {
+  constructor(uniqueID: string,private translate: TranslateService, public router: Router, private _TroncalesService: TroncalesService , private _RutasService: RutasService) {
    // tslint:disable-next-line:max-line-length
+   this.uniqueID = uniqueID;
    $.getJSON('http://datosabiertos.bogota.gov.co/api/3/action/datastore_search?resource_id=d0775af7-1706-4404-8bea-387194287d73&limit=1000', function(data) {
     $.each(data.result.records, function(i, item) {
 
@@ -71,19 +78,6 @@ console.log(this.arrayRutas2);
 
 
 }
-
-buscar() {
-  
-  this.latLon.forEach(element => {
-     
-   if(element.Estacion == $('#estacionCambio').val()){
-    alert("latitud"+element.Lat+"longitud"+element.Lon);
-      this.resetMap(element.Lat, element.Lon,15);
-   }
- });
-
-}
-
 comprobar(vagon: string, Estacion: string) {
   if (vagon.indexOf(Estacion)) {
     return true;
@@ -97,5 +91,4 @@ resetMap(lati: number , long: number, zoom2: number) {
   this.lng = long;
   this.zoom = zoom2;
 }
-
 }

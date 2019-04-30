@@ -55,15 +55,11 @@ export class HomesidebarComponent implements OnInit {
     clearInfo(){
 
         $('#rutapop').empty();
-        $('#estacionCambio').val('');
     }
 
     getinfo(info){
-        $('#estacionCambio').attr('value', info); 
-        $('#estacionCambio').click();
         $('#rutapop').append(info);
-        this.verVagones(info);        
-         
+        this.verVagones(info);
       }
 
      
