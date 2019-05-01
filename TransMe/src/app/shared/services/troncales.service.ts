@@ -77,6 +77,9 @@ export class TroncalesService {
     getLatLon() {
       return this.latLonMapa = latLon;
     }
+    getEstacion(){
+      return estaciones;
+    }
 
     getEstaciones(dato) {
 

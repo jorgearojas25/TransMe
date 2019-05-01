@@ -2,16 +2,21 @@ import { Component, OnInit } from '@angular/core';
 import { UserService } from 'src/app/shared/services/user.service';
 import { ToastrService } from 'ngx-toastr';
 import { CategoriaService } from 'src/app/shared/services/categoria.service';
+import {NgbDateAdapter, NgbDateStruct, NgbDateNativeAdapter} from '@ng-bootstrap/ng-bootstrap';
+import { TroncalesService } from '../../shared/services/troncales.service';
 
 @Component({
   selector: 'app-admin',
   templateUrl: './admin.component.html',
-  styleUrls: ['./admin.component.scss']
+  styleUrls: ['./admin.component.scss'],
+  providers: [{provide: NgbDateAdapter, useClass: NgbDateNativeAdapter}]
 })
 export class AdminComponent implements OnInit {
   userDetails;
+  model: Date;
+  estaciones:any[];
 
-  constructor(public service: UserService, private toastr:ToastrService, public categoria: CategoriaService) { }
+  constructor(public service: UserService, private toastr:ToastrService, public categoria: CategoriaService, public servicioestaciones:TroncalesService) { }
 
   ngOnInit() {
     this.service.eventForm.reset();
@@ -24,6 +29,10 @@ export class AdminComponent implements OnInit {
       },
     );
     this.categoria.getList();
+
+    this.estaciones = this.servicioestaciones.getEstacion()
+    console.log(this.estaciones);
+    
   }
 
   onSubmit(){

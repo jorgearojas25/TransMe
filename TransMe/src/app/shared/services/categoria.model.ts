@@ -1,4 +1,5 @@
 export class Categoria {
     id: String;
-    nombre:String;
+    nombre: String;
+    color: String;
 }
