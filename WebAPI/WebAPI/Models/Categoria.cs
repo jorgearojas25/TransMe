@@ -10,5 +10,6 @@ namespace WebAPI.Models
         public string id { get; set; }
         public string Nombre { get; set; }
         public string color { get; set; }
+        public string bsadd { get; set; }
     }
 }

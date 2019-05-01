@@ -105,8 +105,13 @@ buscarImagen(id_ruta){
     const rutaimagen=$.grep(this.rutaImages,function(value){
       return value.idRuta === id_ruta;
     });
+    const rutaimagenURL=rutaimagen.map(a=>a.URL);
+    const ruta='"../../../../'+rutaimagenURL+'"';
     console.log(rutaimagen);
-    return rutaimagen;
+    console.log(rutaimagenURL);
+    console.log(ruta);
+    $("#img").append('<img style="width:70%" src='+ruta+'>');
+
 }
 
 getBuscarImagen(){
@@ -114,6 +119,10 @@ getBuscarImagen(){
     for (let i = 0; i <= data.length - 1; i++) {
       this.rutaImages.push((data[i])) ; }
       });
+}
+
+cleanImage(){
+  $("#img").empty();
 }
 
 }
