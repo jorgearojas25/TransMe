@@ -5,23 +5,23 @@
             <div class="col-sm-12 col-lg-10">
                 <agm-map  [latitude]="lat" [longitude]="lng" [styles]='[{"featureType":"poi","elementType":"all","stylers":[{"hue":"#000000"},{"saturation":-100},{"lightness":-100},{"visibility":"off"}]},{"featureType":"poi","elementType":"all","stylers":[{"hue":"#000000"},{"saturation":-100},{"lightness":-100},{"visibility":"off"}]},{"featureType":"administrative","elementType":"all","stylers":[{"hue":"#000000"},{"saturation":0},{"lightness":-100},{"visibility":"off"}]},{"featureType":"road","elementType":"labels","stylers":[{"hue":"#ffffff"},{"saturation":-100},{"lightness":100},{"visibility":"off"}]},{"featureType":"water","elementType":"labels","stylers":[{"hue":"#000000"},{"saturation":-100},{"lightness":-100},{"visibility":"off"}]},{"featureType":"road.local","elementType":"all","stylers":[{"hue":"#ffffff"},{"saturation":-100},{"lightness":100},{"visibility":"on"}]},{"featureType":"water","elementType":"geometry","stylers":[{"hue":"#ffffff"},{"saturation":-100},{"lightness":100},{"visibility":"on"}]},{"featureType":"transit","elementType":"labels","stylers":[{"hue":"#000000"},{"saturation":0},{"lightness":-100},{"visibility":"off"}]},{"featureType":"landscape","elementType":"labels","stylers":[{"hue":"#000000"},{"saturation":-100},{"lightness":-100},{"visibility":"off"}]},{"featureType":"road","elementType":"geometry","stylers":[{"hue":"#bbbbbb"},{"saturation":-100},{"lightness":26},{"visibility":"on"}]},{"featureType":"landscape","elementType":"geometry","stylers":[{"hue":"#dddddd"},{"saturation":-100},{"lightness":-3},{"visibility":"on"}]}]' [zoom]="zoom" id="mapa" >
                         <div *ngFor="let place of latLon; let i = index">
-                        <agm-marker  *ngIf="place.Troncal=='NQS Sur'"  [latitude]="place.Lat" [longitude]="place.Lon" [title]="place.Estacion" [iconUrl]="'/assets/points/point1.png'" (markerClick)='buscarImagen(i+1);resetMap(place.Lat,place.Lon,15)' id="index" value="place.Estacion">
+                        <agm-marker  *ngIf="place.Troncal=='NQS Sur'"  [latitude]="place.Lat" [longitude]="place.Lon" [title]="place.Estacion" [iconUrl]="'/assets/points/point1.png'" (markerClick)='resetMap(place.Lat,place.Lon,15)' id="index" value="place.Estacion">
 
                             <agm-info-window (infoWindowClose)='cleanImage();resetMap(4.6597100,-74.0917500,11)'>
                                    
                                 <div class="container">
                                     <div class="row">
-                                    <div class="col-sm-0 col-lg-4 ">
-                                        <div id="img"></div>
+                                    <div class="col-sm-0 col-lg-6 ">
+                                        <img src='{{place.imagen}}' style="width:100%">
                                     </div>
-                                    <div class= "col-lg-8">
+                                    <div class= "col-lg-6">
                                         <div class="row">
                                         <strong style="align-items: center;">{{place.Estacion}}</strong></div>
                                         <div class="row">
                                         <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo" style="width: 100%; height: 30px;">Rutas</button>
                                         <div id="demo" class="collapse">
                                                 <ul class="list-group">
-                                                   
+                                                   <li id="rutas"></li>
                                                       </ul>
                                                 </div>
                                             </div>

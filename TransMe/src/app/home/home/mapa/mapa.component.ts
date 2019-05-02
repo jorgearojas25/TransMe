@@ -40,7 +40,7 @@ export class MapaComponent implements OnInit {
     this.Troncal = this._TroncalesService.getTroncales();
     this.latLon = this._TroncalesService.getLatLon();
     console.log(this.latLon);
-    this.getBuscarImagen();
+    
 
   }
 
@@ -98,7 +98,7 @@ resetMap(lati: number , long: number, zoom2: number) {
   this.zoom = zoom2;
 }
 
-buscarImagen(id_ruta){
+/* buscarImagen(id_ruta){
     id_ruta=id_ruta.toString();
     console.log(this.rutaImages);
     console.log(id_ruta);
@@ -106,20 +106,24 @@ buscarImagen(id_ruta){
       return value.idRuta === id_ruta;
     });
     const rutaimagenURL=rutaimagen.map(a=>a.URL);
-    const ruta='"../../../../'+rutaimagenURL+'"';
+    const ruta='../../../../'+rutaimagenURL;
     console.log(rutaimagen);
     console.log(rutaimagenURL);
     console.log(ruta);
-    $("#img").append('<img style="width:70%" src='+ruta+'>');
+    $("#"+id_ruta).attr('src',ruta);
 
 }
-
-getBuscarImagen(){
+ */
+/* getBuscarImagen(){
   this._TroncalesService.buscarImagen().subscribe(data=>{
     for (let i = 0; i <= data.length - 1; i++) {
       this.rutaImages.push((data[i])) ; }
       });
-}
+      console.log(this.rutaImages);
+      for(var i=1;i<=this.rutaImages.length;i++){
+        this.buscarImagen(i);
+      }
+} */
 
 cleanImage(){
   $("#img").empty();
