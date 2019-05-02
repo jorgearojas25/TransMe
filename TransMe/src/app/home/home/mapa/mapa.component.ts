@@ -78,7 +78,18 @@ buscar() {
 
    if (element.Estacion === $('#estacionCambio').val()) {
 
-      this.resetMap(parseFloat(element.Lat), parseFloat(element.Lon), 15);
+      this.resetMap(parseFloat(element.Lat), parseFloat(element.Lon), 20);
+   }
+ });
+
+}
+buscar2() {
+
+  this.latLon.forEach(element => {
+
+   if (element.Estacion.toLowerCase() === $('#cambiobusqueda').val().toLowerCase() ) {
+
+      this.resetMap(parseFloat(element.Lat), parseFloat(element.Lon), 20);
    }
  });
 
