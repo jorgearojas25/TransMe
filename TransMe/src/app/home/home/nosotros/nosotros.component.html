@@ -1,3 +1,44 @@
-<p>
-  nosotros works!
-</p>
+<app-homeheader></app-homeheader>
+<section class="main-container" [ngClass]="{collapsed: collapedSideBar}" style="background-image: url(../../../assets/images/fondo.png);">
+    <div class="row" id="homerow">
+        
+        <div style="padding:5%"><app-slider></app-slider></div>
+        <div style="padding:5%"class="col-12 col-md-8" >
+            
+            <button style="text-align:center;" class="btn btn-dark btn-lg btn-block" type="button" data-toggle="collapse" data-target=".multi-collapse" aria-expanded="false" aria-controls="multiCollapseExample1 multiCollapseExample2 multiCollapseExample3">N O S O T R O S</button>
+            
+            <br>
+            <p style="text-align:center">
+                    <a class="btn btn-primary" data-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1"> H I S T O R I A</a>
+                    <button class="btn btn-warning" type="button" data-toggle="collapse" data-target="#multiCollapseExample2" aria-expanded="false" aria-controls="multiCollapseExample2">M I S I O N</button>
+                    <button class="btn btn-success" type="button" data-toggle="collapse" data-target="#multiCollapseExample3" aria-expanded="false" aria-controls="multiCollapseExample2">V I S I O N</button>
+                    
+            </p>
+                  <div class="row">
+                    <div class="col">
+                      <div class="collapse multi-collapse" id="multiCollapseExample1">
+                        <div class="card card-body">
+                                En esta época, cuando la ciudad era de un poco más de un millón de habitantes y tenía 8.000 hectáreas de extensión, el servicio era relativamente razonable y cómodo. Pero a medida que la ciudad creció y llegó a alcanzar más de cinco millones de habitantes y una extensión superior a 30.000 hectáreas, no sólo aumentó sustancialmente el parque automotor hasta alcanzar más de 20.000 vehículos, sino que se multiplicaron la anarquía, el caos, la ineficiencia, la incomodidad y la contaminación.                        </div>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="collapse multi-collapse" id="multiCollapseExample2">
+                        <div class="card card-body">
+                                Gestionar el desarrollo e integración de los sistemas de transporte público masivo intermodal de pasajeros de la ciudad de Bogotá D.C. y de la región, con estándares de calidad, dignidad y comodidad, sustentable financiera y ambientalmente y orientado al mejoramiento de la calidad de vida de los usuarios.                        </div>
+                      </div>
+                    </div>
+                    <div class="col">
+                            <div class="collapse multi-collapse" id="multiCollapseExample3">
+                              <div class="card card-body">
+                                    En el 2025 seremos la empresa modelo en América Latina en gestión del transporte público integrado e intermodal de pasajeros y líder en la utilización de tecnologías limpias.
+                                </div>
+                            </div>
+                          </div>
+                  </div>
+                  <img style="width:50%; margin-left:25%; height:70%"src="../../../../assets/images/estacion.png">    
+        </div>
+        
+    </div>
+<app-homefooter></app-homefooter>
+
+</section>

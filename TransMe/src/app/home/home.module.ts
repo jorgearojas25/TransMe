@@ -15,10 +15,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { SliderComponent } from './home/slider/slider.component';
 import { HomefooterComponent } from './home/homefooter/homefooter.component';
 import { MapaComponent } from './home/mapa/mapa.component';
+import { Componente2Component } from './home/componente2/componente2.component';
+import { Componente3Component } from './home/componente3/componente3.component';
+import { NosotrosComponent } from './home/nosotros/nosotros.component';
 
 
 @NgModule({
-  declarations: [HomeComponent, HomeheaderComponent, HomesidebarComponent, BusquedasComponent, HomerutasComponent, SliderComponent, HomefooterComponent, MapaComponent],
+  declarations: [HomeComponent, HomeheaderComponent, HomesidebarComponent, BusquedasComponent, HomerutasComponent, SliderComponent, HomefooterComponent, MapaComponent, NosotrosComponent,Componente2Component, Componente3Component],
   imports: [
     CommonModule,
     HttpClientModule,
