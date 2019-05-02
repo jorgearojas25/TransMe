@@ -18,7 +18,7 @@
                     {{ 'Download Now' | translate }}
                 </a>
             </li> &nbsp; -->
-            <li class="nav-item">
+            <li class="nav-item" style="margin-right: 10px">
                 <a href="javascript:void(0)" class="nav-link mt-1"
                     style="padding: 0.375rem 1rem !important; border-color: #999;"
                     (click)="rltAndLtr()"
@@ -85,7 +85,7 @@
                     </a>
                 </div> 
             </li> -->
-            <li class="nav-item dropdown" ngbDropdown>
+            <!-- <li class="nav-item dropdown" ngbDropdown>
                 <a href="javascript:void(0)" class="nav-link" ngbDropdownToggle>
                     <i class="fa fa-language"></i> {{ 'Language' | translate }} <b class="caret"></b>
                 </a>
@@ -115,17 +115,14 @@
                         {{ 'Simplified Chinese' | translate }}
                     </a>
                 </div>
-            </li>
+            </li> -->
             <li class="nav-item dropdown" ngbDropdown>
                 <a href="javascript:void(0)" class="nav-link" ngbDropdownToggle>
                     <i class="fa fa-user"></i> {{userDetails.fullName}} <b class="caret"></b>
                 </a>
-                <div class="dropdown-menu-left" ngbDropdownMenu style="position: relative;">
+                <div class="dropdown-menu-right" ngbDropdownMenu style="position: relative;">
                     <a class="dropdown-item" href="javascript:void(0)"  [routerLink]="[ '/Perfil']">
                         <i class="fa fa-fw fa-user"></i> {{ 'Settings' | translate }}
-                    </a>
-                    <a class="dropdown-item" href="javascript:void(0)">
-                        <i class="fa fa-fw fa-envelope"></i> {{ 'Inbox' | translate }}
                     </a>
                     <a class="dropdown-item" (click)="onLoggedout()">
                         <i class="fa fa-fw fa-power-off"></i> {{ 'Log Out' | translate }}

@@ -14,6 +14,7 @@ const jsonDA: any[] = [];
 let estacionesTroncales: any[] = [];
 let estacionesTroncalesFiltradas: any[] = [];
 const troncalesFiltradasColor: any[] = [];
+ var rutaImages:any[]=[];
 @Injectable({
   providedIn: 'root'
 })
@@ -24,6 +25,15 @@ export class TroncalesService {
   private latLonMapa: any[] = [];
 
   constructor(private http: HttpClient) {
+    
+    this.buscarImagen().subscribe(data=>{
+      for (let i = 0; i <= data.length - 1; i++) {
+        rutaImages.push((data[i])) ; }
+    
+        });
+    
+      console.log(rutaImages);
+
 
     $.getJSON('http://datosabiertos.bogota.gov.co/api/3/action/datastore_search?resource_id=d0775af7-1706-4404-8bea-387194287d73&limit=1000', function(data) {
 
@@ -38,10 +48,12 @@ export class TroncalesService {
           });
           troncales.push(item.Corredor);
           estaciones.push(item.Name);
-          latLon.push({Estacion: item.Name, Lat: item.Latitud.replace(',', '.').replace('*', ''), Lon: item.Longitud.replace(',', '.').replace('*', ''),Troncal: item.Corredor,Id:item.Id});
+          
+          $.each(rutaImages,function(i,value){
+            if(value.idRuta==item.Id)
+            latLon.push({Estacion: item.Name, Lat: item.Latitud.replace(',', '.').replace('*', ''), Lon: item.Longitud.replace(',', '.').replace('*', ''),Troncal: item.Corredor,imagen:value.URL});
 
-
-
+          })
       });
       $.each(troncales, function(i, item) {
           if ($.inArray(item, troncalesFiltradas) === -1) { troncalesFiltradas.push(item); }

@@ -1,157 +1,136 @@
 
  <div class="container">
+     <br>
+     <div class="row">
+         <div class="col-lg-1"></div>
+         <div class="col-lg-7">
+             <input type="text" val="" id="cambiobusqueda" style="width: 100%; margin-top: 5px;" class="form-control">
+         </div>
+         <div class="col-lg-3">
+                <button (click)="buscar2()"  style="width: 100%" class="btn btn-primary" >buscar</button>
+         </div>
+     </div>
+     <br><br><br>
+     <div id="rutapop" style="align-content: center; margin-left: 10%"></div>
      <div class="row">
          <div class="col-sm-0 col-lg-1"></div>
             <div class="col-sm-12 col-lg-10">
-                <agm-map  [latitude]="lat" [longitude]="lng" [styles]='[{"featureType":"poi","elementType":"all","stylers":[{"hue":"#000000"},{"saturation":-100},{"lightness":-100},{"visibility":"off"}]},{"featureType":"poi","elementType":"all","stylers":[{"hue":"#000000"},{"saturation":-100},{"lightness":-100},{"visibility":"off"}]},{"featureType":"administrative","elementType":"all","stylers":[{"hue":"#000000"},{"saturation":0},{"lightness":-100},{"visibility":"off"}]},{"featureType":"road","elementType":"labels","stylers":[{"hue":"#ffffff"},{"saturation":-100},{"lightness":100},{"visibility":"off"}]},{"featureType":"water","elementType":"labels","stylers":[{"hue":"#000000"},{"saturation":-100},{"lightness":-100},{"visibility":"off"}]},{"featureType":"road.local","elementType":"all","stylers":[{"hue":"#ffffff"},{"saturation":-100},{"lightness":100},{"visibility":"on"}]},{"featureType":"water","elementType":"geometry","stylers":[{"hue":"#ffffff"},{"saturation":-100},{"lightness":100},{"visibility":"on"}]},{"featureType":"transit","elementType":"labels","stylers":[{"hue":"#000000"},{"saturation":0},{"lightness":-100},{"visibility":"off"}]},{"featureType":"landscape","elementType":"labels","stylers":[{"hue":"#000000"},{"saturation":-100},{"lightness":-100},{"visibility":"off"}]},{"featureType":"road","elementType":"geometry","stylers":[{"hue":"#bbbbbb"},{"saturation":-100},{"lightness":26},{"visibility":"on"}]},{"featureType":"landscape","elementType":"geometry","stylers":[{"hue":"#dddddd"},{"saturation":-100},{"lightness":-3},{"visibility":"on"}]}]' [zoom]="zoom" id="mapa" >
+                <agm-map  [latitude]="lat" [longitude]="lng" [styles]=''[zoom]="zoom" id="mapa" >
                         <div *ngFor="let place of latLon; let i = index">
-                        <agm-marker  *ngIf="place.Troncal=='NQS Sur'"  [latitude]="place.Lat" [longitude]="place.Lon" [title]="place.Estacion" [iconUrl]="'/assets/points/point1.png'" (markerClick)='buscarImagen(i+1);resetMap(place.Lat,place.Lon,15)' id="index" value="place.Estacion">
+                        <agm-marker  *ngIf="place.Troncal=='NQS Sur'"  [latitude]="place.Lat" [longitude]="place.Lon" [title]="place.Estacion" [iconUrl]="'/assets/points/point1.png'" (markerClick)='resetMap(place.Lat,place.Lon,20,place.Estacion)' id="index" value="place.Estacion">
 
-                            <agm-info-window (infoWindowClose)='cleanImage();resetMap(4.6597100,-74.0917500,11)'>
+                            <agm-info-window (infoWindowClose)='resetMap(4.6597100,-74.0917500,11)'>
                                    
                                 <div class="container">
                                     <div class="row">
-                                    <div class="col-sm-0 col-lg-4 ">
-                                        <div id="img"></div>
+                                    <div class="col-sm-0 col-lg-12 ">
+                                        <img src='{{place.imagen}}' style="width:100%">
                                     </div>
-                                    <div class= "col-lg-8">
-                                        <div class="row">
-                                        <strong style="align-items: center;">{{place.Estacion}}</strong></div>
-                                        <div class="row">
-                                        <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo" style="width: 100%; height: 30px;">Rutas</button>
-                                        <div id="demo" class="collapse">
-                                                <ul class="list-group">
-                                                   
-                                                      </ul>
-                                                </div>
-                                            </div>
-                                    </div>
+                                   
                                 </div>
                                     </div>
                           </agm-info-window>
                         </agm-marker>
-                        <agm-marker *ngIf="place.Troncal=='Calle 80'"  [latitude]="place.Lat" [longitude]="place.Lon" [title]="place.Estacion" [iconUrl]="'/assets/points/point2.png'" (markerClick)='resetMap(place.Lat,place.Lon,15)'(markerClick)="buscarImagen(i+1)">
-                            <agm-info-window (infoWindowClose)='resetMap(4.6597100,-74.0917500,11)' (infoWindowClose)='cleanImage()'>
+                        <agm-marker *ngIf="place.Troncal=='Calle 80'"  [latitude]="place.Lat" [longitude]="place.Lon" [title]="place.Estacion" [iconUrl]="'/assets/points/point2.png'" (markerClick)='resetMap(place.Lat,place.Lon,20,place.Estacion)'(markerClick)="buscarImagen(i+1)">
+                            <agm-info-window (infoWindowClose)='resetMap(4.6597100,-74.0917500,11)' >
                                    
                                     <div class="container">
                                         <div class="row">
-                                        <div class="col-sm-0 col-lg-4 ">
-                                             <div id="img"></div>
-                                        </div>
-                                        <div class= "col-lg-6">
-                                            <strong style="align-items: center;">{{place.Estacion}}</strong>
-                                        </div>
+                                        <div class="col-sm-0 col-lg-12 ">
+                                                <img src='{{place.imagen}}' style="width:100%">
+                                            </div>
+                                       
                                     </div>
                                         </div>
                               </agm-info-window>
                             </agm-marker>
-                        <agm-marker *ngIf="place.Troncal=='NQS Central'"  [latitude]="place.Lat" [longitude]="place.Lon" [title]="place.Estacion" [iconUrl]="'/assets/points/point3.png'" (markerClick)='resetMap(place.Lat,place.Lon,15)'(markerClick)="buscarImagen(i+1)">
-                            <agm-info-window (infoWindowClose)='resetMap(4.6597100,-74.0917500,11)' (infoWindowClose)='cleanImage()'>
+                        <agm-marker *ngIf="place.Troncal=='NQS Central'"  [latitude]="place.Lat" [longitude]="place.Lon" [title]="place.Estacion" [iconUrl]="'/assets/points/point3.png'" (markerClick)='resetMap(place.Lat,place.Lon,20,place.Estacion)'(markerClick)="buscarImagen(i+1)">
+                            <agm-info-window (infoWindowClose)='resetMap(4.6597100,-74.0917500,11)' >
                                     <div class="container">
                                         <div class="row">
-                                        <div class="col-sm-0 col-lg-4 ">
-                                                <div id="img"></div>
+                                        <div class="col-sm-0 col-lg-12 ">
+                                                <img src='{{place.imagen}}' style="width:100%">
                                         </div>
-                                        <div class= "col-lg-6">
-                                            <strong style="align-items: center;">{{place.Estacion}}</strong>
-                                        </div>
+                                       
                                     </div>
                                         </div>
                               </agm-info-window>
                         </agm-marker>
-                        <agm-marker *ngIf="place.Troncal=='Caracas'"  [latitude]="place.Lat" [longitude]="place.Lon" [title]="place.Estacion" [iconUrl]="'/assets/points/point4.png'" (markerClick)='resetMap(place.Lat,place.Lon,15)'(markerClick)="buscarImagen(i+1)">
+                        <agm-marker *ngIf="place.Troncal=='Caracas'"  [latitude]="place.Lat" [longitude]="place.Lon" [title]="place.Estacion" [iconUrl]="'/assets/points/point4.png'" (markerClick)='resetMap(place.Lat,place.Lon,20,place.Estacion)'(markerClick)="buscarImagen(i+1)">
                             <agm-info-window (infoWindowClose)='resetMap(4.6597100,-74.0917500,11)' (infoWindowClose)='cleanImage()'>
                                     <div class="container">
                                         <div class="row">
-                                        <div class="col-sm-0 col-lg-4">
-                                                <div id="img"></div>
+                                        <div class="col-sm-0 col-lg-12">
+                                                <img src='{{place.imagen}}' style="width:100%">
+
                                         </div>
-                                        <div class= "col-lg-6">
-                                            <strong style="align-items: center;">{{place.Estacion}}</strong>
-                                        </div>
+                                      
                                     </div>
                                         </div>
                               </agm-info-window></agm-marker>
-                        <agm-marker *ngIf="place.Troncal=='Autonorte'"  [latitude]="place.Lat" [longitude]="place.Lon" [title]="place.Estacion" [iconUrl]="'/assets/points/point5.png'" (markerClick)='resetMap(place.Lat,place.Lon,15)'(markerClick)="buscarImagen(i+1)">
-                            <agm-info-window (infoWindowClose)='resetMap(4.6597100,-74.0917500,11)' (infoWindowClose)='cleanImage()'>
+                        <agm-marker *ngIf="place.Troncal=='Autonorte'"  [latitude]="place.Lat" [longitude]="place.Lon" [title]="place.Estacion" [iconUrl]="'/assets/points/point5.png'" (markerClick)='resetMap(place.Lat,place.Lon,20,place.Estacion)'(markerClick)="buscarImagen(i+1)">
+                            <agm-info-window (infoWindowClose)='resetMap(4.6597100,-74.0917500,11)'>
                                     <div class="container">
                                         <div class="row">
-                                        <div class="col-sm-0 col-lg-4 ">
-                                                <div id="img"></div>
-                                        </div>
-                                        <div class= "col-lg-6">
-                                            <strong style="align-items: center;">{{place.Estacion}}</strong>
+                                        <div class="col-sm-0 col-lg-12 ">
+                                                <img src='{{place.imagen}}' style="width:100%">
                                         </div>
                                     </div>
                                         </div>
                               </agm-info-window>
                             </agm-marker>
-                        <agm-marker *ngIf="place.Troncal=='Suba'"  [latitude]="place.Lat" [longitude]="place.Lon" [title]="place.Estacion" [iconUrl]="'/assets/points/point6.png'" (markerClick)='resetMap(place.Lat,place.Lon,15)'(markerClick)="buscarImagen(i+1)">
-                            <agm-info-window (infoWindowClose)='resetMap(4.6597100,-74.0917500,11)' (infoWindowClose)='cleanImage()'> 
+                        <agm-marker *ngIf="place.Troncal=='Suba'"  [latitude]="place.Lat" [longitude]="place.Lon" [title]="place.Estacion" [iconUrl]="'/assets/points/point6.png'" (markerClick)='resetMap(place.Lat,place.Lon,20,place.Estacion)'(markerClick)="buscarImagen(i+1)">
+                            <agm-info-window (infoWindowClose)='resetMap(4.6597100,-74.0917500,11)'> 
                                     <div class="container">
                                         <div class="row">
-                                        <div class="col-sm-0 col-lg-4 ">
-                                                <div id="img"></div>
-                                        </div>
-                                        <div class= "col-lg-6">
-                                            <strong style="align-items: center;">{{place.Estacion}}</strong>
+                                        <div class="col-sm-0 col-lg-12 ">
+                                                <img src='{{place.imagen}}' style="width:100%">
                                         </div>
                                     </div>
                                         </div>
                               </agm-info-window>
                             </agm-marker>
-                        <agm-marker *ngIf="place.Troncal=='Calle 26'"  [latitude]="place.Lat" [longitude]="place.Lon" [title]="place.Estacion" [iconUrl]="'/assets/points/point7.png'" (markerClick)='resetMap(place.Lat,place.Lon,15)'(markerClick)="buscarImagen(i+1)">
-                            <agm-info-window (infoWindowClose)='resetMap(4.6597100,-74.0917500,11)' (infoWindowClose)='cleanImage()'>
+                        <agm-marker *ngIf="place.Troncal=='Calle 26'"  [latitude]="place.Lat" [longitude]="place.Lon" [title]="place.Estacion" [iconUrl]="'/assets/points/point7.png'" (markerClick)='resetMap(place.Lat,place.Lon,20,place.Estacion)'(markerClick)="buscarImagen(i+1)">
+                            <agm-info-window (infoWindowClose)='resetMap(4.6597100,-74.0917500,11)' >
                                     <div class="container">
                                         <div class="row">
-                                        <div class="col-sm-0 col-lg-4 ">
-                                                <div id="img"></div>
-                                        </div>
-                                        <div class= "col-lg-6">
-                                            <strong style="align-items: center;">{{place.Estacion}}</strong>
+                                        <div class="col-sm-0 col-lg-12 ">
+                                                <img src='{{place.imagen}}' style="width:100%">
                                         </div>
                                     </div>
                                         </div>
                               </agm-info-window>
                             </agm-marker>
-                        <agm-marker *ngIf="place.Troncal=='Américas'"  [latitude]="place.Lat" [longitude]="place.Lon" [title]="place.Estacion" [iconUrl]="'/assets/points/point8.png'" (markerClick)='resetMap(place.Lat,place.Lon,15)'(markerClick)="buscarImagen(i+1)">
-                            <agm-info-window (infoWindowClose)='resetMap(4.6597100,-74.0917500,11)' (infoWindowClose)='cleanImage()'>
+                        <agm-marker *ngIf="place.Troncal=='Américas'"  [latitude]="place.Lat" [longitude]="place.Lon" [title]="place.Estacion" [iconUrl]="'/assets/points/point8.png'" (markerClick)='resetMap(place.Lat,place.Lon,20,place.Estacion)'(markerClick)="buscarImagen(i+1)">
+                            <agm-info-window (infoWindowClose)='resetMap(4.6597100,-74.0917500,11)' >
                                     <div class="container">
                                         <div class="row">
-                                        <div class="col-sm-0 col-lg-4 ">
-                                                <div id="img"></div>
-                                        </div>
-                                        <div class= "col-lg-6">
-                                            <strong style="align-items: center;">{{place.Estacion}}</strong>
+                                        <div class="col-sm-0 col-lg-12 ">
+                                                <img src='{{place.imagen}}' style="width:100%">
                                         </div>
                                     </div>
                                         </div>
                               </agm-info-window>
                             </agm-marker>
-                        <agm-marker *ngIf="place.Troncal=='Eje Ambiental'"  [latitude]="place.Lat" [longitude]="place.Lon" [title]="place.Estacion" [iconUrl]="'/assets/points/point9.png'" (markerClick)='resetMap(place.Lat,place.Lon,15)'(markerClick)="buscarImagen(i+1)">
-                            <agm-info-window (infoWindowClose)='resetMap(4.6597100,-74.0917500,11)' (infoWindowClose)='cleanImage()'>
+                        <agm-marker *ngIf="place.Troncal=='Eje Ambiental'"  [latitude]="place.Lat" [longitude]="place.Lon" [title]="place.Estacion" [iconUrl]="'/assets/points/point9.png'" (markerClick)='resetMap(place.Lat,place.Lon,20,place.Estacion)'(markerClick)="buscarImagen(i+1)">
+                            <agm-info-window (infoWindowClose)='resetMap(4.6597100,-74.0917500,11)' >
                                     <div class="container">
                                         <div class="row">
-                                        <div class="col-sm-0 col-lg-4 ">
-                                                <div id="img"></div>
-                                        </div>
-                                        <div class= "col-lg-6">
-                                            <strong style="align-items: center;">{{place.Estacion}}</strong>
+                                        <div class="col-sm-0 col-lg-12 ">
+                                                <img src='{{place.imagen}}' style="width:100%">
                                         </div>
                                     </div>
                                         </div>
                               </agm-info-window>
                         </agm-marker>
-                        <agm-marker *ngIf="place.Troncal=='Caracas Sur'"  [latitude]="place.Lat" [longitude]="place.Lon" [title]="place.Estacion" [iconUrl]="'/assets/points/point11.png'" (markerClick)='resetMap(place.Lat,place.Lon,15)'(markerClick)="buscarImagen(i+1)">
-                            <agm-info-window (infoWindowClose)='resetMap(4.6597100,-74.0917500,11)' (infoWindowClose)='cleanImage()'>
+                        <agm-marker *ngIf="place.Troncal=='Caracas Sur'"  [latitude]="place.Lat" [longitude]="place.Lon" [title]="place.Estacion" [iconUrl]="'/assets/points/point11.png'" (markerClick)='resetMap(place.Lat,place.Lon,20,place.Estacion)'(markerClick)="buscarImagen(i+1)">
+                            <agm-info-window (infoWindowClose)='resetMap(4.6597100,-74.0917500,11)' >
                                     <div class="container">
                                         <div class="row">
-                                        <div class="col-sm-0 col-lg-4 ">
-                                                <div id="img"></div>
+                                        <div class="col-sm-0 col-lg-12 ">
+                                                <img src='{{place.imagen}}' style="width:100%">
                                         </div>
-                                        <div class= "col-lg-6">
-                                            <strong style="align-items: center;">{{place.Estacion}}</strong>
-                                        </div>
+
                                     </div>
                                         </div>
                               </agm-info-window>
@@ -163,7 +142,7 @@
         <div class="col-sm-0 col-lg-1"></div>
 
     </div>
-    <button (click)="buscar()" value="" id="estacionCambio"></button>
+    <button (click)="buscar()" value="" id="estacionCambio" style="visibility: hidden;"></button>
     
     <div ></div>
 

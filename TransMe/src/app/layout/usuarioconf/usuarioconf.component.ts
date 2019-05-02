@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from '../../shared/services/user.service';
 
 @Component({
   selector: 'app-usuarioconf',
@@ -6,10 +7,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./usuarioconf.component.scss']
 })
 export class UsuarioconfComponent implements OnInit {
-
-  constructor() { }
+  userDetails;
+  constructor(public service:UserService) { }
 
   ngOnInit() {
+    this.service.getUserProfile().subscribe(
+      res => {
+        this.userDetails = res
+      },
+      err => {
+        console.log(err);
+      },
+    );
+
   }
 
 }

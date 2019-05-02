@@ -36,7 +36,7 @@ export class LoginComponent implements OnInit {
             },
             err =>{
                 if (err.status == 400) {
-                    this.toastr.error("El nombre de usuario o la contraseña son incorrectos","Intento Fallido")
+                    this.toastr.error("El nombre de usuario o la contraseña son incorrectos","Click para restaurar contraseña")
                 }else
                 console.log(err);
             }

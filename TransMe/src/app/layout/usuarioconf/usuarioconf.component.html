@@ -1,44 +1,34 @@
-<h4><span class="badge badge-pill badge-primary">Configura tu perfil</span></h4>
-
-<form role="form">
-
-    <div class="form-group input-group">
-        <div class="input-group-prepend">
-            <span class="input-group-text" id="basic-addon1">@</span>
-        </div>
-        <!-- <span class="input-group-addon">@</span> -->
-        <input type="text" class="form-control" placeholder="Username">
+<div id="div">
+    <h2 style="text-align: center"><span class="badge badge-pill badge-primary badge-lg">Datos De Perfil</span></h2>
+    
+    
+    <div class="form-group">
+            <img src="../../../assets/images/logo.png" style="align-content: center;width: 20%; margin-left:40%">
+            <br>
+            <br>
+            <div class="row" style="margin-bottom: 20%; margin-left:10%">
+              <br>
+              <div class="col">
+                <h3 ><span class="badge badge-pill badge-primary badge-lg">Numero De Identificacion</span></h3>
+    
+              <input disabled value="{{userDetails.userName}}">
+              </div>
+              <br>
+              <div class="col">
+                <h3 ><span class="badge badge-pill badge-primary badge-lg">Email de Usuario</span></h3>
+    
+              <input disabled value="{{userDetails.email}}">
+              </div>
+              <br>
+              <div class="col">
+                <h3><span class="badge badge-pill badge-primary badge-lg">Nombre De Usuario</span></h3>
+              
+                <span style="padding:2%"><input disabled value="{{userDetails.fullName}}" ></span>
+            </div>
+              
     </div>
-
-    <div class="form-group input-group">
-        <input type="text" class="form-control">
-        <div class="input-group-append">
-            <span class="input-group-text">.00</span>
-        </div>
     </div>
-
-    <div class="form-group input-group">
-        <div class="input-group-prepend">
-            <span class="input-group-text" id="basic-addon1"><i class="fa fa-eur"></i></span>
-        </div>
-        <input type="text" class="form-control" placeholder="Font Awesome Icon">
-    </div>
-
-    <div class="form-group input-group">
-        <div class="input-group-prepend">
-            <span class="input-group-text" id="basic-addon1">$</span>
-        </div>
-        <input type="text" class="form-control">
-        <div class="input-group-append">
-            <span class="input-group-text">.00</span>
-        </div>
-    </div>
-
-    <div class="form-group input-group">
-        <input type="text" class="form-control">
-        <div class="input-group-append">
-            <button class="btn btn-secondary" type="button"><i class="fa fa-search"></i></button>
-        </div>
-    </div>
-
-</form>
+    
+              
+            </div>
+    

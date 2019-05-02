@@ -32,11 +32,13 @@
       </div>
   
     
-  
+  <div class="container">
   <div class="card" *ngFor="let e of events.list">
     <div class="card-body {{e.categoria}} form{{e.idEvento}}">
       <h5 class="card-title">{{e.evento}}</h5>
       <p class="card-text">{{e.descripcionEvento}}</p>
+      <p class="card-text">{{e.fechaEvento}}</p><p class="card-text">{{e.horaEvento}}</p>
+      <p class="card-text">Estacion recomendada: {{e.estacionRecomendada}}</p>
       <form [formGroup]="service.eventoForm" (submit)="onSubmit(e.idEvento)">
         <div class="form-content">
           <div class="form-group">
@@ -60,5 +62,5 @@
       
     </div>
   </div>
-  
+</div>
 </div>

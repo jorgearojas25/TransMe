@@ -121,7 +121,7 @@ export class HomesidebarComponent implements OnInit {
             for (let i = 0; i <= data.length - 1; i++) {
                 this.vagones.push((data[i])) ; }
     });
-        console.log(this.vagones);
+        console.log("vagones: "+this.vagones);
     }
 
     public getRutas() {
@@ -131,7 +131,7 @@ export class HomesidebarComponent implements OnInit {
             }
 
         });
-        console.log(this.rutas);
+        console.log("rutas: "+this.rutas);
     }
 
 
