@@ -8,7 +8,7 @@ namespace WebAPI.Models
 {
     public class UsuarioCategoria
     {
-        public int Id { get; set; }
+        public string id { get; set; }
         public string CategoriaID { get; set; }
         public Categoria Categoria { get; set; }
         public string UsuarioID { get; set; }

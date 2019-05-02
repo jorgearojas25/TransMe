@@ -235,15 +235,14 @@ namespace WebAPI.Migrations
 
             modelBuilder.Entity("WebAPI.Models.UsuarioCategoria", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                    b.Property<string>("id")
+                        .ValueGeneratedOnAdd();
 
                     b.Property<string>("CategoriaID");
 
                     b.Property<string>("UsuarioID");
 
-                    b.HasKey("Id");
+                    b.HasKey("id");
 
                     b.HasIndex("CategoriaID");
 
@@ -254,15 +253,14 @@ namespace WebAPI.Migrations
 
             modelBuilder.Entity("WebAPI.Models.UsuarioEvento", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                    b.Property<string>("id")
+                        .ValueGeneratedOnAdd();
 
                     b.Property<string>("EventoID");
 
                     b.Property<string>("UsuarioID");
 
-                    b.HasKey("Id");
+                    b.HasKey("id");
 
                     b.HasIndex("EventoID");
 

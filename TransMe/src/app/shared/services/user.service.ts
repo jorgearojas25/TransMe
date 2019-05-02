@@ -8,7 +8,7 @@ import { HttpClient, HttpHeaders} from '@angular/common/http';
 })
 export class UserService {
 
-  constructor(private fb: FormBuilder, private fb2:FormBuilder, private http:HttpClient) { }
+  constructor(private fb: FormBuilder, private fb2:FormBuilder,private fb3:FormBuilder, private http:HttpClient) { }
   readonly BaseURI = 'http://localhost:49810/api';
 
   formModel = this.fb.group({
@@ -24,7 +24,7 @@ export class UserService {
     
   });
 
-  eventForm=this.fb2.group({
+  eventForm=this.fb2.group({ 
     id:[''],
     NombreEvento:[''],
     Descripcion:[''],
@@ -35,6 +35,25 @@ export class UserService {
     Estacion:[''],
     Costo:['']
   });
+
+  eventoForm=this.fb3.group({ 
+    id:[''],
+    eventoID:[''],
+    //evento:['null'],
+    usuarioID:[''],
+    //usuario:['null']
+  });
+
+  apartarEvento(){
+    var body = {
+      id: this.eventoForm.value.id,
+      eventoID: this.eventoForm.value.eventoID,
+      //evento: this.eventoForm.value.evento,
+      usuarioID: this.eventoForm.value.usuarioID,
+      //usuario: this.eventoForm.value.usuario
+    };
+    return this.http.post(this.BaseURI + '/UsuarioEvento', body);
+  }
 
 
   comparePasswords(fb: FormGroup) {
@@ -72,10 +91,11 @@ export class UserService {
       EventoID:this.eventForm.value.EventoID,
       NombreEvento:this.eventForm.value.NombreEvento,
       Descripcion:this.eventForm.value.Descripcion,
+      CategoriaID:this.eventForm.value.CategoriaID,
       Fecha:this.eventForm.value.Fecha,
       Hora:this.eventForm.value.Hora,
       Lugar:this.eventForm.value.Lugar,
-      EstacionesID:this.eventForm.value.EstacionesID,
+      Estacion:this.eventForm.value.Estacion,
       Costo:this.eventForm.value.Costo
     }
 

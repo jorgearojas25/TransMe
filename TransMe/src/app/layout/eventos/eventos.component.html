@@ -1,15 +1,56 @@
 <div class="container">
-  <div class="row">
-    <div class="btn-group-toggle" data-toggle="buttons">
-      <label class="btn btn-primary">
-        <input type="checkbox"> Text
+    
+      <!-- <label *ngFor="let c of categoria.list" class="btn btn-{{c.bsadd}}">
+        <input type="checkbox" value="{{c.nombre}}"> {{c.nombre}}
+      </label> -->
+  
+  
+    <label class="btn btn-primary">
+      <input type="checkbox" value="Tecnologia"> Tecnologia
+    </label>
+    <label class="btn btn-danger">
+        <input type="checkbox" value="Deportes"> Deportes
       </label>
-    </div>
-  </div>
+      <label class="btn btn-light">
+          <input type="checkbox" value="Cine"> Cine
+        </label>
+        <label class="btn btn-secondary">
+            <input type="checkbox" value="Politico"> Politico
+          </label>
+          <label class="btn btn-warning">
+              <input type="checkbox" value="Religioso"> Religioso
+            </label>
+            <label class="btn btn-info">
+                <input type="checkbox" value="Recreativo"> Recreativo
+              </label>
+              <label class="btn btn-dark">
+                  <input type="checkbox" value="Teatro"> Teatro
+                </label>
+                <label class="btn btn-success">
+                    <input type="checkbox" value="Conferencia"> Conferencia
+                  </label>
+  
   <div class="card" *ngFor="let e of events.list">
-    <div class="card-body">
+    <div class="card-body {{e.categoria}} form{{e.idEvento}}">
       <h5 class="card-title">{{e.evento}}</h5>
       <p class="card-text">{{e.descripcionEvento}}</p>
+      <form [formGroup]="service.eventoForm" (submit)="onSubmit(e.idEvento)">
+        <div class="form-content">
+          <div class="form-group">
+            <select formControlName="usuarioID">
+              <option value="{{userDetails.id}}">identificacion</option>
+            </select>
+          </div>
+            <select formControlName="eventoID">
+              <option value="{{e.idEvento}}">evento</option>
+            </select>
+        </div>
+        <div class="form-group col-md-8 offset-md-2">
+            <button type="submit" class="btn">Me interesa</button>&nbsp;
+          </div>
+      </form>
+      
     </div>
   </div>
+  
 </div>

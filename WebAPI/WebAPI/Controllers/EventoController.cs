@@ -20,6 +20,32 @@ namespace WebAPI.Controllers
             _context = context;
         }
 
+        [HttpGet]
+        [Route("estad")]
+        public async Task<Object> GetEstad()
+        {
+            var eventos = (from e in _context.Eventos
+                           join c in _context.Categoria
+                           on e.CategoriaID equals c.id
+                           select new
+                           {
+                               Evento = e.NombreEvento,
+                               idEvento = e.id,
+                               DescripcionEvento = e.Descripcion,
+                               idCategoria = c.id.Count(),
+                               colorCategoria = c.color,
+                               Categoria = c.Nombre,
+                               FechaEvento = e.Fecha,
+                               HoraEvento = e.Hora,
+                               LugarEvento = e.Lugar,
+                               EstacionRecomendada = e.Estacion,
+                               CostoEvento = e.Costo
+                               
+                           });
+            return eventos;
+        }
+
+
         // GET: api/Evento
         [HttpGet]
         public async Task<Object> GetEventos()

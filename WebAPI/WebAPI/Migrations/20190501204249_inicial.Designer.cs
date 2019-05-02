@@ -10,8 +10,8 @@ using WebAPI.Models;
 namespace WebAPI.Migrations
 {
     [DbContext(typeof(AuthenticationContext))]
-    [Migration("20190430214950_ColorCategoria")]
-    partial class ColorCategoria
+    [Migration("20190501204249_inicial")]
+    partial class inicial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -198,6 +198,8 @@ namespace WebAPI.Migrations
 
                     b.Property<string>("Nombre");
 
+                    b.Property<string>("bsadd");
+
                     b.Property<string>("color");
 
                     b.HasKey("id");
@@ -235,15 +237,14 @@ namespace WebAPI.Migrations
 
             modelBuilder.Entity("WebAPI.Models.UsuarioCategoria", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                    b.Property<string>("id")
+                        .ValueGeneratedOnAdd();
 
                     b.Property<string>("CategoriaID");
 
                     b.Property<string>("UsuarioID");
 
-                    b.HasKey("Id");
+                    b.HasKey("id");
 
                     b.HasIndex("CategoriaID");
 
@@ -254,15 +255,14 @@ namespace WebAPI.Migrations
 
             modelBuilder.Entity("WebAPI.Models.UsuarioEvento", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                    b.Property<string>("id")
+                        .ValueGeneratedOnAdd();
 
                     b.Property<string>("EventoID");
 
                     b.Property<string>("UsuarioID");
 
-                    b.HasKey("Id");
+                    b.HasKey("id");
 
                     b.HasIndex("EventoID");
 

@@ -9,7 +9,7 @@ namespace WebAPI.Models
 {
     public class UsuarioEvento
     {
-        public int Id { get; set; }
+        public string id { get; set; }
         public string EventoID { get; set; }
         public Evento Evento { get; set; }
         public string UsuarioID { get; set; }

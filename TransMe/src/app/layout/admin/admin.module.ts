@@ -6,6 +6,7 @@ import { AdminRoutingModule } from './admin-routing.module';
 import { AdminComponent } from '../admin/admin.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [AdminComponent],
@@ -14,6 +15,7 @@ import { BrowserModule } from '@angular/platform-browser';
     AdminRoutingModule,
     ReactiveFormsModule,
     NgbModule,
+    ToastrModule
     
   ]
 })

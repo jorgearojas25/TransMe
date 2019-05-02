@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace WebAPI.Migrations
 {
-    public partial class CreacionInicial : Migration
+    public partial class inicial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -54,7 +54,9 @@ namespace WebAPI.Migrations
                 columns: table => new
                 {
                     id = table.Column<string>(nullable: false),
-                    Nombre = table.Column<string>(nullable: true)
+                    Nombre = table.Column<string>(nullable: true),
+                    color = table.Column<string>(nullable: true),
+                    bsadd = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -196,14 +198,13 @@ namespace WebAPI.Migrations
                 name: "UsuarioCategorias",
                 columns: table => new
                 {
-                    Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    id = table.Column<string>(nullable: false),
                     CategoriaID = table.Column<string>(nullable: true),
                     UsuarioID = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_UsuarioCategorias", x => x.Id);
+                    table.PrimaryKey("PK_UsuarioCategorias", x => x.id);
                     table.ForeignKey(
                         name: "FK_UsuarioCategorias_Categoria_CategoriaID",
                         column: x => x.CategoriaID,
@@ -222,14 +223,13 @@ namespace WebAPI.Migrations
                 name: "UsuarioEventos",
                 columns: table => new
                 {
-                    Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    id = table.Column<string>(nullable: false),
                     EventoID = table.Column<string>(nullable: true),
                     UsuarioID = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_UsuarioEventos", x => x.Id);
+                    table.PrimaryKey("PK_UsuarioEventos", x => x.id);
                     table.ForeignKey(
                         name: "FK_UsuarioEventos_Eventos_EventoID",
                         column: x => x.EventoID,

@@ -6,7 +6,6 @@ import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home/home.component';
 import { HomeheaderComponent } from './home/homeheader/homeheader.component';
 import { HomesidebarComponent } from './home/homesidebar/homesidebar.component';
-import { MapaComponent } from './home/mapa/mapa.component';
 import { BusquedasComponent } from './home/busquedas/busquedas.component';
 
 import { AgmCoreModule } from '@agm/core';
@@ -15,10 +14,11 @@ import { HomerutasComponent } from './home/homerutas/homerutas.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SliderComponent } from './home/slider/slider.component';
 import { HomefooterComponent } from './home/homefooter/homefooter.component';
+import { MapaComponent } from './home/mapa/mapa.component';
 
 
 @NgModule({
-  declarations: [HomeComponent, HomeheaderComponent, HomesidebarComponent, MapaComponent, BusquedasComponent, HomerutasComponent, SliderComponent, HomefooterComponent, ],
+  declarations: [HomeComponent, HomeheaderComponent, HomesidebarComponent, BusquedasComponent, HomerutasComponent, SliderComponent, HomefooterComponent, MapaComponent],
   imports: [
     CommonModule,
     HttpClientModule,
