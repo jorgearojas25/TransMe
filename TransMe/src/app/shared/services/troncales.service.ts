@@ -38,7 +38,7 @@ export class TroncalesService {
           });
           troncales.push(item.Corredor);
           estaciones.push(item.Name);
-          latLon.push({Estacion: item.Name, Lat: item.Latitud.replace(',', '.').replace('*', ''), Lon: item.Longitud.replace(',', '.').replace('*', ''),Troncal: item.Corredor,Id:item.Id});
+          latLon.push({Estacion: item.Name, Lat: item.Latitud.replace(',', '.').replace('*', ''), Lon: item.Longitud.replace(',', '.').replace('*', ''), Troncal: item.Corredor, Id: item.Id});
 
 
 
@@ -77,7 +77,7 @@ export class TroncalesService {
     getLatLon() {
       return this.latLonMapa = latLon;
     }
-    getEstacion(){
+    getEstacion() {
       return estaciones;
     }
 
@@ -103,7 +103,7 @@ export class TroncalesService {
 
     buscarImagen(): Observable<any> {
       return this.http.get('./assets/json/imagenesjson.json');
-    
+
     }
 
 }

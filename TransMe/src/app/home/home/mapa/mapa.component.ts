@@ -51,7 +51,7 @@ export class MapaComponent implements OnInit {
     $.each(data.result.records, function(i, item) {
 
       jsonDA.push({
-        
+
         Estacion: item.Name,
         Troncal: item.Corredor,
         Codigo: item.Id,
@@ -98,31 +98,31 @@ resetMap(lati: number , long: number, zoom2: number) {
   this.zoom = zoom2;
 }
 
-buscarImagen(id_ruta){
-    id_ruta=id_ruta.toString();
+buscarImagen(id_ruta) {
+    id_ruta = id_ruta.toString();
     console.log(this.rutaImages);
     console.log(id_ruta);
-    const rutaimagen=$.grep(this.rutaImages,function(value){
+    const rutaimagen = $.grep(this.rutaImages, function(value) {
       return value.idRuta === id_ruta;
     });
-    const rutaimagenURL=rutaimagen.map(a=>a.URL);
-    const ruta='"../../../../'+rutaimagenURL+'"';
+    const rutaimagenURL = rutaimagen.map(a => a.URL);
+    const ruta = '"../../../../' + rutaimagenURL + '"';
     console.log(rutaimagen);
     console.log(rutaimagenURL);
     console.log(ruta);
-    $("#img").append('<img style="width:70%" src='+ruta+'>');
+    $('#img').append('<img style="width:70%" src=' + ruta + '>');
 
 }
 
-getBuscarImagen(){
-  this._TroncalesService.buscarImagen().subscribe(data=>{
+getBuscarImagen() {
+  this._TroncalesService.buscarImagen().subscribe(data => {
     for (let i = 0; i <= data.length - 1; i++) {
       this.rutaImages.push((data[i])) ; }
       });
 }
 
-cleanImage(){
-  $("#img").empty();
+cleanImage() {
+  $('#img').empty();
 }
 
 }
