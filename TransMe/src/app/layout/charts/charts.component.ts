@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { routerTransition } from '../../router.animations';
+import { EstadisticasService } from '../../shared/services/estadisticas.service';
 
 @Component({
     selector: 'app-charts',
@@ -158,7 +159,7 @@ export class ChartsComponent implements OnInit {
          */
     }
 
-    constructor() {}
+    constructor( public estad:EstadisticasService) {}
 
     ngOnInit() {
         this.barChartType = 'bar';
@@ -169,6 +170,8 @@ export class ChartsComponent implements OnInit {
         this.polarAreaLegend = true;
         this.polarAreaChartType = 'polarArea';
         this.lineChartLegend = true;
-        this.lineChartType = 'line';
+        this.lineChartType = 'line'; 
+        this.estad.getEventos();
     }
+
 }

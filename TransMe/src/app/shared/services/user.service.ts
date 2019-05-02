@@ -26,14 +26,14 @@ export class UserService {
 
   eventForm=this.fb2.group({ 
     id:[''],
-    NombreEvento:[''],
+    NombreEvento:['',Validators.required],
     Descripcion:[''],
-    CategoriaID:[''],
-    Fecha:[''],
-    Hora:[''],
+    CategoriaID:['',Validators.required],
+    Fecha:['',Validators.required],
+    Hora:['',Validators.required],
     Lugar:[''],
-    Estacion:[''],
-    Costo:['']
+    Estacion:['',Validators.required],
+    Costo:['',Validators.required]
   });
 
   eventoForm=this.fb3.group({ 

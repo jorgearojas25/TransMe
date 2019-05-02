@@ -1,0 +1,8 @@
+
+<div class="id"></div>
+<div *ngFor="let me of miseventos.list" class="card {{me.idUser}}">
+    <div class="card-body" *ngIf="me.idUser === userDetails.id">
+        <h5 class="card-title"></h5>
+        <p class="card-text"><strong>{{me.nombreEvent}}&nbsp;</strong>{{me.fecha}}&nbsp;{{me.descripcion}}</p>
+    </div>
+</div>

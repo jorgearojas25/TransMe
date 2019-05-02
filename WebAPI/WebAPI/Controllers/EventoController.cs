@@ -27,20 +27,12 @@ namespace WebAPI.Controllers
             var eventos = (from e in _context.Eventos
                            join c in _context.Categoria
                            on e.CategoriaID equals c.id
+                           group new {c,e} by new {c.Nombre} into g
                            select new
                            {
-                               Evento = e.NombreEvento,
-                               idEvento = e.id,
-                               DescripcionEvento = e.Descripcion,
-                               idCategoria = c.id.Count(),
-                               colorCategoria = c.color,
-                               Categoria = c.Nombre,
-                               FechaEvento = e.Fecha,
-                               HoraEvento = e.Hora,
-                               LugarEvento = e.Lugar,
-                               EstacionRecomendada = e.Estacion,
-                               CostoEvento = e.Costo
-                               
+                               Categoria = g.Key.Nombre,
+                               Count = g.Select(x => x.c.id).Count()
+
                            });
             return eventos;
         }

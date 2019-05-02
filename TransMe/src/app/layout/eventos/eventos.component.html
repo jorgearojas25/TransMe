@@ -4,31 +4,34 @@
         <input type="checkbox" value="{{c.nombre}}"> {{c.nombre}}
       </label> -->
   
-  
-    <label class="btn btn-primary">
-      <input type="checkbox" value="Tecnologia"> Tecnologia
+      <div>
+        <label class="btn btn-primary">
+      <input checked="true" type="checkbox" value="Tecnologia"> Tecnologia
     </label>
     <label class="btn btn-danger">
-        <input type="checkbox" value="Deportes"> Deportes
+        <input checked="true" type="checkbox" value="Deportes"> Deportes
       </label>
       <label class="btn btn-light">
-          <input type="checkbox" value="Cine"> Cine
+          <input checked="true" type="checkbox" value="Cine"> Cine
         </label>
         <label class="btn btn-secondary">
-            <input type="checkbox" value="Politico"> Politico
+            <input checked="true" type="checkbox" value="Politico"> Politico
           </label>
           <label class="btn btn-warning">
-              <input type="checkbox" value="Religioso"> Religioso
+              <input type="checkbox" checked="true" value="Religioso"> Religioso
             </label>
             <label class="btn btn-info">
-                <input type="checkbox" value="Recreativo"> Recreativo
+                <input type="checkbox" checked="true" value="Recreativo"> Recreativo
               </label>
               <label class="btn btn-dark">
-                  <input type="checkbox" value="Teatro"> Teatro
+                  <input type="checkbox" checked="true" value="Teatro"> Teatro
                 </label>
                 <label class="btn btn-success">
-                    <input type="checkbox" value="Conferencia"> Conferencia
+                    <input type="checkbox" checked="true" value="Conferencia"> Conferencia
                   </label>
+      </div>
+  
+    
   
   <div class="card" *ngFor="let e of events.list">
     <div class="card-body {{e.categoria}} form{{e.idEvento}}">
@@ -37,12 +40,17 @@
       <form [formGroup]="service.eventoForm" (submit)="onSubmit(e.idEvento)">
         <div class="form-content">
           <div class="form-group">
+            <label>¿Cuantas personas van a ir? </label>
             <select formControlName="usuarioID">
-              <option value="{{userDetails.id}}">identificacion</option>
+              <option value="{{userDetails.id}}">1</option>
+              <option value="{{userDetails.id}}">2</option>
+              <option value="{{userDetails.id}}">3</option>
+              <option value="{{userDetails.id}}">4</option>
             </select>
           </div>
+          <label>¿Que días vas a ir? </label>
             <select formControlName="eventoID">
-              <option value="{{e.idEvento}}">evento</option>
+              <option value="{{e.idEvento}}">{{e.fechaEvento}}</option>
             </select>
         </div>
         <div class="form-group col-md-8 offset-md-2">

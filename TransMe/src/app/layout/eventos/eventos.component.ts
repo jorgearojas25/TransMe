@@ -32,8 +32,11 @@ export class EventosComponent implements OnInit {
     );
     console.log(this.userDetails);
 
-
+    
+    
     $(document).ready(function(){
+        
+    
       $('input[type="checkbox"]').click(function(){
           if($(this).attr("value")=="Tecnologia"){
               $(".Tecnologia").toggle();
@@ -42,28 +45,27 @@ export class EventosComponent implements OnInit {
               $(".Deportes").toggle();
           }
           if($(this).attr("value")=="Cine"){
-              $(".Deportes").toggle();
+              $(".Cine").toggle();
           }
           if($(this).attr("value")=="Teatro"){
-              $(".Deportes").toggle();
+              $(".Teatro").toggle();
           }
           if($(this).attr("value")=="Politico"){
-              $(".Deportes").toggle();
+              $(".Politico").toggle();
           }
           if($(this).attr("value")=="Religioso"){
-              $(".Deportes").toggle();
+              $(".Religioso").toggle();
           }
           if($(this).attr("value")=="Recreativo"){
-              $(".Deportes").toggle();
+              $(".Recreativo").toggle();
           }
           if($(this).attr("value")=="Conferencia"){
-              $(".Deportes").toggle();
+              $(".Conferencia").toggle();
           }
           
-
-        
       });
   });
+
   }
 
 
@@ -71,7 +73,7 @@ export class EventosComponent implements OnInit {
     $('.form'+dato).toggle();
     this.service.apartarEvento().subscribe(
         (res:any)=>{
-            if(res.OK){
+            if(res){
                 this.toastr.success('Evento Registrado','Gracias!');
             }
         },

@@ -38,7 +38,7 @@ export class AdminComponent implements OnInit {
   onSubmit(){
     this.service.postEvento().subscribe(
         (res:any)=>{
-            if(res.succeeded){
+            if(res){
                 this.service.eventForm.reset();
                 this.toastr.success('Evento Creado!','Registro Completo');
             }

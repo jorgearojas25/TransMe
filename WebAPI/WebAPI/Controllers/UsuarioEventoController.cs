@@ -19,29 +19,8 @@ namespace WebAPI.Controllers
         {
             _context = context;
         }
-        [HttpGet("{id}")]
-        [Route("MisEventos")]
-        public async Task<Object> GetMisEventos([FromRoute] string id)
-        {
-            var MisEventos = (from e in _context.Eventos
-                              join ue in _context.UsuarioEventos
-                              on e.id equals ue.EventoID
-                              join u in _context.ApplicationUsers
-                              on ue.UsuarioID equals u.Id
-                              select new
-                              {
-                                  Evento = e.NombreEvento,
-                                  idEvento = e.id,
-                                  DescripcionEvento = e.Descripcion,
-                                  Categoria = e.CategoriaID,
-                                  FechaEvento = e.Fecha,
-                                  HoraEvento = e.Hora,
-                                  LugarEvento = e.Lugar,
-                                  EstacionRecomendada = e.Estacion,
-                                  CostoEvento = e.Costo
-                              });
-            return MisEventos;
-        }
+
+        
 
         // GET: api/UsuarioEvento
         [HttpGet]
@@ -49,6 +28,35 @@ namespace WebAPI.Controllers
         {
             return _context.UsuarioEventos;
         }
+
+        [HttpGet]
+        [Route("MisEventos")]
+        public async Task<Object> MisEventos()
+        {
+            var misEventos = (from e in _context.Eventos
+                              join ue in _context.UsuarioEventos
+                              on e.id equals ue.EventoID
+                              join u in _context.ApplicationUsers
+                              on ue.UsuarioID equals u.Id
+                              group new {e,u,ue} by new {ue.EventoID,e.NombreEvento,u.Id,e.CategoriaID,e.Descripcion,e.Fecha,e.Hora,e.Lugar,e.Estacion} into g
+                              select new
+                              {
+                                  idEvento = g.Key.EventoID,
+                                  NombreEvent = g.Key.NombreEvento,
+                                  idUser = g.Key.Id,
+                                  idCategoria = g.Key.CategoriaID,
+                                  descripcion = g.Key.Descripcion,
+                                  fecha = g.Key.Fecha,
+                                  hora = g.Key.Hora,
+                                  lugar = g.Key.Lugar,
+                                  estacion = g.Key.Estacion
+
+                                  
+                              }
+                              );
+            return misEventos;
+        }
+
 
         // GET: api/UsuarioEvento/5
         [HttpGet("{id}")]
