@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
+import { UserService } from 'src/app/shared/services/user.service';
 
 @Component({
     selector: 'app-header',
@@ -8,9 +9,10 @@ import { TranslateService } from '@ngx-translate/core';
     styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
+    userDetails;
     public pushRightClass: string;
 
-    constructor(private translate: TranslateService, public router: Router) {
+    constructor(private translate: TranslateService, public router: Router, private service: UserService) {
 
         this.router.events.subscribe(val => {
             if (
@@ -25,6 +27,14 @@ export class HeaderComponent implements OnInit {
 
     ngOnInit() {
         this.pushRightClass = 'push-right';
+        this.service.getUserProfile().subscribe(
+            res => {
+                this.userDetails = res;
+            },
+            err =>{
+                console.log(err);
+            },
+        );
     }
 
     isToggled(): boolean {

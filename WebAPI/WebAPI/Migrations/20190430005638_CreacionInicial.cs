@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace WebAPI.Migrations
 {
-    public partial class InitialCreate : Migration
+    public partial class CreacionInicial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -47,6 +47,18 @@ namespace WebAPI.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_AspNetUsers", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Categoria",
+                columns: table => new
+                {
+                    id = table.Column<string>(nullable: false),
+                    Nombre = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Categoria", x => x.id);
                 });
 
             migrationBuilder.CreateTable(
@@ -155,6 +167,83 @@ namespace WebAPI.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "Eventos",
+                columns: table => new
+                {
+                    id = table.Column<string>(nullable: false),
+                    NombreEvento = table.Column<string>(nullable: true),
+                    Descripcion = table.Column<string>(nullable: true),
+                    CategoriaID = table.Column<string>(nullable: true),
+                    Fecha = table.Column<DateTime>(nullable: false),
+                    Hora = table.Column<TimeSpan>(nullable: false),
+                    Lugar = table.Column<string>(nullable: true),
+                    Estacion = table.Column<string>(nullable: true),
+                    Costo = table.Column<decimal>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Eventos", x => x.id);
+                    table.ForeignKey(
+                        name: "FK_Eventos_Categoria_CategoriaID",
+                        column: x => x.CategoriaID,
+                        principalTable: "Categoria",
+                        principalColumn: "id",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "UsuarioCategorias",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    CategoriaID = table.Column<string>(nullable: true),
+                    UsuarioID = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_UsuarioCategorias", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_UsuarioCategorias_Categoria_CategoriaID",
+                        column: x => x.CategoriaID,
+                        principalTable: "Categoria",
+                        principalColumn: "id",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_UsuarioCategorias_AspNetUsers_UsuarioID",
+                        column: x => x.UsuarioID,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "UsuarioEventos",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    EventoID = table.Column<string>(nullable: true),
+                    UsuarioID = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_UsuarioEventos", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_UsuarioEventos_Eventos_EventoID",
+                        column: x => x.EventoID,
+                        principalTable: "Eventos",
+                        principalColumn: "id",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_UsuarioEventos_AspNetUsers_UsuarioID",
+                        column: x => x.UsuarioID,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
                 table: "AspNetRoleClaims",
@@ -193,6 +282,31 @@ namespace WebAPI.Migrations
                 column: "NormalizedUserName",
                 unique: true,
                 filter: "[NormalizedUserName] IS NOT NULL");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Eventos_CategoriaID",
+                table: "Eventos",
+                column: "CategoriaID");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_UsuarioCategorias_CategoriaID",
+                table: "UsuarioCategorias",
+                column: "CategoriaID");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_UsuarioCategorias_UsuarioID",
+                table: "UsuarioCategorias",
+                column: "UsuarioID");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_UsuarioEventos_EventoID",
+                table: "UsuarioEventos",
+                column: "EventoID");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_UsuarioEventos_UsuarioID",
+                table: "UsuarioEventos",
+                column: "UsuarioID");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -213,10 +327,22 @@ namespace WebAPI.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
+                name: "UsuarioCategorias");
+
+            migrationBuilder.DropTable(
+                name: "UsuarioEventos");
+
+            migrationBuilder.DropTable(
                 name: "AspNetRoles");
 
             migrationBuilder.DropTable(
+                name: "Eventos");
+
+            migrationBuilder.DropTable(
                 name: "AspNetUsers");
+
+            migrationBuilder.DropTable(
+                name: "Categoria");
         }
     }
 }

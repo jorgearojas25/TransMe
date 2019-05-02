@@ -6,8 +6,8 @@
             <form role="form" [formGroup]="service.formModel" autocomplete="off" (submit)="onSubmit()">
                 <div class="form-content">
                     <div class="form-group required">
-                        <label>Nombre de usuario</label>
-                        <input class="form-control input-underline input-lg" formControlName="UserName" id="" placeholder="{{ 'Usuario' | translate }}">
+                        <label>Numero de Documento</label>
+                        <input class="form-control input-underline input-lg" formControlName="UserName" id="" placeholder="{{ 'Numero de Documento' | translate }}">
                         <label class="text-danger" *ngIf="service.formModel.get('UserName').touched && service.formModel.get('UserName').errors?.required">Este campo es obligatorio.</label>
                     </div>
 
@@ -20,6 +20,15 @@
                     <div class="form-group"> 
                         <label>Nombre Completo</label>
                         <input type="text" class="form-control input-underline input-lg" formControlName="FullName" id="" placeholder="{{ 'Full Name' | translate }}">
+                    </div>
+                    <div class="form-group"> 
+                        <label>Acceder Como </label>
+                        <br>
+                        <select style="width:211px" formControlName="Role">
+                        <option  value="Customer" id="">Customer</option>
+                        <option  value="Admin" id="">Admin</option>
+                        </select>
+                        
                     </div>
                     <div formGroupName="Passwords">
                         <div class="form-group required">
@@ -34,7 +43,7 @@
                             <label class="text-danger" *ngIf="service.formModel.get('Passwords.ConfirmPassword').touched && service.formModel.get('Passwords.ConfirmPassword').errors?.required">Este campo es obligatorio.</label>
           <label class="text-danger" *ngIf="service.formModel.get('Passwords.ConfirmPassword').touched && service.formModel.get('Passwords.ConfirmPassword').errors?.passwordMismatch">La contraseña no coincide</label>
                         </div>
-                    </div>
+                    </div>   
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-8 offset-md-2">

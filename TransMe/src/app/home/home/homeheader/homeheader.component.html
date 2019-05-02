@@ -4,14 +4,42 @@
       <!-- <span class="navbar-toggler-icon"></span> -->
       <i class="fa fa-bars text-muted" aria-hidden="true"></i>
   </button>
+  <li  class="nav-item d-none d-xl-block">
+        <a
+            [routerLink]="[ '/nosotros']"
+            class="navbar-brand"  
+            style="padding:0% 0% 0% 60%; font-size:90%;"
+        >
+            {{'NOSOTROS' | translate}}
+        </a>
+    </li> 
+    <li  class="nav-item d-none d-xl-block">
+            <a
+                [routerLink]="[ '/componente2']"
+                class="navbar-brand"  
+                style="padding:0% 0% 0% 60%; font-size:90%;"
+            >
+                {{'componente2' | translate}}
+            </a>
+        </li> 
+        <li  class="nav-item d-none d-xl-block">
+                <a
+                    [routerLink]="[ '/componente3']"
+                    class="navbar-brand"  
+                    style="padding:0% 0% 0% 60%; font-size:90%;"
+                >
+                    {{'componente3' | translate}}
+                </a>
+            </li> 
   <div class="collapse navbar-collapse">
  
       <ul class="navbar-nav ml-auto">
 
              
-     <li  class="nav-item"><form class="form-inline my-3 my-sm-0 ">
+    <!--  <li  class="nav-item"><form class="form-inline my-3 my-sm-0 ">
             <input class="form-control mr-sm-3" type="text" placeholder="{{ 'Search' | translate }}" >
-        </form></li> 
+        </form></li>  -->
+
 
           <li class="nav-item d-none d-xl-block">
               <a
@@ -22,15 +50,7 @@
                   {{ 'Log in' | translate }}
               </a>
           </li> &nbsp;
-          <li class="nav-item d-none d-xl-block">
-            <a
-                [routerLink]="[ '/dashboard']"
-                class="nav-link btn mt-1" role="button"
-                style="padding: .375rem 1rem !important;border-color: #999;"
-            >
-                {{ 'Boton Magico' | translate }}
-            </a>
-        </li> &nbsp;
+          
           <li class="nav-item d-none d-xl-block">
             <a
                 [routerLink]="[ '/signup']"

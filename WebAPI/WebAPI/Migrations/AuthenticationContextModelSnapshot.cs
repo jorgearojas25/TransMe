@@ -189,6 +189,88 @@ namespace WebAPI.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
+            modelBuilder.Entity("WebAPI.Models.Categoria", b =>
+                {
+                    b.Property<string>("id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Nombre");
+
+                    b.Property<string>("bsadd");
+
+                    b.Property<string>("color");
+
+                    b.HasKey("id");
+
+                    b.ToTable("Categoria");
+                });
+
+            modelBuilder.Entity("WebAPI.Models.Evento", b =>
+                {
+                    b.Property<string>("id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("CategoriaID");
+
+                    b.Property<decimal>("Costo");
+
+                    b.Property<string>("Descripcion");
+
+                    b.Property<string>("Estacion");
+
+                    b.Property<DateTime>("Fecha");
+
+                    b.Property<TimeSpan>("Hora");
+
+                    b.Property<string>("Lugar");
+
+                    b.Property<string>("NombreEvento");
+
+                    b.HasKey("id");
+
+                    b.HasIndex("CategoriaID");
+
+                    b.ToTable("Eventos");
+                });
+
+            modelBuilder.Entity("WebAPI.Models.UsuarioCategoria", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("CategoriaID");
+
+                    b.Property<string>("UsuarioID");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CategoriaID");
+
+                    b.HasIndex("UsuarioID");
+
+                    b.ToTable("UsuarioCategorias");
+                });
+
+            modelBuilder.Entity("WebAPI.Models.UsuarioEvento", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("EventoID");
+
+                    b.Property<string>("UsuarioID");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("EventoID");
+
+                    b.HasIndex("UsuarioID");
+
+                    b.ToTable("UsuarioEventos");
+                });
+
             modelBuilder.Entity("WebAPI.Models.ApplicationUser", b =>
                 {
                     b.HasBaseType("Microsoft.AspNetCore.Identity.IdentityUser");
@@ -244,6 +326,35 @@ namespace WebAPI.Migrations
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("WebAPI.Models.Evento", b =>
+                {
+                    b.HasOne("WebAPI.Models.Categoria", "Categoria")
+                        .WithMany()
+                        .HasForeignKey("CategoriaID");
+                });
+
+            modelBuilder.Entity("WebAPI.Models.UsuarioCategoria", b =>
+                {
+                    b.HasOne("WebAPI.Models.Categoria", "Categoria")
+                        .WithMany()
+                        .HasForeignKey("CategoriaID");
+
+                    b.HasOne("WebAPI.Models.ApplicationUser", "Usuario")
+                        .WithMany()
+                        .HasForeignKey("UsuarioID");
+                });
+
+            modelBuilder.Entity("WebAPI.Models.UsuarioEvento", b =>
+                {
+                    b.HasOne("WebAPI.Models.Evento", "Evento")
+                        .WithMany()
+                        .HasForeignKey("EventoID");
+
+                    b.HasOne("WebAPI.Models.ApplicationUser", "Usuario")
+                        .WithMany()
+                        .HasForeignKey("UsuarioID");
                 });
 #pragma warning restore 612, 618
         }

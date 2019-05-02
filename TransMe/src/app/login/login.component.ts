@@ -32,7 +32,7 @@ export class LoginComponent implements OnInit {
         this.service.login(form.value).subscribe(
             (res:any)=>{
                 localStorage.setItem('token',res.token);
-                this.router.navigateByUrl('/dashboard')
+                this.router.navigateByUrl('/Eventos')
             },
             err =>{
                 if (err.status == 400) {
