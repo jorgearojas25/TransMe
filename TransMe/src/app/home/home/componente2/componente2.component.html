@@ -1,3 +1,97 @@
-<p>
-  componente2 works!
-</p>
+<app-homeheader></app-homeheader>
+<section class="main-container" [ngClass]="{collapsed: collapedSideBar}" style="background-image: url(../../../assets/images/fondo.png);">
+  <div class="row" id="homerow">
+    <div style="padding:5%"><app-slider></app-slider></div>
+    <div style="padding:5%"class="col-12 col-md-8" >
+      <br>
+      <br>
+      <p style="text-align:center">
+        <a class="btn btn-success btn-lg btn-block" data-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1"> P U N T O S  R E C A R G A</a>
+      </p>
+      <div class="row">
+        <div class="col">
+          <div class="collapse multi-collapse" id="multiCollapseExample1">
+            <div class="card card-body">
+              Actualmente existen miles de puntos de recarga y venta de tarjetas en toda la ciudad y en los municipios de Cajicá, Cáqueza, Chía, Chocontá, Cogua, Cota, Facatativá, Funza, Fusagasugá, Gachancipá, Girardot, La Calera, Madrid, Mosquera, Pacho, Sibaté, Soacha, Sopó, Tabio, Tocancipá, Ubaté, Villa Pinzón, Villeta y Zipaquirá mediante la red Paga Todo.      
+            </div>
+          </div>
+        </div>
+        
+      <br>
+      <br>
+      </div>
+      <p style="text-align:center">
+        <a class="btn btn-primary btn-lg btn-block" data-toggle="collapse" href="#multiCollapseExample3" role="button" aria-expanded="false" aria-controls="multiCollapseExample3"> T A R I F A S</a>
+        <br>
+        <br>
+        <button class="btn btn-warning btn-lg btn-block" type="button" data-toggle="collapse" data-target="#multiCollapseExample4" aria-expanded="false" aria-controls="multiCollapseExample4">H O R A R I O S</button>
+      </p>
+      <div class="row">
+        <div class="col">
+          <div class="collapse multi-collapse" id="multiCollapseExample3">
+            <div class="card card-body">
+              <table class="tg">
+                <tr>
+                  <td class="tg-0lax">Usuarios</td>
+                  <td class="tg-0lax">Transmilenio</td>
+                  <td class="tg-0lax">SITP</td>
+                  <td class="tg-0lax">Transbordo</td>
+                  <td class="tg-0lax">Subsidio Mensual</td>
+                </tr>
+                <tr>
+                  <td class="tg-0lax">Estandár</td>
+                  <td class="tg-0lax">$2400</td>
+                  <td class="tg-0lax">$2200</td>
+                  <td class="tg-0lax">$200</td>
+                  <td class="tg-0lax">No recibe</td>
+                </tr>
+                <tr>
+                  <td class="tg-0lax">Adulto Mayor</td>
+                  <td class="tg-0lax">$2160</td>
+                  <td class="tg-0lax">$1980</td>
+                  <td class="tg-0lax">$180</td>
+                  <td class="tg-0lax">No recibe</td>
+                </tr>
+                <tr>
+                  <td class="tg-0lax">Discapacitados</td>
+                  <td class="tg-0lax">$2400</td>
+                  <td class="tg-0lax">$2200</td>
+                  <td class="tg-0lax">$200</td>
+                  <td class="tg-0lax">$24000</td>
+                </tr>
+                <tr>
+                  <td class="tg-0lax">Adulto Mayor</td>
+                  <td class="tg-0lax">$1800</td>
+                  <td class="tg-0lax">$1650</td>
+                  <td class="tg-0lax">$150</td>
+                  <td class="tg-0lax">No recibe</td>
+                </tr>
+              </table>
+              <figcaption>El transbordo entre SITP no tiene costo</figcaption>
+            </div>
+          </div>
+        </div>
+       
+        <div class="col">
+          <div class="collapse multi-collapse" id="multiCollapseExample4">
+            <div class="card card-body">
+              <table class="tg">
+	 
+                <tr>
+                  <td class="tg-0lax">L-V</td>
+                  <td class="tg-0lax">S-D-F</td>
+                </tr>
+                   <tr>
+                  <td class="tg-0lax">4:00 am - 12:00pm</td>
+                  <td class="tg-0lax">4:00 am - 11:30pm</td>
+                </tr>
+                </table>
+            </div>
+          </div>
+        </div>
+      <br>
+      </div>
+  </div>
+</div>
+<app-homefooter></app-homefooter>
+</section>

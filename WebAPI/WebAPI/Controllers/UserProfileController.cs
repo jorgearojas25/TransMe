@@ -38,7 +38,11 @@ namespace WebAPI.Controllers
             };
         }
 
-       
+       // [HttpPut]
+       //public async Task<ActionResult> PutUserSettings(ApplicationUser app)
+        //{
+        //    _userManager
+       // }
 
         
 
