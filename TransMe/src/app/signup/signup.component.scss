@@ -1,0 +1,7 @@
+// shared css for the login and signup page
+@import "../login/login.component.scss";
+div.form-group.required>label:first-child:after{
+    content:'*';
+    color: white;
+	padding-left: 5px;
+}

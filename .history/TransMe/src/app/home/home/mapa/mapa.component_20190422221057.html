@@ -1,0 +1,168 @@
+
+ <div class="container">
+     <div class="row">
+         <div class="col-sm-0 col-lg-1"></div>
+            <div class="col-sm-12 col-lg-10">
+                <agm-map [latitude]="4.6597100" [longitude]="-74.0917500" [styles]='[{"featureType":"poi","elementType":"all","stylers":[{"hue":"#000000"},{"saturation":-100},{"lightness":-100},{"visibility":"off"}]},{"featureType":"poi","elementType":"all","stylers":[{"hue":"#000000"},{"saturation":-100},{"lightness":-100},{"visibility":"off"}]},{"featureType":"administrative","elementType":"all","stylers":[{"hue":"#000000"},{"saturation":0},{"lightness":-100},{"visibility":"off"}]},{"featureType":"road","elementType":"labels","stylers":[{"hue":"#ffffff"},{"saturation":-100},{"lightness":100},{"visibility":"off"}]},{"featureType":"water","elementType":"labels","stylers":[{"hue":"#000000"},{"saturation":-100},{"lightness":-100},{"visibility":"off"}]},{"featureType":"road.local","elementType":"all","stylers":[{"hue":"#ffffff"},{"saturation":-100},{"lightness":100},{"visibility":"on"}]},{"featureType":"water","elementType":"geometry","stylers":[{"hue":"#ffffff"},{"saturation":-100},{"lightness":100},{"visibility":"on"}]},{"featureType":"transit","elementType":"labels","stylers":[{"hue":"#000000"},{"saturation":0},{"lightness":-100},{"visibility":"off"}]},{"featureType":"landscape","elementType":"labels","stylers":[{"hue":"#000000"},{"saturation":-100},{"lightness":-100},{"visibility":"off"}]},{"featureType":"road","elementType":"geometry","stylers":[{"hue":"#bbbbbb"},{"saturation":-100},{"lightness":26},{"visibility":"on"}]},{"featureType":"landscape","elementType":"geometry","stylers":[{"hue":"#dddddd"},{"saturation":-100},{"lightness":-3},{"visibility":"on"}]}]' [zoom]="11" id="mapa" >
+                        <div *ngFor="let place of latLon; let i = index">
+                        <agm-marker *ngIf="place.Troncal=='NQS Sur'"  [latitude]="place.Lat" [longitude]="place.Lon" [title]="place.Estacion" [iconUrl]="'/assets/points/point1.png'">
+                            <agm-info-window [disableAutoPan]="true">
+                                <div class="container">
+                                    <div class="row">
+                                    <div class="col-sm-0 col-lg-4 ">
+                                        <img src="/assets/images/logo.png" style=" width: 100%;">
+                                    </div>
+                                    <div class= "col-lg-8">
+                                        <div class="row">
+                                        <strong style="align-items: center;">{{place.Estacion}}</strong></div>
+                                        <div class="row">
+                                        <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo" style="width: 100%; height: 30px;">Rutas</button>
+                                        <div id="demo" class="collapse">
+                                                <ul class="list-group">
+                                                    <div *ngFor="let item of arrayRutas2;">
+                                                        <li class="list-group-item" *ngIf="comprobar(item.idVagon,place.Estacion)">Cras justo odio</li>
+                                                     </div>
+                                                      </ul>
+                                                </div>
+                                            </div>
+                                    </div>
+                                </div>
+                                    </div>
+                          </agm-info-window>
+                        </agm-marker>
+                        <agm-marker *ngIf="place.Troncal=='Calle 80'"  [latitude]="place.Lat" [longitude]="place.Lon" [title]="place.Estacion" [iconUrl]="'/assets/points/point2.png'">
+                            <agm-info-window [disableAutoPan]="true">
+                                    <div class="container">
+                                        <div class="row">
+                                        <div class="col-sm-0 col-lg-4 ">
+                                   
+                                          
+                                        </div>
+                                        <div class= "col-lg-6">
+                                            <strong style="align-items: center;">{{place.Estacion}}</strong>
+                                        </div>
+                                    </div>
+                                        </div>
+                              </agm-info-window>
+                            </agm-marker>
+                        <agm-marker *ngIf="place.Troncal=='NQS Central'"  [latitude]="place.Lat" [longitude]="place.Lon" [title]="place.Estacion" [iconUrl]="'/assets/points/point3.png'">
+                            <agm-info-window [disableAutoPan]="true">
+                                    <div class="container">
+                                        <div class="row">
+                                        <div class="col-sm-0 col-lg-4 ">
+                                   
+                                        </div>
+                                        <div class= "col-lg-6">
+                                            <strong style="align-items: center;">{{place.Estacion}}</strong>
+                                        </div>
+                                    </div>
+                                        </div>
+                              </agm-info-window>
+                        </agm-marker>
+                        <agm-marker *ngIf="place.Troncal=='Caracas'"  [latitude]="place.Lat" [longitude]="place.Lon" [title]="place.Estacion" [iconUrl]="'/assets/points/point4.png'">
+                            <agm-info-window [disableAutoPan]="true">
+                                    <div class="container">
+                                        <div class="row">
+                                        <div class="col-sm-0 col-lg-4">
+                                    
+                                        </div>
+                                        <div class= "col-lg-6">
+                                            <strong style="align-items: center;">{{place.Estacion}}</strong>
+                                        </div>
+                                    </div>
+                                        </div>
+                              </agm-info-window></agm-marker>
+                        <agm-marker *ngIf="place.Troncal=='Autonorte'"  [latitude]="place.Lat" [longitude]="place.Lon" [title]="place.Estacion" [iconUrl]="'/assets/points/point5.png'">
+                            <agm-info-window [disableAutoPan]="true">
+                                    <div class="container">
+                                        <div class="row">
+                                        <div class="col-sm-0 col-lg-4 ">
+                                  
+                                        </div>
+                                        <div class= "col-lg-6">
+                                            <strong style="align-items: center;">{{place.Estacion}}</strong>
+                                        </div>
+                                    </div>
+                                        </div>
+                              </agm-info-window>
+                            </agm-marker>
+                        <agm-marker *ngIf="place.Troncal=='Suba'"  [latitude]="place.Lat" [longitude]="place.Lon" [title]="place.Estacion" [iconUrl]="'/assets/points/point6.png'">
+                            <agm-info-window [disableAutoPan]="true">
+                                    <div class="container">
+                                        <div class="row">
+                                        <div class="col-sm-0 col-lg-4 ">
+                                   
+                                        </div>
+                                        <div class= "col-lg-6">
+                                            <strong style="align-items: center;">{{place.Estacion}}</strong>
+                                        </div>
+                                    </div>
+                                        </div>
+                              </agm-info-window>
+                            </agm-marker>
+                        <agm-marker *ngIf="place.Troncal=='Calle 26'"  [latitude]="place.Lat" [longitude]="place.Lon" [title]="place.Estacion" [iconUrl]="'/assets/points/point7.png'">
+                            <agm-info-window [disableAutoPan]="true">
+                                    <div class="container">
+                                        <div class="row">
+                                        <div class="col-sm-0 col-lg-4 ">
+                                   
+                                        </div>
+                                        <div class= "col-lg-6">
+                                            <strong style="align-items: center;">{{place.Estacion}}</strong>
+                                        </div>
+                                    </div>
+                                        </div>
+                              </agm-info-window>
+                            </agm-marker>
+                        <agm-marker *ngIf="place.Troncal=='Américas'"  [latitude]="place.Lat" [longitude]="place.Lon" [title]="place.Estacion" [iconUrl]="'/assets/points/point8.png'">
+                            <agm-info-window [disableAutoPan]="true">
+                                    <div class="container">
+                                        <div class="row">
+                                        <div class="col-sm-0 col-lg-4 ">
+                                    
+                                        </div>
+                                        <div class= "col-lg-6">
+                                            <strong style="align-items: center;">{{place.Estacion}}</strong>
+                                        </div>
+                                    </div>
+                                        </div>
+                              </agm-info-window>
+                            </agm-marker>
+                        <agm-marker *ngIf="place.Troncal=='Eje Ambiental'"  [latitude]="place.Lat" [longitude]="place.Lon" [title]="place.Estacion" [iconUrl]="'/assets/points/point9.png'">
+                            <agm-info-window [disableAutoPan]="true">
+                                    <div class="container">
+                                        <div class="row">
+                                        <div class="col-sm-0 col-lg-4 ">
+                                   
+                                        </div>
+                                        <div class= "col-lg-6">
+                                            <strong style="align-items: center;">{{place.Estacion}}</strong>
+                                        </div>
+                                    </div>
+                                        </div>
+                              </agm-info-window>
+                        </agm-marker>
+                        <agm-marker *ngIf="place.Troncal=='Caracas Sur'"  [latitude]="place.Lat" [longitude]="place.Lon" [title]="place.Estacion" [iconUrl]="'/assets/points/point11.png'">
+                            <agm-info-window [disableAutoPan]="true">
+                                    <div class="container">
+                                        <div class="row">
+                                        <div class="col-sm-0 col-lg-4 ">
+                                    
+                                        </div>
+                                        <div class= "col-lg-6">
+                                            <strong style="align-items: center;">{{place.Estacion}}</strong>
+                                        </div>
+                                    </div>
+                                        </div>
+                              </agm-info-window>
+                            </agm-marker>
+                    </div>
+                    
+            </agm-map>
+            </div>
+        <div class="col-sm-0 col-lg-1"></div>
+    </div>
+</div>
+<!-- <div *ngFor="let item of latLon;">
+    {{item.Troncal}}
+</div> -->

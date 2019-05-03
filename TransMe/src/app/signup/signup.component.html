@@ -1,0 +1,57 @@
+<div class="login-page" [@routerTransition]>
+    <div class="row justify-content-md-center">
+        <div class="col-md-4">
+            <img [routerLink]="['']" class="user-avatar" src="assets/images/logo.png" width="150px" />
+            <h1>TransMe | <a [routerLink]="['']">{{ 'Inicio' | translate }}</a></h1>
+            <form role="form" [formGroup]="service.formModel" autocomplete="off" (submit)="onSubmit()">
+                <div class="form-content">
+                    <div class="form-group required">
+                        <label>Numero de Documento</label>
+                        <input class="form-control input-underline input-lg" formControlName="UserName" id="" placeholder="{{ 'Numero de Documento' | translate }}">
+                        <label class="text-danger" *ngIf="service.formModel.get('UserName').touched && service.formModel.get('UserName').errors?.required">Este campo es obligatorio.</label>
+                    </div>
+
+                    <div class="form-group required">
+                        <label>Email</label>
+                        <input type="text" class="form-control input-underline input-lg" formControlName="Email" id="" placeholder="{{ 'Email' | translate }}">
+                        <label class="text-danger" *ngIf="service.formModel.get('Email').touched && service.formModel.get('Email').errors?.email">Esta no es una direccion valida</label>
+                    </div>
+
+                    <div class="form-group"> 
+                        <label>Nombre Completo</label>
+                        <input type="text" class="form-control input-underline input-lg" formControlName="FullName" id="" placeholder="{{ 'Full Name' | translate }}">
+                    </div>
+                    <div class="form-group"> 
+                        <label>Acceder Como </label>
+                        <br>
+                        <select style="width:211px" formControlName="Role">
+                        <option  value="Customer" id="">Customer</option>
+                        <option  value="Admin" id="">Admin</option>
+                        </select>
+                        
+                    </div>
+                    <div formGroupName="Passwords">
+                        <div class="form-group required">
+                            <label>Contraseña</label>
+                            <input type="password" class="form-control input-underline input-lg" formControlName="Password" id="" placeholder="{{ 'Password' | translate }}">
+                            <label class="text-danger" *ngIf="service.formModel.get('Passwords.Password').touched && service.formModel.get('Passwords.Password').errors?.required">Este campo es obligatorio</label>
+          <label class="text-danger" *ngIf="service.formModel.get('Passwords.Password').touched && service.formModel.get('Passwords.Password').errors?.minlength">Minimo 4 Caracteres</label>
+                        </div>
+                        <div class="form-group required">
+                            <label>Repita su contraseña</label>
+                            <input type="password" class="form-control input-underline input-lg" formControlName="ConfirmPassword" id="" placeholder="{{ 'Repeat Password' | translate }}">
+                            <label class="text-danger" *ngIf="service.formModel.get('Passwords.ConfirmPassword').touched && service.formModel.get('Passwords.ConfirmPassword').errors?.required">Este campo es obligatorio.</label>
+          <label class="text-danger" *ngIf="service.formModel.get('Passwords.ConfirmPassword').touched && service.formModel.get('Passwords.ConfirmPassword').errors?.passwordMismatch">La contraseña no coincide</label>
+                        </div>
+                    </div>   
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-8 offset-md-2">
+                        <button type="submit" [disabled]="!service.formModel.valid" class="btn rounded-btn">{{ 'Register' | translate }}</button>&nbsp;
+                    <button class="btn rounded-btn" [routerLink]="['/login']">{{ 'Log in' | translate }}</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
